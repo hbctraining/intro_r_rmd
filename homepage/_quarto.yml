@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: ../docs
+
+website:
+  title: "Introduction to R"
+  page-footer: >
+      This lesson has been developed by members of the teaching team at the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). <br>
+      These are open access materials distributed under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited. <br>
+      Some materials used are adapted from work that is Copyright © [Data Carpentry](http://datacarpentry.org/). All Data Carpentry instructional material is made available under the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0).
+  
+  
+  navbar:
+    left:
+      - text: "Schedule"
+        href: ../docs/schedule.html
+    right:
+      - text: "HBC"
+        href: https://bioinformatics.sph.harvard.edu/
+      - text: "GitHub"
+        href: https://github.com/hbctraining/intro_r_rmd
+      - text: "Contact us"
+        href: mailto:hbctraining@hsph.harvard.edu
+
+format:
+  html:
+    theme: simplex
+    google-analytics: UA-150953419-1
+    css: ../css/styles.css
