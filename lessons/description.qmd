@@ -1,3 +1,9 @@
+---
+sidebar: false
+toc: false
+---
+
+
 ## Introduction to R
 
 | Audience   | Computational skills required | Duration                                                   |
