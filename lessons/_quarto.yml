@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: ../docs
+  resources:
+    - ../img/
+
 
 website:
   title: "Introduction to R"
