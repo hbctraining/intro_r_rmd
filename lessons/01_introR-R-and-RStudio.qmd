@@ -280,7 +280,7 @@ You should see the command run in the console and output the result.
 What happens if we do that same command without the comment symbol `#`?
 Re-run the command after removing the \# sign in the front:
 
-```{r}  
+```{r}
 #| eval: false
 
 I am adding 3 and 5. R is fun!
@@ -343,9 +343,9 @@ we have listed a few more that can be helpful as you work in RStudio.
 
 ::: callout-tip
 # Exercises
-1. Try highlighting only `3 +` from
-your script editor and running it. Find a way to bring back the command
-prompt `>` in the console. 
+
+1.  Try highlighting only `3 +` from your script editor and running it.
+    Find a way to bring back the command prompt `>` in the console.
 :::
 
 ## The R syntax
