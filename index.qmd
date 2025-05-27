@@ -25,7 +25,7 @@ This repository has teaching materials for a hands-on **Introduction to R** work
 
 ### Lessons
 
--   [Workshop schedule (trainer-led learning)](schedule.qmd)
+-   [Workshop schedule (trainer-led learning)](lessons/schedule.qmd)
 <!-- -   [Self-learning](schedules/links-to-lessons.md) -->
 
 ### Installation Requirements
