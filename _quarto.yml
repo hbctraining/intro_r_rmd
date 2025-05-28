@@ -4,6 +4,7 @@ project:
   resources:
     - img/
     - css/
+    - slides/
 
 
 website:
@@ -29,14 +30,14 @@ website:
   
   sidebar:
     title: "Lessons"      # Optional title above the sidebar
-    style: "docked"     # Sidebar is docked to the left
-    collapse-level: 2      # At what header level to start collapsing
-    # contents: auto         # <-- THIS creates the automatic TOC from page headers (no sections)
+    style: "docked"       # Sidebar is docked to the left
+    collapse-level: 2     # At what header level to start collapsing
+    # contents: auto      # Creates automatic TOC from page headers (no sections)
     contents:
       - section: "Day 1:"
         contents:
           - lessons/01_introR-R-and-RStudio.qmd  
-      - section: "Day 1 Homework:"
+      - section: "Day 1 Self-learning:"
         contents:
           - lessons/02_introR-syntax-and-data-structures.qmd
           - lessons/03_introR-functions-and-arguments.qmd
@@ -55,7 +56,7 @@ format:
     code-copy: true      # enables copy button (default in most themes)
     code-tools: true     # enables the copy button!
     google-analytics: UA-150953419-1
-    prompt: true         # <-- prompts for all code blocks
+    prompt: true         
 
 # Global Execution Defaults
 execute:
