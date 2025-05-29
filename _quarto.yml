@@ -62,6 +62,7 @@ format:
     css: css/styles.css
     fig-align: "center"
     toc: true
+    toc-expand: false
     number-sections: false
     code-block-bg: true
     code-copy: true      # enables copy button (default in most themes)
