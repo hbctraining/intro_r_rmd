@@ -41,8 +41,19 @@ website:
         contents:
           - lessons/02_introR-syntax-and-data-structures.qmd
           - lessons/03_introR-functions-and-arguments.qmd
+          - lessons/06_reading_and_data_inspection.qmd
+
+      - section: "Day 2"
+        contents:
+          - lessons/Day2_activities.qmd
+          - lessons/05_introR-data-wrangling.qmd
+      - section: "Day 2 Self-learning"
+        contents:
           - lessons/04_introR_packages.qmd
-        
+          - lessons/07_introR-data-wrangling2.qmd
+          - lessons/08_identifying-matching-elements.qmd
+          - lessons/09_reordering-to-match-datasets.qmd
+          - lessons/10_setting_up_to_plot.qmd
 
 
 format:
@@ -55,6 +66,7 @@ format:
     code-block-bg: true
     code-copy: true      # enables copy button (default in most themes)
     code-tools: true     # enables the copy button!
+    code-line-wrap: wrap
     google-analytics: UA-150953419-1
     prompt: true         
 

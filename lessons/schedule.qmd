@@ -91,7 +91,7 @@ II. **Complete the exercises**:
 | Time | Topic | Instructor |
 |:-----------------:|:------------------------------------:|:-------------:|
 | 10:00 - 10:50 | Questions about self-learning | All |
-| 10:50 - 11:15 | [In-class exercises](../activities/Day2_activities.qmd) + [Answer key](../activities/Day2_activities_answer_key.R) | Heather |
+| 10:50 - 11:15 | [In-class exercises](../lessons/Day2_activities.qmd) + [Answer key](../activities/Day2_activities_answer_key.R) | Heather |
 | 11:15 - 12:00 | [Data Wrangling: Subsetting Vectors and Factors](05_introR-data-wrangling.qmd) | Will |
 
 ### Before the next class:
