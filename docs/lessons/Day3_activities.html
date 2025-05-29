@@ -9,7 +9,7 @@
 <meta name="author" content="Mary Piper, Meeta Mistry, Radhika Khetani">
 <meta name="dcterms.date" content="2019-12-04">
 
-<title>Introduction to R - Day 2 Activities</title>
+<title>Introduction to R - Day 3 Activities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -145,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/Day2_activities.html">Day 2</a></li><li class="breadcrumb-item"><a href="../lessons/Day2_activities.html">Day 2 Activities</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/Day3_activities.html">Day 3</a></li><li class="breadcrumb-item"><a href="../lessons/Day3_activities.html">Day 3 Activities</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -205,16 +205,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Day 2</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lessons/Day2_activities.html" class="sidebar-item-text sidebar-link active">
+  <a href="../lessons/Day2_activities.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 2 Activities</span></a>
   </div>
 </li>
@@ -269,16 +269,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Day 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lessons/Day3_activities.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/Day3_activities.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Day 3 Activities</span></a>
   </div>
 </li>
@@ -358,7 +358,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#reading-in-and-inspecting-data" id="toc-reading-in-and-inspecting-data" class="nav-link" data-scroll-target="#reading-in-and-inspecting-data">Reading in and inspecting data</a></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data wrangling</a></li>
+  <li><a href="#the-in-operator-reordering-and-matching" id="toc-the-in-operator-reordering-and-matching" class="nav-link" data-scroll-target="#the-in-operator-reordering-and-matching">The %in% operator, reordering and matching</a></li>
+  <li><a href="#bonus-using-map_lgl" id="toc-bonus-using-map_lgl" class="nav-link" data-scroll-target="#bonus-using-map_lgl">BONUS: Using <code>map_lgl()</code></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -367,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Day 2 Activities</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Day 3 Activities</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -394,21 +400,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<section id="reading-in-and-inspecting-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-in-and-inspecting-data">Reading in and inspecting data</h2>
 <ol type="1">
-<li><strong>Custom Functions</strong> - Let’s create a function <code>temp_conv()</code>, which converts the temperature in Fahrenheit (input) to the temperature in Kelvin (output).
-<ul>
-<li>We could perform a two-step calculation: first convert from Fahrenheit to Celsius, and then convert from Celsius to Kelvin.</li>
-<li>The formula for these two calculations are as follows: temp_c = (temp_f - 32) * 5 / 9; temp_k = temp_c + 273.15. To test your function,</li>
-<li>if your input is 70, the result of <code>temp_conv(70)</code> should be 294.2611.</li>
-</ul></li>
-<li><strong>Nesting Functions</strong> - Now we want to round the temperature in Kelvin (output of <code>temp_conv()</code>) to a single decimal place. Use the <code>round()</code> function with the newly-created <code>temp_conv()</code> function to achieve this in one line of code. If your input is 70, the output should now be 294.3.</li>
+<li>Download the <a href="https://raw.githubusercontent.com/hbctraining/Intro-to-R-flipped/master/data/animals.csv">animals.csv</a>, by right-clicking on the link and “Save Link As…” to place the file into the <code>data</code> directory.</li>
+<li>Read the <code>.csv</code> file into your environment and assign it to a variable called <code>animals</code>. <strong>Be sure to check that your row names are the different animals.</strong></li>
+<li>Check to make sure that <code>animals</code> is a dataframe.</li>
+<li>How many rows are in the <code>animals</code> dataframe? How many columns?</li>
+</ol>
+</section>
+<section id="data-wrangling" class="level2">
+<h2 class="anchored" data-anchor-id="data-wrangling">Data wrangling</h2>
+<ol type="1">
+<li>Extract the <code>speed</code> value of 40 km/h from the <code>animals</code> dataframe.</li>
+<li>Return the rows with animals that are the <code>color</code> Tan.</li>
+<li>Return the rows with animals that have <code>speed</code> greater than 50 km/h and output only the <code>color</code> column. Keep the output as a data frame.<br>
+</li>
+<li>Change the color of “Grey” to “Gray”.</li>
+<li>Create a list called <code>animals_list</code> in which the first element contains the speed column of the <code>animals</code> dataframe and the second element contains the color column of the <code>animals</code> dataframe.</li>
+<li>Give each element of your list the appropriate name (i.e speed and color).</li>
+</ol>
+</section>
+<section id="the-in-operator-reordering-and-matching" class="level2">
+<h2 class="anchored" data-anchor-id="the-in-operator-reordering-and-matching">The %in% operator, reordering and matching</h2>
+<ol type="1">
+<li>In your environment you should have a dataframe called <code>proj_summary</code> which contains quality metric information for an RNA-seq dataset. We have obtained batch information for the control samples in this dataset. <strong>Copy and paste the code below to create a dataframe of control samples with the associated batch information</strong>:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ctrl_samples <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">row.names =</span> <span class="fu">c</span>(<span class="st">"sample3"</span>, <span class="st">"sample10"</span>, <span class="st">"sample8"</span>, <span class="st">"sample4"</span>, <span class="st">"sample15"</span>), </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">date =</span> <span class="fu">c</span>(<span class="st">"01/13/2018"</span>, <span class="st">"03/15/2018"</span>, <span class="st">"01/13/2018"</span>, <span class="st">"09/20/2018"</span>,<span class="st">"03/15/2018"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>How many of the <code>ctrl_samples</code> are also in the <code>proj_summary</code> dataframe? Use the %in% operator to compare sample names.</li>
+<li>Keep only the rows in <code>proj_summary</code> which correspond to those in <code>ctrl_samples</code>. Do this with the %in% operator. Save it to a variable called <code>proj_summary_ctrl</code>.</li>
+<li>We would like to add in the batch information for the samples in <code>proj_summary_ctrl</code>. Find the rows that match in <code>ctrl_samples</code>.</li>
+<li>Use <code>cbind()</code> to add a column called <code>batch</code> to the <code>proj_summary_ctrl</code> dataframe. Assign this new dataframe back to <code>proj_summary_ctrl</code>.</li>
+</ol>
+</section>
+<section id="bonus-using-map_lgl" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-using-map_lgl">BONUS: Using <code>map_lgl()</code></h2>
+<ol type="1">
+<li>Subset <code>proj_summary</code> to keep only the “high” and “low” samples based on the treament column. Save the new dataframe to a variable called <code>proj_summary_noctl</code>.</li>
+<li>Further, subset the dataframe to remove the non-numeric columns “Quality_format”, and “treatment”. Try to do this using the <code>map_lgl()</code> function in addition to <code>is.numeric()</code>. Save the new dataframe back to <code>proj_summary_noctl</code>.</li>
 </ol>
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -696,20 +737,49 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Day 2 Activities"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Mary Piper, Meeta Mistry, Radhika Khetani"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "Wednesday, December 4, 2019"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Custom Functions** - Let's create a function <span class="in">`temp_conv()`</span>, which converts the temperature in Fahrenheit (input) to the temperature in Kelvin (output). </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>We could perform a two-step calculation: first convert from Fahrenheit to Celsius, and then convert from Celsius to Kelvin. </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>The formula for these two calculations are as follows: temp_c = (temp_f - 32) * 5 / 9; temp_k = temp_c + 273.15. To test your function, </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>if your input is 70, the result of <span class="in">`temp_conv(70)`</span> should be 294.2611.</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Nesting Functions** - Now we want to round the temperature in Kelvin (output of <span class="in">`temp_conv()`</span>) to a single decimal place. Use the <span class="in">`round()`</span> function with the newly-created  <span class="in">`temp_conv()`</span> function to achieve this in one line of code. If your input is 70, the output should now be 294.3.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Day 3 Activities"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Mary Piper, Meeta Mistry, Radhika Khetani"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "Wednesday, December 4, 2019"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading in and inspecting data</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Download the <span class="co">[</span><span class="ot">animals.csv</span><span class="co">](https://raw.githubusercontent.com/hbctraining/Intro-to-R-flipped/master/data/animals.csv)</span>, by right-clicking on the link and "Save Link As..." to place the file into the <span class="in">`data`</span> directory.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Read the <span class="in">`.csv`</span> file into your environment and assign it to a variable called <span class="in">`animals`</span>. **Be sure to check that your row names are the different animals.**</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Check to make sure that <span class="in">`animals`</span> is a dataframe.</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>How many rows are in the <span class="in">`animals`</span> dataframe? How many columns?</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data wrangling</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Extract the <span class="in">`speed`</span> value of 40 km/h from the <span class="in">`animals`</span> dataframe.</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Return the rows with animals that are the <span class="in">`color`</span> Tan.</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Return the rows with animals that have <span class="in">`speed`</span> greater than 50 km/h and output only the <span class="in">`color`</span> column. Keep the output as a data frame.  </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Change the color of "Grey" to "Gray". </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Create a list called <span class="in">`animals_list`</span> in which the first element contains the speed column of the <span class="in">`animals`</span> dataframe and the second element contains the color column of the <span class="in">`animals`</span> dataframe. </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Give each element of your list the appropriate name (i.e speed and color).</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## The %in% operator, reordering and matching</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>In your environment you should have a dataframe called <span class="in">`proj_summary`</span> which contains quality metric information for an RNA-seq dataset. We have obtained batch information for the control samples in this dataset. **Copy and paste the code below to create a dataframe of control samples with the associated batch information**:</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ctrl_samples <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">row.names =</span> <span class="fu">c</span>(<span class="st">"sample3"</span>, <span class="st">"sample10"</span>, <span class="st">"sample8"</span>, <span class="st">"sample4"</span>, <span class="st">"sample15"</span>), </span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>                           <span class="at">date =</span> <span class="fu">c</span>(<span class="st">"01/13/2018"</span>, <span class="st">"03/15/2018"</span>, <span class="st">"01/13/2018"</span>, <span class="st">"09/20/2018"</span>,<span class="st">"03/15/2018"</span>))</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>How many of the <span class="in">`ctrl_samples`</span> are also in the <span class="in">`proj_summary`</span> dataframe? Use the %in% operator to compare sample names.</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Keep only the rows in <span class="in">`proj_summary`</span> which correspond to those in <span class="in">`ctrl_samples`</span>. Do this with the %in% operator. Save it to a variable called <span class="in">`proj_summary_ctrl`</span>.</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>We would like to add in the batch information for the samples in <span class="in">`proj_summary_ctrl`</span>. Find the rows that match in <span class="in">`ctrl_samples`</span>.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Use <span class="in">`cbind()`</span> to add a column called <span class="in">`batch`</span> to the <span class="in">`proj_summary_ctrl`</span> dataframe. Assign this new dataframe back to <span class="in">`proj_summary_ctrl`</span>.</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## BONUS: Using `map_lgl()`</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Subset <span class="in">`proj_summary`</span> to keep only the "high" and "low" samples based on the treament column. Save the new dataframe to a variable called <span class="in">`proj_summary_noctl`</span>.</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Further, subset the dataframe to remove the non-numeric columns "Quality_format", and "treatment". Try to do this using the <span class="in">`map_lgl()`</span> function in addition to <span class="in">`is.numeric()`</span>. Save the new dataframe back to <span class="in">`proj_summary_noctl`</span>.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
