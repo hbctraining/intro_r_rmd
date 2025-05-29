@@ -31,7 +31,7 @@ website:
   sidebar:
     title: "Lessons"      # Optional title above the sidebar
     style: "docked"       # Sidebar is docked to the left
-    collapse-level: 2     # At what header level to start collapsing
+    collapse-level: 1     # At what header level to start collapsing
     # contents: auto      # Creates automatic TOC from page headers (no sections)
     contents:
       - section: "Day 1:"
@@ -62,7 +62,6 @@ format:
     css: css/styles.css
     fig-align: "center"
     toc: true
-    toc-expand: false
     number-sections: false
     code-block-bg: true
     code-copy: true      # enables copy button (default in most themes)
