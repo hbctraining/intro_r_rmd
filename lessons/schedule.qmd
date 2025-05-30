@@ -13,7 +13,7 @@ editor:
 | Time | Topic | Instructor |
 |:-----------------:|:------------------------------------:|:-------------:|
 | 10:00 - 10:30 | [Workshop Introduction](../slides/workshop_intro_slides.pdf) | Heather |
-| 10:30 - 11:45 | [Introduction to R and RStudio](01_introR-R-and-RStudio.qmd) | Will |
+| 10:30 - 11:45 | [Introduction to R and RStudio](01b_introR-R-and-RStudio.qmd) | Will |
 | 11:45 - 12:00 | Overview of self-learning materials and homework submission | Will |
 
 ### Before the next class:
