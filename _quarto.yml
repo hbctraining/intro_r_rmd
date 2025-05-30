@@ -36,7 +36,7 @@ website:
     contents:
       - section: "Day 1:"
         contents:
-          - lessons/01_introR-R-and-RStudio.qmd  
+          - lessons/01b_introR-R-and-RStudio.qmd  
       - section: "Day 1 Self-learning:"
         contents:
           - lessons/02_introR-syntax-and-data-structures.qmd
