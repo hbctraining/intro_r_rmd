@@ -2,9 +2,6 @@
 title: Introduction to R and RStudio
 authors: Mary Piper, Meeta Mistry, Will Gammerdinger, Noor Sohail
 date: "Friday, May 30, 2025"
-editor_options: 
-  markdown: 
-    wrap: 72
 ---
 
 Approximate time: 45 minutes

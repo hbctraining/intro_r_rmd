@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -147,10 +147,218 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Day 1:</a></li><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Introduction to R and RStudio</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Day 1:</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/01b_introR-R-and-RStudio.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introduction to R and RStudio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Day 1 Self-learning:</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/02_introR-syntax-and-data-structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Syntax and Data Structures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/03_introR-functions-and-arguments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/06_reading_and_data_inspection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reading in and inspecting data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Day 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/Day2_activities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 2 Activities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/05_introR-data-wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data subsetting with base R: vectors and factors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Day 2 Self-learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/04_introR_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Packages and libraries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/07_introR-data-wrangling2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data wrangling: dataframes, matrices, and lists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/08_identifying-matching-elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced R, logical operators for matching</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/09_reordering-to-match-datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced R, reordering to match datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/10_setting_up_to_plot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting and data visualization in R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Day 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/Day3_activities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 3 Activities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/11_ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting and data visualization in R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Day 3 Self-learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/11b_Custom_Functions_ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Custom functions for consistent plots</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/12_boxplot_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting and data visualization in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/13_exporting_data_and_plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Saving data and plots to file</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/14_finding_help.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting and finding help</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/15_tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tidyverse data wrangling</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Day 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/Day4_activities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 4 Activities</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -200,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Day 1:</a></li><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Introduction to R and RStudio</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Introduction to R and RStudio</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -1162,680 +1370,677 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Introduction to R and RStudio</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">authors:</span><span class="co"> Mary Piper, Meeta Mistry, Will Gammerdinger, Noor Sohail</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "Friday, May 30, 2025"</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">  markdown: </span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">    wrap: 72</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>Approximate time: 45 minutes</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Objectives</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe what R and RStudio are.</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interact with R using RStudio.</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Familiarize various components of RStudio.</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Employ variables in R.</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is R?</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>The common misconception is that R is a programming language but in fact</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>it is much more than that. Think of R as an environment for statistical</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>computing and graphics, which brings together a number of features to</span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>provide powerful functionality.</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>The R environment combines:</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Effective handling of big data</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Collection of integrated tools</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Graphical facilities</span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Simple and effective programming language</span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why use R?</span></span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/why_R.png" width="600"/&gt;</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>Approximate time: 45 minutes</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Objectives</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe what R and RStudio are.</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interact with R using RStudio.</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Familiarize various components of RStudio.</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Employ variables in R.</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is R?</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>The common misconception is that R is a programming language but in fact</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>it is much more than that. Think of R as an environment for statistical</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>computing and graphics, which brings together a number of features to</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>provide powerful functionality.</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>The R environment combines:</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Effective handling of big data</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Collection of integrated tools</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Graphical facilities</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Simple and effective programming language</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why use R?</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/why_R.png" width="600"/&gt;</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>R is a powerful, extensible environment. It has a wide range of</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>statistics and general data analysis and visualization capabilities.</span>
 <span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>R is a powerful, extensible environment. It has a wide range of</span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>statistics and general data analysis and visualization capabilities.</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Data handling, wrangling, and storage</span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Wide array of statistical methods and graphical techniques available</span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Easy to install on any platform and use (and it's free!)</span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open source with a large and growing community of peers</span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Examples of R used in the media and science</span></span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*"At the BBC data team, we have developed an R package and an R</span>
-<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>    cookbook to make the process of creating publication-ready graphics</span>
-<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>    in our in-house style..."* - [BBC Visual and Data Journalism</span>
-<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>    cookbook for R graphics](https://bbc.github.io/rcookbook/)</span>
-<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*"R package of data and code behind the stories and interactives at</span>
-<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>    FiveThirtyEight.com, a data-driven journalism website founded by</span>
-<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>    Nate Silver (initially began as a polling aggregation site, but now</span>
-<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>    covers politics, sports, science and pop culture) and owned by</span>
-<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>    ESPN..."* - [fivethirtyeight</span>
-<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>    Package](https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/fivethirtyeight.html)</span>
-<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>[Single Cell RNA-seq Data analysis with</span>
-<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>    Seurat](https://satijalab.org/seurat/)</span>
-<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is RStudio?</span></span>
-<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>RStudio is freely available open-source Integrated Development</span>
-<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>Environment (IDE). RStudio provides an environment with many features to</span>
-<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>make using R easier and is a great alternative to working on R in the</span>
-<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a>terminal.</span>
-<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/rstudio_logo.png" width="300"/&gt;</span>
-<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Graphical user interface, not just a command prompt</span>
-<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Great learning tool</span>
-<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Free for academic use</span>
-<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Platform agnostic</span>
-<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open source</span>
-<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: If you are using these materials for a locally installed version</span></span>
-<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; of RStudio, please use [this</span></span>
-<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; lesson](../docs/lessons/01a_introR-R-and-RStudio.html).</span></span>
-<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is Posit Cloud?</span></span>
-<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a>Posit is the open-source data science company who manages RStudio. While</span>
-<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a>many R users download Rstudio to run their analyses locally, Posit</span>
-<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a>offers a service called <span class="co">[</span><span class="ot">Posit Cloud</span><span class="co">](https://posit.cloud/)</span> which allows</span>
-<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a>users to carry out their analyses in the cloud. There can be various</span>
-<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a>advantages to this model of work including:</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Data handling, wrangling, and storage</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Wide array of statistical methods and graphical techniques available</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Easy to install on any platform and use (and it's free!)</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open source with a large and growing community of peers</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Examples of R used in the media and science</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*"At the BBC data team, we have developed an R package and an R</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>    cookbook to make the process of creating publication-ready graphics</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>    in our in-house style..."* - [BBC Visual and Data Journalism</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>    cookbook for R graphics](https://bbc.github.io/rcookbook/)</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*"R package of data and code behind the stories and interactives at</span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>    FiveThirtyEight.com, a data-driven journalism website founded by</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>    Nate Silver (initially began as a polling aggregation site, but now</span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>    covers politics, sports, science and pop culture) and owned by</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>    ESPN..."* - [fivethirtyeight</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>    Package](https://cran.r-project.org/web/packages/fivethirtyeight/vignettes/fivethirtyeight.html)</span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>[Single Cell RNA-seq Data analysis with</span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>    Seurat](https://satijalab.org/seurat/)</span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is RStudio?</span></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>RStudio is freely available open-source Integrated Development</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>Environment (IDE). RStudio provides an environment with many features to</span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>make using R easier and is a great alternative to working on R in the</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>terminal.</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/rstudio_logo.png" width="300"/&gt;</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Graphical user interface, not just a command prompt</span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Great learning tool</span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Free for academic use</span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Platform agnostic</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open source</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: If you are using these materials for a locally installed version</span></span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; of RStudio, please use [this</span></span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; lesson](../docs/lessons/01a_introR-R-and-RStudio.html).</span></span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is Posit Cloud?</span></span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a>Posit is the open-source data science company who manages RStudio. While</span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a>many R users download Rstudio to run their analyses locally, Posit</span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a>offers a service called <span class="co">[</span><span class="ot">Posit Cloud</span><span class="co">](https://posit.cloud/)</span> which allows</span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a>users to carry out their analyses in the cloud. There can be various</span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a>advantages to this model of work including:</span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Your analyses are available from any computer in the world</span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Sharing Rstudio projects can be easier</span>
 <span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Your analyses are available from any computer in the world</span>
-<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Sharing Rstudio projects can be easier</span>
-<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Posit_cloud_logo.png" width="300"/&gt;</span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Posit_cloud_logo.png" width="300"/&gt;</span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a>However, there are restrictions on the free accounts that come from</span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>Posit Cloud including:</span>
 <span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>However, there are restrictions on the free accounts that come from</span>
-<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a>Posit Cloud including:</span>
-<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Maximum of 25 projects</span>
-<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>25 compute hours per month</span>
-<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>1GB maximum of RAM</span>
-<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why are we using Posit Cloud?</span></span>
-<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a>Given the restrictions on compute time and RAM, you might wonder why we</span>
-<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a>are teaching you R using Posit Cloud? And that answer is that Posit</span>
-<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a>Cloud offers a great environment for teaching from and all of the</span>
-<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a>principles that we learn to use in RStudio on Posit Cloud will apply to</span>
-<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a>your local installation of RStudio as well. Some of these benefits are:</span>
-<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Shared operating system for package installations</span>
-<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Shared versions of R and packages</span>
-<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Allows instructors to take control of your RStudio environment to</span>
-<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a>    help troubleshoot issues</span>
-<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Can pre-load data to analyze</span>
-<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a>Our recommendation is for you to familiarize yourself with RStudio in</span>
-<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a>this workshop in a common shared environment on Posit Cloud and then</span>
-<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a>take these skills with you and implement them on your own analyses on a</span>
-<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a>local version of RStudio.</span>
-<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Entering the Introduction to R Workspace on Posit Cloud</span></span>
-<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a>Before you are able to use Posit Cloud, you will need to make a free</span>
-<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a>account on Posit by following <span class="co">[</span><span class="ot">this link</span><span class="co">](https://posit.cloud/)</span> if you</span>
-<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a>have not already done so. Once you have made an account on Posit Cloud,</span>
-<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a>the instructors to the workshop will have shared a link with you to join</span>
-<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a>the Introduction to R workspace hosted by the Harvard Chan</span>
-<span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a>Bioinformatics Core. It should take you to a webpage that looks like</span>
-<span id="cb14-126"><a href="#cb14-126" aria-hidden="true" tabindex="-1"></a>this:</span>
-<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Join_workspace_annotated.png" width="600"/&gt;</span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Maximum of 25 projects</span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>25 compute hours per month</span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>1GB maximum of RAM</span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why are we using Posit Cloud?</span></span>
+<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>Given the restrictions on compute time and RAM, you might wonder why we</span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a>are teaching you R using Posit Cloud? And that answer is that Posit</span>
+<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a>Cloud offers a great environment for teaching from and all of the</span>
+<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a>principles that we learn to use in RStudio on Posit Cloud will apply to</span>
+<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a>your local installation of RStudio as well. Some of these benefits are:</span>
+<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Shared operating system for package installations</span>
+<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Shared versions of R and packages</span>
+<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Allows instructors to take control of your RStudio environment to</span>
+<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a>    help troubleshoot issues</span>
+<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Can pre-load data to analyze</span>
+<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a>Our recommendation is for you to familiarize yourself with RStudio in</span>
+<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a>this workshop in a common shared environment on Posit Cloud and then</span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a>take these skills with you and implement them on your own analyses on a</span>
+<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a>local version of RStudio.</span>
+<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a><span class="fu">## Entering the Introduction to R Workspace on Posit Cloud</span></span>
+<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a>Before you are able to use Posit Cloud, you will need to make a free</span>
+<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a>account on Posit by following <span class="co">[</span><span class="ot">this link</span><span class="co">](https://posit.cloud/)</span> if you</span>
+<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a>have not already done so. Once you have made an account on Posit Cloud,</span>
+<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a>the instructors to the workshop will have shared a link with you to join</span>
+<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a>the Introduction to R workspace hosted by the Harvard Chan</span>
+<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a>Bioinformatics Core. It should take you to a webpage that looks like</span>
+<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a>this:</span>
+<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Join_workspace_annotated.png" width="600"/&gt;</span>
+<span id="cb14-126"><a href="#cb14-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a>Left-click the "Join" Button and it should take you to a screen that</span>
+<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a>looks like the one below:</span>
 <span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a>Left-click the "Join" Button and it should take you to a screen that</span>
-<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a>looks like the one below:</span>
-<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Open_hamburger_annotated.png" width="600"/&gt;</span>
+<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Open_hamburger_annotated.png" width="600"/&gt;</span>
+<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a>You have now joined the Harvard Chan Bioinformatics Core's Introduction</span>
+<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a>to R workspace on Posit Cloud.</span>
 <span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a>You have now joined the Harvard Chan Bioinformatics Core's Introduction</span>
-<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a>to R workspace on Posit Cloud.</span>
-<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview of Posit Cloud Workspaces</span></span>
+<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview of Posit Cloud Workspaces</span></span>
+<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a>Left-click on the Hamburger button in the top left to reveal your</span>
+<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a>available workspaces.</span>
 <span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a>Left-click on the Hamburger button in the top left to reveal your</span>
-<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a>available workspaces.</span>
-<span id="cb14-142"><a href="#cb14-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Open_hamburger_2_annotated.png" width="600"/&gt;</span>
+<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Open_hamburger_2_annotated.png" width="600"/&gt;</span>
+<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-142"><a href="#cb14-142" aria-hidden="true" tabindex="-1"></a>On the top of the left-hand panel you should see a section called</span>
+<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a>"Spaces". Within it you should see three options:</span>
 <span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a>On the top of the left-hand panel you should see a section called</span>
-<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a>"Spaces". Within it you should see three options:</span>
-<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Your Workspace** - This is where you can use Posit Cloud's</span>
-<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a>    resources in accordance with your account's limits. If it is the</span>
-<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a>    free account then it would be 25 compute hours per month and 1GB of</span>
-<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a>    RAM.</span>
-<span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Introduction to R** - This is the Harvard Chan Bioinformatics</span>
-<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a>    Core's Workspace and we set the compute limits. **This workspace is</span>
-<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a>    only to be used for the workshop and not personal use outside of the</span>
-<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a>    workshop.**</span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Your Workspace** - This is where you can use Posit Cloud's</span>
+<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a>    resources in accordance with your account's limits. If it is the</span>
+<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a>    free account then it would be 25 compute hours per month and 1GB of</span>
+<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a>    RAM.</span>
+<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Introduction to R** - This is the Harvard Chan Bioinformatics</span>
+<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a>    Core's Workspace and we set the compute limits. **This workspace is</span>
+<span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a>    only to be used for the workshop and not personal use outside of the</span>
+<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a>    workshop.**</span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**+ New Space** - This is what you can use to create a new workspace</span>
+<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a>    that is tied to your personal account limits.</span>
 <span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**+ New Space** - This is what you can use to create a new workspace</span>
-<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a>    that is tied to your personal account limits.</span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a>Select the **Introduction to R** workspace. This will be the workspace</span>
+<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a>that we will be working within for this workshop.</span>
 <span id="cb14-160"><a href="#cb14-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-161"><a href="#cb14-161" aria-hidden="true" tabindex="-1"></a>Select the **Introduction to R** workspace. This will be the workspace</span>
-<span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a>that we will be working within for this workshop.</span>
-<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Select_workspace_annotated.png" width="600"/&gt;</span>
-<span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-166"><a href="#cb14-166" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is a project in RStudio?</span></span>
-<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-168"><a href="#cb14-168" aria-hidden="true" tabindex="-1"></a>It is simply a directory that contains everything related your analyses</span>
-<span id="cb14-169"><a href="#cb14-169" aria-hidden="true" tabindex="-1"></a>for a specific project. RStudio projects are useful when you are working</span>
-<span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a>on context-specific analyses and you wish to keep them separate. When</span>
-<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a>creating a project in RStudio you associate it with a working directory</span>
-<span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a>of your choice (either an existing one, or a new one). A <span class="in">`. RProj file`</span></span>
-<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a>is created within that directory and that keeps track of your command</span>
-<span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a>history and variables in the environment. The <span class="in">`. RProj file`</span> can be used</span>
-<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a>to open the project in its current state but at a later date.</span>
+<span id="cb14-161"><a href="#cb14-161" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Select_workspace_annotated.png" width="600"/&gt;</span>
+<span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is a project in RStudio?</span></span>
+<span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a>It is simply a directory that contains everything related your analyses</span>
+<span id="cb14-166"><a href="#cb14-166" aria-hidden="true" tabindex="-1"></a>for a specific project. RStudio projects are useful when you are working</span>
+<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a>on context-specific analyses and you wish to keep them separate. When</span>
+<span id="cb14-168"><a href="#cb14-168" aria-hidden="true" tabindex="-1"></a>creating a project in RStudio you associate it with a working directory</span>
+<span id="cb14-169"><a href="#cb14-169" aria-hidden="true" tabindex="-1"></a>of your choice (either an existing one, or a new one). A <span class="in">`. RProj file`</span></span>
+<span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a>is created within that directory and that keeps track of your command</span>
+<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a>history and variables in the environment. The <span class="in">`. RProj file`</span> can be used</span>
+<span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a>to open the project in its current state but at a later date.</span>
+<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a>When a project is **(re)opened** within RStudio the following actions</span>
+<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a>are taken:</span>
 <span id="cb14-176"><a href="#cb14-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a>When a project is **(re)opened** within RStudio the following actions</span>
-<span id="cb14-178"><a href="#cb14-178" aria-hidden="true" tabindex="-1"></a>are taken:</span>
-<span id="cb14-179"><a href="#cb14-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A new R session (process) is started</span>
-<span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The .RData file in the project's main directory is loaded,</span>
-<span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a>    populating the environment with any objects that were present when</span>
-<span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a>    the project was closed.</span>
-<span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The .Rhistory file in the project's main directory is loaded into</span>
-<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a>    the RStudio History pane (and used for Console Up/Down arrow command</span>
-<span id="cb14-186"><a href="#cb14-186" aria-hidden="true" tabindex="-1"></a>    history).</span>
-<span id="cb14-187"><a href="#cb14-187" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The current working directory is set to the project directory.</span>
-<span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Previously edited source documents are restored into editor tabs</span>
-<span id="cb14-189"><a href="#cb14-189" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Other RStudio settings (e.g. active tabs, splitter positions, etc.)</span>
-<span id="cb14-190"><a href="#cb14-190" aria-hidden="true" tabindex="-1"></a>    are restored to where they were the last time the project was</span>
-<span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a>    closed.</span>
+<span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A new R session (process) is started</span>
+<span id="cb14-178"><a href="#cb14-178" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The .RData file in the project's main directory is loaded,</span>
+<span id="cb14-179"><a href="#cb14-179" aria-hidden="true" tabindex="-1"></a>    populating the environment with any objects that were present when</span>
+<span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a>    the project was closed.</span>
+<span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The .Rhistory file in the project's main directory is loaded into</span>
+<span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a>    the RStudio History pane (and used for Console Up/Down arrow command</span>
+<span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a>    history).</span>
+<span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The current working directory is set to the project directory.</span>
+<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Previously edited source documents are restored into editor tabs</span>
+<span id="cb14-186"><a href="#cb14-186" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Other RStudio settings (e.g. active tabs, splitter positions, etc.)</span>
+<span id="cb14-187"><a href="#cb14-187" aria-hidden="true" tabindex="-1"></a>    are restored to where they were the last time the project was</span>
+<span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a>    closed.</span>
+<span id="cb14-189"><a href="#cb14-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-190"><a href="#cb14-190" aria-hidden="true" tabindex="-1"></a>*Information adapted from [RStudio Support</span>
+<span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a>Site](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)*</span>
 <span id="cb14-192"><a href="#cb14-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a>*Information adapted from [RStudio Support</span>
-<span id="cb14-194"><a href="#cb14-194" aria-hidden="true" tabindex="-1"></a>Site](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)*</span>
-<span id="cb14-195"><a href="#cb14-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a><span class="fu">## Starting a Project on Posit Cloud</span></span>
-<span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-198"><a href="#cb14-198" aria-hidden="true" tabindex="-1"></a>We have already began setting up the project for you and you should see</span>
-<span id="cb14-199"><a href="#cb14-199" aria-hidden="true" tabindex="-1"></a>a project called "Intro-to-R" within the **Introduction to R**</span>
-<span id="cb14-200"><a href="#cb14-200" aria-hidden="true" tabindex="-1"></a>workspace:</span>
-<span id="cb14-201"><a href="#cb14-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-202"><a href="#cb14-202" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Start_project_annotated.png" width="600"/&gt;</span>
+<span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a><span class="fu">## Starting a Project on Posit Cloud</span></span>
+<span id="cb14-194"><a href="#cb14-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-195"><a href="#cb14-195" aria-hidden="true" tabindex="-1"></a>We have already began setting up the project for you and you should see</span>
+<span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a>a project called "Intro-to-R" within the **Introduction to R**</span>
+<span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a>workspace:</span>
+<span id="cb14-198"><a href="#cb14-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-199"><a href="#cb14-199" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Start_project_annotated.png" width="600"/&gt;</span>
+<span id="cb14-200"><a href="#cb14-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-201"><a href="#cb14-201" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: We have instructions on how to create a project locally in [this</span></span>
+<span id="cb14-202"><a href="#cb14-202" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; lesson](../docs/lessons/01a_introR-R-and-RStudio.html#create-a-new-project-directory-in-rstudio).</span></span>
 <span id="cb14-203"><a href="#cb14-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-204"><a href="#cb14-204" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: We have instructions on how to create a project locally in [this</span></span>
-<span id="cb14-205"><a href="#cb14-205" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; lesson](../docs/lessons/01a_introR-R-and-RStudio.html#create-a-new-project-directory-in-rstudio).</span></span>
-<span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-207"><a href="#cb14-207" aria-hidden="true" tabindex="-1"></a>The RStudio interface should now look like this:</span>
-<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Initial_state_annotated.png" width="800"/&gt;</span>
-<span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a>Next, we are going to create an Rscript to keep a record of our work,</span>
-<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a>but first we will implement good data management practices and create a</span>
-<span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a>folder to hold this script. In the bottom-right panel there should be a</span>
-<span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a>button that has a folder with a green plus on it and says "New Folder",</span>
-<span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a>left-click this button:</span>
-<span id="cb14-216"><a href="#cb14-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-217"><a href="#cb14-217" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/New_folder.png" width="800"/&gt;</span>
+<span id="cb14-204"><a href="#cb14-204" aria-hidden="true" tabindex="-1"></a>The RStudio interface should now look like this:</span>
+<span id="cb14-205"><a href="#cb14-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Initial_state_annotated.png" width="800"/&gt;</span>
+<span id="cb14-207"><a href="#cb14-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a>Next, we are going to create an Rscript to keep a record of our work,</span>
+<span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a>but first we will implement good data management practices and create a</span>
+<span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a>folder to hold this script. In the bottom-right panel there should be a</span>
+<span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a>button that has a folder with a green plus on it and says "New Folder",</span>
+<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a>left-click this button:</span>
+<span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/New_folder.png" width="800"/&gt;</span>
+<span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-216"><a href="#cb14-216" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: Depending on the size of your window, the "New Folder" button</span></span>
+<span id="cb14-217"><a href="#cb14-217" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; may just have the icon or the icon and the word "Folder".</span></span>
 <span id="cb14-218"><a href="#cb14-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-219"><a href="#cb14-219" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: Depending on the size of your window, the "New Folder" button</span></span>
-<span id="cb14-220"><a href="#cb14-220" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; may just have the icon or the icon and the word "Folder".</span></span>
+<span id="cb14-219"><a href="#cb14-219" aria-hidden="true" tabindex="-1"></a>A window should pop-up prompting you to provide a name for the folder.</span>
+<span id="cb14-220"><a href="#cb14-220" aria-hidden="true" tabindex="-1"></a>Type "scripts" into the text box and left-click "OK":</span>
 <span id="cb14-221"><a href="#cb14-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a>A window should pop-up prompting you to provide a name for the folder.</span>
-<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a>Type "scripts" into the text box and left-click "OK":</span>
-<span id="cb14-224"><a href="#cb14-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/New_folder_2_annotated.png" width="800"/&gt;</span>
-<span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-227"><a href="#cb14-227" aria-hidden="true" tabindex="-1"></a>Now in the bottom-left panel, you should see a "scripts" folder.</span>
-<span id="cb14-228"><a href="#cb14-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-229"><a href="#cb14-229" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Added_folder_annotated.png" width="800"/&gt;</span>
-<span id="cb14-230"><a href="#cb14-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a>Now we will create the Rscript that we will write our code in. In order</span>
-<span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a>to create an Rscript, left-click "File" in the top-left, then "New</span>
-<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a>File", and left-click "R Script".</span>
-<span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Create_R_script_annotated.png" width="800"/&gt;</span>
+<span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/New_folder_2_annotated.png" width="800"/&gt;</span>
+<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-224"><a href="#cb14-224" aria-hidden="true" tabindex="-1"></a>Now in the bottom-left panel, you should see a "scripts" folder.</span>
+<span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Added_folder_annotated.png" width="800"/&gt;</span>
+<span id="cb14-227"><a href="#cb14-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-228"><a href="#cb14-228" aria-hidden="true" tabindex="-1"></a>Now we will create the Rscript that we will write our code in. In order</span>
+<span id="cb14-229"><a href="#cb14-229" aria-hidden="true" tabindex="-1"></a>to create an Rscript, left-click "File" in the top-left, then "New</span>
+<span id="cb14-230"><a href="#cb14-230" aria-hidden="true" tabindex="-1"></a>File", and left-click "R Script".</span>
+<span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Create_R_script_annotated.png" width="800"/&gt;</span>
+<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a>This will create an R Script as the top panel on the left side of your</span>
+<span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a>RStudio window.</span>
 <span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-237"><a href="#cb14-237" aria-hidden="true" tabindex="-1"></a>This will create an R Script as the top panel on the left side of your</span>
-<span id="cb14-238"><a href="#cb14-238" aria-hidden="true" tabindex="-1"></a>RStudio window.</span>
-<span id="cb14-239"><a href="#cb14-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Added_R_script_annotated.png" width="800"/&gt;</span>
+<span id="cb14-237"><a href="#cb14-237" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Added_R_script_annotated.png" width="800"/&gt;</span>
+<span id="cb14-238"><a href="#cb14-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-239"><a href="#cb14-239" aria-hidden="true" tabindex="-1"></a>Before we go any further, let's save our new R Script by left-clicking</span>
+<span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a>"File" in the top-left and left-clicking "Save As...".</span>
 <span id="cb14-241"><a href="#cb14-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>Before we go any further, let's save our new R Script by left-clicking</span>
-<span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a>"File" in the top-left and left-clicking "Save As...".</span>
-<span id="cb14-244"><a href="#cb14-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-245"><a href="#cb14-245" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Save_as_annotated.png" width="800"/&gt;</span>
+<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Save_as_annotated.png" width="800"/&gt;</span>
+<span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-244"><a href="#cb14-244" aria-hidden="true" tabindex="-1"></a>We are going to place this new R Script within our newly created</span>
+<span id="cb14-245"><a href="#cb14-245" aria-hidden="true" tabindex="-1"></a>"scripts" folder, so left-click the "scripts" folder.</span>
 <span id="cb14-246"><a href="#cb14-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a>We are going to place this new R Script within our newly created</span>
-<span id="cb14-248"><a href="#cb14-248" aria-hidden="true" tabindex="-1"></a>"scripts" folder, so left-click the "scripts" folder.</span>
-<span id="cb14-249"><a href="#cb14-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-250"><a href="#cb14-250" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Select_scripts_folder_annotated.png" width="800"/&gt;</span>
+<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Select_scripts_folder_annotated.png" width="800"/&gt;</span>
+<span id="cb14-248"><a href="#cb14-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-249"><a href="#cb14-249" aria-hidden="true" tabindex="-1"></a>Let's name our R Script as "Intro-to-R.R" in the text field and</span>
+<span id="cb14-250"><a href="#cb14-250" aria-hidden="true" tabindex="-1"></a>left-click "Save".</span>
 <span id="cb14-251"><a href="#cb14-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a>Let's name our R Script as "Intro-to-R.R" in the text field and</span>
-<span id="cb14-253"><a href="#cb14-253" aria-hidden="true" tabindex="-1"></a>left-click "Save".</span>
-<span id="cb14-254"><a href="#cb14-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-255"><a href="#cb14-255" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Save_R_script_annotated.png" width="800"/&gt;</span>
-<span id="cb14-256"><a href="#cb14-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-257"><a href="#cb14-257" aria-hidden="true" tabindex="-1"></a>Now our RStudio Window should look like:</span>
-<span id="cb14-258"><a href="#cb14-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-259"><a href="#cb14-259" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/RStudio_established_annotated.png" width="800"/&gt;</span>
-<span id="cb14-260"><a href="#cb14-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a><span class="fu">## RStudio Interface</span></span>
-<span id="cb14-262"><a href="#cb14-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-263"><a href="#cb14-263" aria-hidden="true" tabindex="-1"></a>**The RStudio interface has four main panels:**</span>
-<span id="cb14-264"><a href="#cb14-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-265"><a href="#cb14-265" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Console**: where you can type commands and see output. *The</span>
-<span id="cb14-266"><a href="#cb14-266" aria-hidden="true" tabindex="-1"></a>    console is all you would see if you ran R in the command line</span>
-<span id="cb14-267"><a href="#cb14-267" aria-hidden="true" tabindex="-1"></a>    without RStudio.*</span>
-<span id="cb14-268"><a href="#cb14-268" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Script editor**: where you can type out commands and save to file.</span>
-<span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a>    You can also submit the commands to run in the console.</span>
-<span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Environment/History**: environment shows all active objects and</span>
-<span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a>    history keeps track of all commands run in console</span>
-<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Files/Plots/Packages/Help**</span>
-<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a><span class="fu">## Organizing your working directory &amp; setting up</span></span>
-<span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-276"><a href="#cb14-276" aria-hidden="true" tabindex="-1"></a><span class="fu">### Viewing your working directory</span></span>
+<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Save_R_script_annotated.png" width="800"/&gt;</span>
+<span id="cb14-253"><a href="#cb14-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-254"><a href="#cb14-254" aria-hidden="true" tabindex="-1"></a>Now our RStudio Window should look like:</span>
+<span id="cb14-255"><a href="#cb14-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-256"><a href="#cb14-256" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/RStudio_established_annotated.png" width="800"/&gt;</span>
+<span id="cb14-257"><a href="#cb14-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-258"><a href="#cb14-258" aria-hidden="true" tabindex="-1"></a><span class="fu">## RStudio Interface</span></span>
+<span id="cb14-259"><a href="#cb14-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-260"><a href="#cb14-260" aria-hidden="true" tabindex="-1"></a>**The RStudio interface has four main panels:**</span>
+<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-262"><a href="#cb14-262" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Console**: where you can type commands and see output. *The</span>
+<span id="cb14-263"><a href="#cb14-263" aria-hidden="true" tabindex="-1"></a>    console is all you would see if you ran R in the command line</span>
+<span id="cb14-264"><a href="#cb14-264" aria-hidden="true" tabindex="-1"></a>    without RStudio.*</span>
+<span id="cb14-265"><a href="#cb14-265" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Script editor**: where you can type out commands and save to file.</span>
+<span id="cb14-266"><a href="#cb14-266" aria-hidden="true" tabindex="-1"></a>    You can also submit the commands to run in the console.</span>
+<span id="cb14-267"><a href="#cb14-267" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Environment/History**: environment shows all active objects and</span>
+<span id="cb14-268"><a href="#cb14-268" aria-hidden="true" tabindex="-1"></a>    history keeps track of all commands run in console</span>
+<span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Files/Plots/Packages/Help**</span>
+<span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a><span class="fu">## Organizing your working directory &amp; setting up</span></span>
+<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a><span class="fu">### Viewing your working directory</span></span>
+<span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a>Before we organize our working directory, let's check to see where our</span>
+<span id="cb14-276"><a href="#cb14-276" aria-hidden="true" tabindex="-1"></a>current working directory is located by typing into the console:</span>
 <span id="cb14-277"><a href="#cb14-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-278"><a href="#cb14-278" aria-hidden="true" tabindex="-1"></a>Before we organize our working directory, let's check to see where our</span>
-<span id="cb14-279"><a href="#cb14-279" aria-hidden="true" tabindex="-1"></a>current working directory is located by typing into the console:</span>
-<span id="cb14-280"><a href="#cb14-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-283"><a href="#cb14-283" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb14-280"><a href="#cb14-280" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-281"><a href="#cb14-281" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb14-282"><a href="#cb14-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-283"><a href="#cb14-283" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-285"><a href="#cb14-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-286"><a href="#cb14-286" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
-<span id="cb14-287"><a href="#cb14-287" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb14-288"><a href="#cb14-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-289"><a href="#cb14-289" aria-hidden="true" tabindex="-1"></a>Your working directory should be <span class="in">`/cloud/project`</span>. This is where our R</span>
-<span id="cb14-290"><a href="#cb14-290" aria-hidden="true" tabindex="-1"></a>project is being hosted. The working directory is where RStudio will</span>
-<span id="cb14-291"><a href="#cb14-291" aria-hidden="true" tabindex="-1"></a>automatically look for any files you bring in and where it will</span>
-<span id="cb14-292"><a href="#cb14-292" aria-hidden="true" tabindex="-1"></a>automatically save any files you create, unless otherwise specified.</span>
+<span id="cb14-286"><a href="#cb14-286" aria-hidden="true" tabindex="-1"></a>Your working directory should be <span class="in">`/cloud/project`</span>. This is where our R</span>
+<span id="cb14-287"><a href="#cb14-287" aria-hidden="true" tabindex="-1"></a>project is being hosted. The working directory is where RStudio will</span>
+<span id="cb14-288"><a href="#cb14-288" aria-hidden="true" tabindex="-1"></a>automatically look for any files you bring in and where it will</span>
+<span id="cb14-289"><a href="#cb14-289" aria-hidden="true" tabindex="-1"></a>automatically save any files you create, unless otherwise specified.</span>
+<span id="cb14-290"><a href="#cb14-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-291"><a href="#cb14-291" aria-hidden="true" tabindex="-1"></a>You can visualize your working directory by selecting the <span class="in">`Files`</span> tab</span>
+<span id="cb14-292"><a href="#cb14-292" aria-hidden="true" tabindex="-1"></a>from the **Files/Plots/Packages/Help** window.</span>
 <span id="cb14-293"><a href="#cb14-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-294"><a href="#cb14-294" aria-hidden="true" tabindex="-1"></a>You can visualize your working directory by selecting the <span class="in">`Files`</span> tab</span>
-<span id="cb14-295"><a href="#cb14-295" aria-hidden="true" tabindex="-1"></a>from the **Files/Plots/Packages/Help** window.</span>
-<span id="cb14-296"><a href="#cb14-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-297"><a href="#cb14-297" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Files_tab_annotated.png" width="400"/&gt;</span>
-<span id="cb14-298"><a href="#cb14-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-299"><a href="#cb14-299" aria-hidden="true" tabindex="-1"></a>If you wanted to choose a different directory to be your working</span>
-<span id="cb14-300"><a href="#cb14-300" aria-hidden="true" tabindex="-1"></a>directory, you could navigate to a different folder in the <span class="in">`Files`</span> tab,</span>
-<span id="cb14-301"><a href="#cb14-301" aria-hidden="true" tabindex="-1"></a>then, click on the <span class="in">`More`</span> dropdown menu which appears as a Cog and</span>
-<span id="cb14-302"><a href="#cb14-302" aria-hidden="true" tabindex="-1"></a>select <span class="in">`Set As Working Directory`</span>.</span>
-<span id="cb14-303"><a href="#cb14-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-304"><a href="#cb14-304" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Set_working_directory_annotated.png" width="400"/&gt;</span>
+<span id="cb14-294"><a href="#cb14-294" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Files_tab_annotated.png" width="400"/&gt;</span>
+<span id="cb14-295"><a href="#cb14-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-296"><a href="#cb14-296" aria-hidden="true" tabindex="-1"></a>If you wanted to choose a different directory to be your working</span>
+<span id="cb14-297"><a href="#cb14-297" aria-hidden="true" tabindex="-1"></a>directory, you could navigate to a different folder in the <span class="in">`Files`</span> tab,</span>
+<span id="cb14-298"><a href="#cb14-298" aria-hidden="true" tabindex="-1"></a>then, click on the <span class="in">`More`</span> dropdown menu which appears as a Cog and</span>
+<span id="cb14-299"><a href="#cb14-299" aria-hidden="true" tabindex="-1"></a>select <span class="in">`Set As Working Directory`</span>.</span>
+<span id="cb14-300"><a href="#cb14-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-301"><a href="#cb14-301" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Set_working_directory_annotated.png" width="400"/&gt;</span>
+<span id="cb14-302"><a href="#cb14-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-303"><a href="#cb14-303" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb14-304"><a href="#cb14-304" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
 <span id="cb14-305"><a href="#cb14-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-306"><a href="#cb14-306" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb14-307"><a href="#cb14-307" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
-<span id="cb14-308"><a href="#cb14-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-309"><a href="#cb14-309" aria-hidden="true" tabindex="-1"></a>To organize your working directory for a particular analysis, you should</span>
-<span id="cb14-310"><a href="#cb14-310" aria-hidden="true" tabindex="-1"></a>separate the original data (raw data) from intermediate datasets. For</span>
-<span id="cb14-311"><a href="#cb14-311" aria-hidden="true" tabindex="-1"></a>instance, you may want to create a <span class="in">`data/`</span> directory within your working</span>
-<span id="cb14-312"><a href="#cb14-312" aria-hidden="true" tabindex="-1"></a>directory that stores the raw data, a <span class="in">`scripts/`</span> directory for your R</span>
-<span id="cb14-313"><a href="#cb14-313" aria-hidden="true" tabindex="-1"></a>scripts, a <span class="in">`results/`</span> directory for intermediate datasets and a</span>
-<span id="cb14-314"><a href="#cb14-314" aria-hidden="true" tabindex="-1"></a><span class="in">`figures/`</span> directory for the plots you will generate.</span>
-<span id="cb14-315"><a href="#cb14-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-316"><a href="#cb14-316" aria-hidden="true" tabindex="-1"></a>We have provided you an R project with the <span class="in">`data/`</span> and we made our</span>
-<span id="cb14-317"><a href="#cb14-317" aria-hidden="true" tabindex="-1"></a><span class="in">`scripts/`</span> directory (or folder) together. For this exercise create the</span>
-<span id="cb14-318"><a href="#cb14-318" aria-hidden="true" tabindex="-1"></a><span class="in">`results/`</span> and <span class="in">`figures/`</span> directories.</span>
-<span id="cb14-319"><a href="#cb14-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-320"><a href="#cb14-320" aria-hidden="true" tabindex="-1"></a>When finished, your working directory should look like:</span>
+<span id="cb14-306"><a href="#cb14-306" aria-hidden="true" tabindex="-1"></a>To organize your working directory for a particular analysis, you should</span>
+<span id="cb14-307"><a href="#cb14-307" aria-hidden="true" tabindex="-1"></a>separate the original data (raw data) from intermediate datasets. For</span>
+<span id="cb14-308"><a href="#cb14-308" aria-hidden="true" tabindex="-1"></a>instance, you may want to create a <span class="in">`data/`</span> directory within your working</span>
+<span id="cb14-309"><a href="#cb14-309" aria-hidden="true" tabindex="-1"></a>directory that stores the raw data, a <span class="in">`scripts/`</span> directory for your R</span>
+<span id="cb14-310"><a href="#cb14-310" aria-hidden="true" tabindex="-1"></a>scripts, a <span class="in">`results/`</span> directory for intermediate datasets and a</span>
+<span id="cb14-311"><a href="#cb14-311" aria-hidden="true" tabindex="-1"></a><span class="in">`figures/`</span> directory for the plots you will generate.</span>
+<span id="cb14-312"><a href="#cb14-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-313"><a href="#cb14-313" aria-hidden="true" tabindex="-1"></a>We have provided you an R project with the <span class="in">`data/`</span> and we made our</span>
+<span id="cb14-314"><a href="#cb14-314" aria-hidden="true" tabindex="-1"></a><span class="in">`scripts/`</span> directory (or folder) together. For this exercise create the</span>
+<span id="cb14-315"><a href="#cb14-315" aria-hidden="true" tabindex="-1"></a><span class="in">`results/`</span> and <span class="in">`figures/`</span> directories.</span>
+<span id="cb14-316"><a href="#cb14-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-317"><a href="#cb14-317" aria-hidden="true" tabindex="-1"></a>When finished, your working directory should look like:</span>
+<span id="cb14-318"><a href="#cb14-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-319"><a href="#cb14-319" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Directories_made_annotated.png" width="400"/&gt;</span>
+<span id="cb14-320"><a href="#cb14-320" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-321"><a href="#cb14-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-322"><a href="#cb14-322" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Directories_made_annotated.png" width="400"/&gt;</span>
-<span id="cb14-323"><a href="#cb14-323" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb14-324"><a href="#cb14-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-325"><a href="#cb14-325" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting up</span></span>
-<span id="cb14-326"><a href="#cb14-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-327"><a href="#cb14-327" aria-hidden="true" tabindex="-1"></a>This is more of a housekeeping task. We will be writing long lines of</span>
-<span id="cb14-328"><a href="#cb14-328" aria-hidden="true" tabindex="-1"></a>code in our script editor and want to make sure that the lines "wrap"</span>
-<span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a>and you don't have to scroll back and forth to look at your long line of</span>
-<span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a>code.</span>
+<span id="cb14-322"><a href="#cb14-322" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting up</span></span>
+<span id="cb14-323"><a href="#cb14-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-324"><a href="#cb14-324" aria-hidden="true" tabindex="-1"></a>This is more of a housekeeping task. We will be writing long lines of</span>
+<span id="cb14-325"><a href="#cb14-325" aria-hidden="true" tabindex="-1"></a>code in our script editor and want to make sure that the lines "wrap"</span>
+<span id="cb14-326"><a href="#cb14-326" aria-hidden="true" tabindex="-1"></a>and you don't have to scroll back and forth to look at your long line of</span>
+<span id="cb14-327"><a href="#cb14-327" aria-hidden="true" tabindex="-1"></a>code.</span>
+<span id="cb14-328"><a href="#cb14-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a>Click on "Code" at the top of your RStudio screen and select "Soft Wrap</span>
+<span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a>Long Lines" in the pull down menu.</span>
 <span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a>Click on "Code" at the top of your RStudio screen and select "Soft Wrap</span>
-<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a>Long Lines" in the pull down menu.</span>
-<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-336"><a href="#cb14-336" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Soft_wrap.gif" width="600"/&gt;</span>
-<span id="cb14-337"><a href="#cb14-337" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb14-338"><a href="#cb14-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-339"><a href="#cb14-339" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interacting with R</span></span>
-<span id="cb14-340"><a href="#cb14-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-341"><a href="#cb14-341" aria-hidden="true" tabindex="-1"></a>Now that we have our interface and directory structure set up, let's</span>
-<span id="cb14-342"><a href="#cb14-342" aria-hidden="true" tabindex="-1"></a>start playing with R! There are **two main ways** of interacting with R</span>
-<span id="cb14-343"><a href="#cb14-343" aria-hidden="true" tabindex="-1"></a>in RStudio: using the **console** or by using **script editor** (plain</span>
-<span id="cb14-344"><a href="#cb14-344" aria-hidden="true" tabindex="-1"></a>text files that contain your code).</span>
-<span id="cb14-345"><a href="#cb14-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-346"><a href="#cb14-346" aria-hidden="true" tabindex="-1"></a><span class="fu">### Console window</span></span>
-<span id="cb14-347"><a href="#cb14-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-348"><a href="#cb14-348" aria-hidden="true" tabindex="-1"></a>The **console window** (in RStudio, the bottom left panel) is the place</span>
-<span id="cb14-349"><a href="#cb14-349" aria-hidden="true" tabindex="-1"></a>where R is waiting for you to tell it what to do, and where it will show</span>
-<span id="cb14-350"><a href="#cb14-350" aria-hidden="true" tabindex="-1"></a>the results of a command. You can type commands directly into the</span>
-<span id="cb14-351"><a href="#cb14-351" aria-hidden="true" tabindex="-1"></a>console, but they will be forgotten when you close the session.</span>
-<span id="cb14-352"><a href="#cb14-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-353"><a href="#cb14-353" aria-hidden="true" tabindex="-1"></a>Let's test it out:</span>
-<span id="cb14-354"><a href="#cb14-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-357"><a href="#cb14-357" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-358"><a href="#cb14-358" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb14-359"><a href="#cb14-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb14-360"><a href="#cb14-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-361"><a href="#cb14-361" aria-hidden="true" tabindex="-1"></a><span class="fu">### Script editor</span></span>
-<span id="cb14-362"><a href="#cb14-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-363"><a href="#cb14-363" aria-hidden="true" tabindex="-1"></a>Best practice is to enter the commands in the **script editor**, and</span>
-<span id="cb14-364"><a href="#cb14-364" aria-hidden="true" tabindex="-1"></a>save the script. You are encouraged to comment liberally to describe the</span>
-<span id="cb14-365"><a href="#cb14-365" aria-hidden="true" tabindex="-1"></a>commands you are running using <span class="in">`#`</span>. This way, you have a complete record</span>
-<span id="cb14-366"><a href="#cb14-366" aria-hidden="true" tabindex="-1"></a>of what you did, you can easily show others how you did it and you can</span>
-<span id="cb14-367"><a href="#cb14-367" aria-hidden="true" tabindex="-1"></a>do it again later on if needed.</span>
-<span id="cb14-368"><a href="#cb14-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-369"><a href="#cb14-369" aria-hidden="true" tabindex="-1"></a>**The Rstudio script editor allows you to 'send' the current line or the</span>
-<span id="cb14-370"><a href="#cb14-370" aria-hidden="true" tabindex="-1"></a>currently highlighted text to the R console by clicking on the <span class="in">`Run`</span></span>
-<span id="cb14-371"><a href="#cb14-371" aria-hidden="true" tabindex="-1"></a>button in the upper-right hand corner of the script editor**.</span>
-<span id="cb14-372"><a href="#cb14-372" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-373"><a href="#cb14-373" aria-hidden="true" tabindex="-1"></a>Now let's try entering commands to the **script editor** and using the</span>
-<span id="cb14-374"><a href="#cb14-374" aria-hidden="true" tabindex="-1"></a>comments character <span class="in">`#`</span> to add descriptions and highlighting the text to</span>
-<span id="cb14-375"><a href="#cb14-375" aria-hidden="true" tabindex="-1"></a>run:</span>
-<span id="cb14-376"><a href="#cb14-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-379"><a href="#cb14-379" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-380"><a href="#cb14-380" aria-hidden="true" tabindex="-1"></a><span class="co"># Intro to R Lesson</span></span>
-<span id="cb14-381"><a href="#cb14-381" aria-hidden="true" tabindex="-1"></a><span class="co"># June 3rd, 2025</span></span>
-<span id="cb14-382"><a href="#cb14-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-383"><a href="#cb14-383" aria-hidden="true" tabindex="-1"></a><span class="co"># Interacting with R</span></span>
-<span id="cb14-384"><a href="#cb14-384" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-385"><a href="#cb14-385" aria-hidden="true" tabindex="-1"></a><span class="do">## I am adding 3 and 5. R is fun!</span></span>
-<span id="cb14-386"><a href="#cb14-386" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb14-387"><a href="#cb14-387" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb14-388"><a href="#cb14-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-389"><a href="#cb14-389" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-390"><a href="#cb14-390" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Run_script_1.gif" width="700"/&gt;</span>
-<span id="cb14-391"><a href="#cb14-391" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a>::: center</span>
+<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Soft_wrap.gif" width="600"/&gt;</span>
+<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-336"><a href="#cb14-336" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interacting with R</span></span>
+<span id="cb14-337"><a href="#cb14-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-338"><a href="#cb14-338" aria-hidden="true" tabindex="-1"></a>Now that we have our interface and directory structure set up, let's</span>
+<span id="cb14-339"><a href="#cb14-339" aria-hidden="true" tabindex="-1"></a>start playing with R! There are **two main ways** of interacting with R</span>
+<span id="cb14-340"><a href="#cb14-340" aria-hidden="true" tabindex="-1"></a>in RStudio: using the **console** or by using **script editor** (plain</span>
+<span id="cb14-341"><a href="#cb14-341" aria-hidden="true" tabindex="-1"></a>text files that contain your code).</span>
+<span id="cb14-342"><a href="#cb14-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-343"><a href="#cb14-343" aria-hidden="true" tabindex="-1"></a><span class="fu">### Console window</span></span>
+<span id="cb14-344"><a href="#cb14-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-345"><a href="#cb14-345" aria-hidden="true" tabindex="-1"></a>The **console window** (in RStudio, the bottom left panel) is the place</span>
+<span id="cb14-346"><a href="#cb14-346" aria-hidden="true" tabindex="-1"></a>where R is waiting for you to tell it what to do, and where it will show</span>
+<span id="cb14-347"><a href="#cb14-347" aria-hidden="true" tabindex="-1"></a>the results of a command. You can type commands directly into the</span>
+<span id="cb14-348"><a href="#cb14-348" aria-hidden="true" tabindex="-1"></a>console, but they will be forgotten when you close the session.</span>
+<span id="cb14-349"><a href="#cb14-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-350"><a href="#cb14-350" aria-hidden="true" tabindex="-1"></a>Let's test it out:</span>
+<span id="cb14-351"><a href="#cb14-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-354"><a href="#cb14-354" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-355"><a href="#cb14-355" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb14-356"><a href="#cb14-356" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-357"><a href="#cb14-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-358"><a href="#cb14-358" aria-hidden="true" tabindex="-1"></a><span class="fu">### Script editor</span></span>
+<span id="cb14-359"><a href="#cb14-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-360"><a href="#cb14-360" aria-hidden="true" tabindex="-1"></a>Best practice is to enter the commands in the **script editor**, and</span>
+<span id="cb14-361"><a href="#cb14-361" aria-hidden="true" tabindex="-1"></a>save the script. You are encouraged to comment liberally to describe the</span>
+<span id="cb14-362"><a href="#cb14-362" aria-hidden="true" tabindex="-1"></a>commands you are running using <span class="in">`#`</span>. This way, you have a complete record</span>
+<span id="cb14-363"><a href="#cb14-363" aria-hidden="true" tabindex="-1"></a>of what you did, you can easily show others how you did it and you can</span>
+<span id="cb14-364"><a href="#cb14-364" aria-hidden="true" tabindex="-1"></a>do it again later on if needed.</span>
+<span id="cb14-365"><a href="#cb14-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-366"><a href="#cb14-366" aria-hidden="true" tabindex="-1"></a>**The Rstudio script editor allows you to 'send' the current line or the</span>
+<span id="cb14-367"><a href="#cb14-367" aria-hidden="true" tabindex="-1"></a>currently highlighted text to the R console by clicking on the <span class="in">`Run`</span></span>
+<span id="cb14-368"><a href="#cb14-368" aria-hidden="true" tabindex="-1"></a>button in the upper-right hand corner of the script editor**.</span>
+<span id="cb14-369"><a href="#cb14-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-370"><a href="#cb14-370" aria-hidden="true" tabindex="-1"></a>Now let's try entering commands to the **script editor** and using the</span>
+<span id="cb14-371"><a href="#cb14-371" aria-hidden="true" tabindex="-1"></a>comments character <span class="in">`#`</span> to add descriptions and highlighting the text to</span>
+<span id="cb14-372"><a href="#cb14-372" aria-hidden="true" tabindex="-1"></a>run:</span>
+<span id="cb14-373"><a href="#cb14-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-376"><a href="#cb14-376" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-377"><a href="#cb14-377" aria-hidden="true" tabindex="-1"></a><span class="co"># Intro to R Lesson</span></span>
+<span id="cb14-378"><a href="#cb14-378" aria-hidden="true" tabindex="-1"></a><span class="co"># June 3rd, 2025</span></span>
+<span id="cb14-379"><a href="#cb14-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-380"><a href="#cb14-380" aria-hidden="true" tabindex="-1"></a><span class="co"># Interacting with R</span></span>
+<span id="cb14-381"><a href="#cb14-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-382"><a href="#cb14-382" aria-hidden="true" tabindex="-1"></a><span class="do">## I am adding 3 and 5. R is fun!</span></span>
+<span id="cb14-383"><a href="#cb14-383" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb14-384"><a href="#cb14-384" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-385"><a href="#cb14-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-386"><a href="#cb14-386" aria-hidden="true" tabindex="-1"></a>::: center</span>
+<span id="cb14-387"><a href="#cb14-387" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Run_script_1.gif" width="700"/&gt;</span>
+<span id="cb14-388"><a href="#cb14-388" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-389"><a href="#cb14-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-390"><a href="#cb14-390" aria-hidden="true" tabindex="-1"></a>Alternatively, you can run by simply pressing the <span class="in">`Ctrl`</span> and</span>
+<span id="cb14-391"><a href="#cb14-391" aria-hidden="true" tabindex="-1"></a><span class="in">`Return/Enter`</span> keys at the same time as a shortcut.</span>
 <span id="cb14-392"><a href="#cb14-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-393"><a href="#cb14-393" aria-hidden="true" tabindex="-1"></a>Alternatively, you can run by simply pressing the <span class="in">`Ctrl`</span> and</span>
-<span id="cb14-394"><a href="#cb14-394" aria-hidden="true" tabindex="-1"></a><span class="in">`Return/Enter`</span> keys at the same time as a shortcut.</span>
-<span id="cb14-395"><a href="#cb14-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-396"><a href="#cb14-396" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-397"><a href="#cb14-397" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Run_script_2.gif" width="700"/&gt;</span>
-<span id="cb14-398"><a href="#cb14-398" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb14-399"><a href="#cb14-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-400"><a href="#cb14-400" aria-hidden="true" tabindex="-1"></a>You should see the command run in the console and output the result.</span>
-<span id="cb14-401"><a href="#cb14-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-402"><a href="#cb14-402" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Console_commands_annotated.png" width="600"/&gt;</span>
+<span id="cb14-393"><a href="#cb14-393" aria-hidden="true" tabindex="-1"></a>::: center</span>
+<span id="cb14-394"><a href="#cb14-394" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Run_script_2.gif" width="700"/&gt;</span>
+<span id="cb14-395"><a href="#cb14-395" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-396"><a href="#cb14-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-397"><a href="#cb14-397" aria-hidden="true" tabindex="-1"></a>You should see the command run in the console and output the result.</span>
+<span id="cb14-398"><a href="#cb14-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-399"><a href="#cb14-399" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Console_commands_annotated.png" width="600"/&gt;</span>
+<span id="cb14-400"><a href="#cb14-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-401"><a href="#cb14-401" aria-hidden="true" tabindex="-1"></a>What happens if we do that same command without the comment symbol <span class="in">`#`</span>?</span>
+<span id="cb14-402"><a href="#cb14-402" aria-hidden="true" tabindex="-1"></a>Re-run the command after removing the <span class="sc">\#</span> sign in the front:</span>
 <span id="cb14-403"><a href="#cb14-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-404"><a href="#cb14-404" aria-hidden="true" tabindex="-1"></a>What happens if we do that same command without the comment symbol <span class="in">`#`</span>?</span>
-<span id="cb14-405"><a href="#cb14-405" aria-hidden="true" tabindex="-1"></a>Re-run the command after removing the <span class="sc">\#</span> sign in the front:</span>
-<span id="cb14-406"><a href="#cb14-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-409"><a href="#cb14-409" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-410"><a href="#cb14-410" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb14-411"><a href="#cb14-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-412"><a href="#cb14-412" aria-hidden="true" tabindex="-1"></a>I am adding <span class="dv">3</span> and <span class="fl">5.</span> R is fun<span class="sc">!</span></span>
-<span id="cb14-413"><a href="#cb14-413" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">5</span></span>
-<span id="cb14-414"><a href="#cb14-414" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-406"><a href="#cb14-406" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-407"><a href="#cb14-407" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb14-408"><a href="#cb14-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-409"><a href="#cb14-409" aria-hidden="true" tabindex="-1"></a>I am adding <span class="dv">3</span> and <span class="fl">5.</span> R is fun<span class="sc">!</span></span>
+<span id="cb14-410"><a href="#cb14-410" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">5</span></span>
+<span id="cb14-411"><a href="#cb14-411" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-412"><a href="#cb14-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-413"><a href="#cb14-413" aria-hidden="true" tabindex="-1"></a>Now R is trying to run that sentence as a command, and it doesn't work.</span>
+<span id="cb14-414"><a href="#cb14-414" aria-hidden="true" tabindex="-1"></a>We get an error in the console</span>
 <span id="cb14-415"><a href="#cb14-415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-416"><a href="#cb14-416" aria-hidden="true" tabindex="-1"></a>Now R is trying to run that sentence as a command, and it doesn't work.</span>
-<span id="cb14-417"><a href="#cb14-417" aria-hidden="true" tabindex="-1"></a>We get an error in the console</span>
-<span id="cb14-418"><a href="#cb14-418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-419"><a href="#cb14-419" aria-hidden="true" tabindex="-1"></a>::: callout-warning</span>
-<span id="cb14-420"><a href="#cb14-420" aria-hidden="true" tabindex="-1"></a>Error: unexpected symbol in "I am"</span>
-<span id="cb14-421"><a href="#cb14-421" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-416"><a href="#cb14-416" aria-hidden="true" tabindex="-1"></a>::: callout-warning</span>
+<span id="cb14-417"><a href="#cb14-417" aria-hidden="true" tabindex="-1"></a>Error: unexpected symbol in "I am"</span>
+<span id="cb14-418"><a href="#cb14-418" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-419"><a href="#cb14-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-420"><a href="#cb14-420" aria-hidden="true" tabindex="-1"></a>This means that the R interpreter did not know what to do with that</span>
+<span id="cb14-421"><a href="#cb14-421" aria-hidden="true" tabindex="-1"></a>command</span>
 <span id="cb14-422"><a href="#cb14-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-423"><a href="#cb14-423" aria-hidden="true" tabindex="-1"></a>This means that the R interpreter did not know what to do with that</span>
-<span id="cb14-424"><a href="#cb14-424" aria-hidden="true" tabindex="-1"></a>command</span>
-<span id="cb14-425"><a href="#cb14-425" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-426"><a href="#cb14-426" aria-hidden="true" tabindex="-1"></a><span class="fu">### Console command prompt</span></span>
-<span id="cb14-427"><a href="#cb14-427" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-428"><a href="#cb14-428" aria-hidden="true" tabindex="-1"></a>Interpreting the command prompt can help understand when R is ready to</span>
-<span id="cb14-429"><a href="#cb14-429" aria-hidden="true" tabindex="-1"></a>accept commands. Below lists the different states of the command prompt</span>
-<span id="cb14-430"><a href="#cb14-430" aria-hidden="true" tabindex="-1"></a>and how you can exit a command:</span>
-<span id="cb14-431"><a href="#cb14-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-432"><a href="#cb14-432" aria-hidden="true" tabindex="-1"></a>**Console is ready to accept commands**: <span class="in">`&gt;`</span>.</span>
-<span id="cb14-433"><a href="#cb14-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-434"><a href="#cb14-434" aria-hidden="true" tabindex="-1"></a>If R is ready to accept commands, the R console shows a <span class="in">`&gt;`</span> prompt.</span>
-<span id="cb14-435"><a href="#cb14-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-436"><a href="#cb14-436" aria-hidden="true" tabindex="-1"></a>When the console receives a command (by directly typing into the console</span>
-<span id="cb14-437"><a href="#cb14-437" aria-hidden="true" tabindex="-1"></a>or running from the script editor (<span class="in">`Ctrl-Enter`</span>), R will try to execute</span>
-<span id="cb14-438"><a href="#cb14-438" aria-hidden="true" tabindex="-1"></a>it.</span>
+<span id="cb14-423"><a href="#cb14-423" aria-hidden="true" tabindex="-1"></a><span class="fu">### Console command prompt</span></span>
+<span id="cb14-424"><a href="#cb14-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-425"><a href="#cb14-425" aria-hidden="true" tabindex="-1"></a>Interpreting the command prompt can help understand when R is ready to</span>
+<span id="cb14-426"><a href="#cb14-426" aria-hidden="true" tabindex="-1"></a>accept commands. Below lists the different states of the command prompt</span>
+<span id="cb14-427"><a href="#cb14-427" aria-hidden="true" tabindex="-1"></a>and how you can exit a command:</span>
+<span id="cb14-428"><a href="#cb14-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-429"><a href="#cb14-429" aria-hidden="true" tabindex="-1"></a>**Console is ready to accept commands**: <span class="in">`&gt;`</span>.</span>
+<span id="cb14-430"><a href="#cb14-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-431"><a href="#cb14-431" aria-hidden="true" tabindex="-1"></a>If R is ready to accept commands, the R console shows a <span class="in">`&gt;`</span> prompt.</span>
+<span id="cb14-432"><a href="#cb14-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-433"><a href="#cb14-433" aria-hidden="true" tabindex="-1"></a>When the console receives a command (by directly typing into the console</span>
+<span id="cb14-434"><a href="#cb14-434" aria-hidden="true" tabindex="-1"></a>or running from the script editor (<span class="in">`Ctrl-Enter`</span>), R will try to execute</span>
+<span id="cb14-435"><a href="#cb14-435" aria-hidden="true" tabindex="-1"></a>it.</span>
+<span id="cb14-436"><a href="#cb14-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-437"><a href="#cb14-437" aria-hidden="true" tabindex="-1"></a>After running, the console will show the results and come back with a</span>
+<span id="cb14-438"><a href="#cb14-438" aria-hidden="true" tabindex="-1"></a>new <span class="in">`&gt;`</span> prompt to wait for new commands.</span>
 <span id="cb14-439"><a href="#cb14-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-440"><a href="#cb14-440" aria-hidden="true" tabindex="-1"></a>After running, the console will show the results and come back with a</span>
-<span id="cb14-441"><a href="#cb14-441" aria-hidden="true" tabindex="-1"></a>new <span class="in">`&gt;`</span> prompt to wait for new commands.</span>
-<span id="cb14-442"><a href="#cb14-442" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-443"><a href="#cb14-443" aria-hidden="true" tabindex="-1"></a>**Console is waiting for you to enter more data**: <span class="in">`+`</span>.</span>
-<span id="cb14-444"><a href="#cb14-444" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-445"><a href="#cb14-445" aria-hidden="true" tabindex="-1"></a>If R is still waiting for you to enter more data because it isn't</span>
-<span id="cb14-446"><a href="#cb14-446" aria-hidden="true" tabindex="-1"></a>complete yet, the console will show a <span class="in">`+`</span> prompt. It means that you</span>
-<span id="cb14-447"><a href="#cb14-447" aria-hidden="true" tabindex="-1"></a>haven't finished entering a complete command. Often this can be due to</span>
-<span id="cb14-448"><a href="#cb14-448" aria-hidden="true" tabindex="-1"></a>you having not 'closed' a parenthesis or quotation.</span>
-<span id="cb14-449"><a href="#cb14-449" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-450"><a href="#cb14-450" aria-hidden="true" tabindex="-1"></a>**Escaping a command and getting a new prompt**: <span class="in">`esc`</span></span>
-<span id="cb14-451"><a href="#cb14-451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-452"><a href="#cb14-452" aria-hidden="true" tabindex="-1"></a>If you're in Rstudio and you can't figure out why your command isn't</span>
-<span id="cb14-453"><a href="#cb14-453" aria-hidden="true" tabindex="-1"></a>running, you can click inside the console window and press <span class="in">`esc`</span> to</span>
-<span id="cb14-454"><a href="#cb14-454" aria-hidden="true" tabindex="-1"></a>escape the command and bring back a new prompt <span class="in">`&gt;`</span>.</span>
-<span id="cb14-455"><a href="#cb14-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-456"><a href="#cb14-456" aria-hidden="true" tabindex="-1"></a><span class="fu">### Keyboard shortcuts in RStudio</span></span>
+<span id="cb14-440"><a href="#cb14-440" aria-hidden="true" tabindex="-1"></a>**Console is waiting for you to enter more data**: <span class="in">`+`</span>.</span>
+<span id="cb14-441"><a href="#cb14-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-442"><a href="#cb14-442" aria-hidden="true" tabindex="-1"></a>If R is still waiting for you to enter more data because it isn't</span>
+<span id="cb14-443"><a href="#cb14-443" aria-hidden="true" tabindex="-1"></a>complete yet, the console will show a <span class="in">`+`</span> prompt. It means that you</span>
+<span id="cb14-444"><a href="#cb14-444" aria-hidden="true" tabindex="-1"></a>haven't finished entering a complete command. Often this can be due to</span>
+<span id="cb14-445"><a href="#cb14-445" aria-hidden="true" tabindex="-1"></a>you having not 'closed' a parenthesis or quotation.</span>
+<span id="cb14-446"><a href="#cb14-446" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-447"><a href="#cb14-447" aria-hidden="true" tabindex="-1"></a>**Escaping a command and getting a new prompt**: <span class="in">`esc`</span></span>
+<span id="cb14-448"><a href="#cb14-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-449"><a href="#cb14-449" aria-hidden="true" tabindex="-1"></a>If you're in Rstudio and you can't figure out why your command isn't</span>
+<span id="cb14-450"><a href="#cb14-450" aria-hidden="true" tabindex="-1"></a>running, you can click inside the console window and press <span class="in">`esc`</span> to</span>
+<span id="cb14-451"><a href="#cb14-451" aria-hidden="true" tabindex="-1"></a>escape the command and bring back a new prompt <span class="in">`&gt;`</span>.</span>
+<span id="cb14-452"><a href="#cb14-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-453"><a href="#cb14-453" aria-hidden="true" tabindex="-1"></a><span class="fu">### Keyboard shortcuts in RStudio</span></span>
+<span id="cb14-454"><a href="#cb14-454" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-455"><a href="#cb14-455" aria-hidden="true" tabindex="-1"></a>In addition to some of the shortcuts described earlier in this lesson,</span>
+<span id="cb14-456"><a href="#cb14-456" aria-hidden="true" tabindex="-1"></a>we have listed a few more that can be helpful as you work in RStudio.</span>
 <span id="cb14-457"><a href="#cb14-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-458"><a href="#cb14-458" aria-hidden="true" tabindex="-1"></a>In addition to some of the shortcuts described earlier in this lesson,</span>
-<span id="cb14-459"><a href="#cb14-459" aria-hidden="true" tabindex="-1"></a>we have listed a few more that can be helpful as you work in RStudio.</span>
-<span id="cb14-460"><a href="#cb14-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-461"><a href="#cb14-461" aria-hidden="true" tabindex="-1"></a>| key | action |</span>
-<span id="cb14-462"><a href="#cb14-462" aria-hidden="true" tabindex="-1"></a>|--------------------------------|----------------------------------------|</span>
-<span id="cb14-463"><a href="#cb14-463" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Enter&lt;/kbd&gt; | Run command from script editor in console |</span>
-<span id="cb14-464"><a href="#cb14-464" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;ESC&lt;/kbd&gt; | Escape the current command to return to the command prompt |</span>
-<span id="cb14-465"><a href="#cb14-465" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;1&lt;/kbd&gt; | Move cursor from console to script editor |</span>
-<span id="cb14-466"><a href="#cb14-466" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;2&lt;/kbd&gt; | Move cursor from script editor to console |</span>
-<span id="cb14-467"><a href="#cb14-467" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Tab&lt;/kbd&gt; | Use this key to complete a file path |</span>
-<span id="cb14-468"><a href="#cb14-468" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt; | Comment the block of highlighted text |</span>
+<span id="cb14-458"><a href="#cb14-458" aria-hidden="true" tabindex="-1"></a>| key | action |</span>
+<span id="cb14-459"><a href="#cb14-459" aria-hidden="true" tabindex="-1"></a>|--------------------------------|----------------------------------------|</span>
+<span id="cb14-460"><a href="#cb14-460" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Enter&lt;/kbd&gt; | Run command from script editor in console |</span>
+<span id="cb14-461"><a href="#cb14-461" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;ESC&lt;/kbd&gt; | Escape the current command to return to the command prompt |</span>
+<span id="cb14-462"><a href="#cb14-462" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;1&lt;/kbd&gt; | Move cursor from console to script editor |</span>
+<span id="cb14-463"><a href="#cb14-463" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;2&lt;/kbd&gt; | Move cursor from script editor to console |</span>
+<span id="cb14-464"><a href="#cb14-464" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Tab&lt;/kbd&gt; | Use this key to complete a file path |</span>
+<span id="cb14-465"><a href="#cb14-465" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt; | Comment the block of highlighted text |</span>
+<span id="cb14-466"><a href="#cb14-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-467"><a href="#cb14-467" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb14-468"><a href="#cb14-468" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
 <span id="cb14-469"><a href="#cb14-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-470"><a href="#cb14-470" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb14-471"><a href="#cb14-471" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
-<span id="cb14-472"><a href="#cb14-472" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-473"><a href="#cb14-473" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Try highlighting only <span class="in">`3 +`</span> from your script editor and running it.</span>
-<span id="cb14-474"><a href="#cb14-474" aria-hidden="true" tabindex="-1"></a>    Find a way to bring back the command prompt <span class="in">`&gt;`</span> in the console.</span>
-<span id="cb14-475"><a href="#cb14-475" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb14-476"><a href="#cb14-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-477"><a href="#cb14-477" aria-hidden="true" tabindex="-1"></a><span class="fu">## The R syntax</span></span>
-<span id="cb14-478"><a href="#cb14-478" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-479"><a href="#cb14-479" aria-hidden="true" tabindex="-1"></a>Now that we know how to talk with R via the script editor or the</span>
-<span id="cb14-480"><a href="#cb14-480" aria-hidden="true" tabindex="-1"></a>console, we want to use R for something more than adding numbers. To do</span>
-<span id="cb14-481"><a href="#cb14-481" aria-hidden="true" tabindex="-1"></a>this, we need to know more about the R syntax.</span>
-<span id="cb14-482"><a href="#cb14-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-483"><a href="#cb14-483" aria-hidden="true" tabindex="-1"></a>The main "parts of speech" in R (syntax) include:</span>
-<span id="cb14-484"><a href="#cb14-484" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-485"><a href="#cb14-485" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>the **comments** <span class="in">`#`</span> and how they are used to document function and</span>
-<span id="cb14-486"><a href="#cb14-486" aria-hidden="true" tabindex="-1"></a>    its content</span>
-<span id="cb14-487"><a href="#cb14-487" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**variables** and **functions**</span>
-<span id="cb14-488"><a href="#cb14-488" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>the **assignment operator** <span class="in">`&lt;-`</span></span>
-<span id="cb14-489"><a href="#cb14-489" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>the <span class="in">`=`</span> for **arguments** in functions</span>
+<span id="cb14-470"><a href="#cb14-470" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Try highlighting only <span class="in">`3 +`</span> from your script editor and running it.</span>
+<span id="cb14-471"><a href="#cb14-471" aria-hidden="true" tabindex="-1"></a>    Find a way to bring back the command prompt <span class="in">`&gt;`</span> in the console.</span>
+<span id="cb14-472"><a href="#cb14-472" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-473"><a href="#cb14-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-474"><a href="#cb14-474" aria-hidden="true" tabindex="-1"></a><span class="fu">## The R syntax</span></span>
+<span id="cb14-475"><a href="#cb14-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-476"><a href="#cb14-476" aria-hidden="true" tabindex="-1"></a>Now that we know how to talk with R via the script editor or the</span>
+<span id="cb14-477"><a href="#cb14-477" aria-hidden="true" tabindex="-1"></a>console, we want to use R for something more than adding numbers. To do</span>
+<span id="cb14-478"><a href="#cb14-478" aria-hidden="true" tabindex="-1"></a>this, we need to know more about the R syntax.</span>
+<span id="cb14-479"><a href="#cb14-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-480"><a href="#cb14-480" aria-hidden="true" tabindex="-1"></a>The main "parts of speech" in R (syntax) include:</span>
+<span id="cb14-481"><a href="#cb14-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-482"><a href="#cb14-482" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>the **comments** <span class="in">`#`</span> and how they are used to document function and</span>
+<span id="cb14-483"><a href="#cb14-483" aria-hidden="true" tabindex="-1"></a>    its content</span>
+<span id="cb14-484"><a href="#cb14-484" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**variables** and **functions**</span>
+<span id="cb14-485"><a href="#cb14-485" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>the **assignment operator** <span class="in">`&lt;-`</span></span>
+<span id="cb14-486"><a href="#cb14-486" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>the <span class="in">`=`</span> for **arguments** in functions</span>
+<span id="cb14-487"><a href="#cb14-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-488"><a href="#cb14-488" aria-hidden="true" tabindex="-1"></a>*NOTE: indentation and consistency in spacing is used to improve clarity</span>
+<span id="cb14-489"><a href="#cb14-489" aria-hidden="true" tabindex="-1"></a>and legibility*</span>
 <span id="cb14-490"><a href="#cb14-490" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-491"><a href="#cb14-491" aria-hidden="true" tabindex="-1"></a>*NOTE: indentation and consistency in spacing is used to improve clarity</span>
-<span id="cb14-492"><a href="#cb14-492" aria-hidden="true" tabindex="-1"></a>and legibility*</span>
+<span id="cb14-491"><a href="#cb14-491" aria-hidden="true" tabindex="-1"></a>We will go through each of these "parts of speech" in more detail,</span>
+<span id="cb14-492"><a href="#cb14-492" aria-hidden="true" tabindex="-1"></a>starting with the assignment operator.</span>
 <span id="cb14-493"><a href="#cb14-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-494"><a href="#cb14-494" aria-hidden="true" tabindex="-1"></a>We will go through each of these "parts of speech" in more detail,</span>
-<span id="cb14-495"><a href="#cb14-495" aria-hidden="true" tabindex="-1"></a>starting with the assignment operator.</span>
-<span id="cb14-496"><a href="#cb14-496" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-497"><a href="#cb14-497" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assignment operator</span></span>
-<span id="cb14-498"><a href="#cb14-498" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-499"><a href="#cb14-499" aria-hidden="true" tabindex="-1"></a>To do useful and interesting things in R, we need to assign *values* to</span>
-<span id="cb14-500"><a href="#cb14-500" aria-hidden="true" tabindex="-1"></a>*variables* using the assignment operator, <span class="in">`&lt;-`</span>. For example, we can use</span>
-<span id="cb14-501"><a href="#cb14-501" aria-hidden="true" tabindex="-1"></a>the assignment operator to assign the value of <span class="in">`3`</span> to <span class="in">`x`</span> by executing:</span>
-<span id="cb14-502"><a href="#cb14-502" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-505"><a href="#cb14-505" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-506"><a href="#cb14-506" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb14-507"><a href="#cb14-507" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-494"><a href="#cb14-494" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assignment operator</span></span>
+<span id="cb14-495"><a href="#cb14-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-496"><a href="#cb14-496" aria-hidden="true" tabindex="-1"></a>To do useful and interesting things in R, we need to assign *values* to</span>
+<span id="cb14-497"><a href="#cb14-497" aria-hidden="true" tabindex="-1"></a>*variables* using the assignment operator, <span class="in">`&lt;-`</span>. For example, we can use</span>
+<span id="cb14-498"><a href="#cb14-498" aria-hidden="true" tabindex="-1"></a>the assignment operator to assign the value of <span class="in">`3`</span> to <span class="in">`x`</span> by executing:</span>
+<span id="cb14-499"><a href="#cb14-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-502"><a href="#cb14-502" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-503"><a href="#cb14-503" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb14-504"><a href="#cb14-504" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-505"><a href="#cb14-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-506"><a href="#cb14-506" aria-hidden="true" tabindex="-1"></a>The assignment operator (<span class="in">`&lt;-`</span>) assigns **values on the right** to</span>
+<span id="cb14-507"><a href="#cb14-507" aria-hidden="true" tabindex="-1"></a>**variables on the left**.</span>
 <span id="cb14-508"><a href="#cb14-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-509"><a href="#cb14-509" aria-hidden="true" tabindex="-1"></a>The assignment operator (<span class="in">`&lt;-`</span>) assigns **values on the right** to</span>
-<span id="cb14-510"><a href="#cb14-510" aria-hidden="true" tabindex="-1"></a>**variables on the left**.</span>
+<span id="cb14-509"><a href="#cb14-509" aria-hidden="true" tabindex="-1"></a>*In RStudio, typing <span class="in">`Alt + -`</span> (push <span class="in">`Alt`</span> at the same time as the <span class="in">`-`</span></span>
+<span id="cb14-510"><a href="#cb14-510" aria-hidden="true" tabindex="-1"></a>key, on Mac type <span class="in">`option + -`</span>) will write <span class="in">`&lt;-`</span> in a single keystroke.*</span>
 <span id="cb14-511"><a href="#cb14-511" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-512"><a href="#cb14-512" aria-hidden="true" tabindex="-1"></a>*In RStudio, typing <span class="in">`Alt + -`</span> (push <span class="in">`Alt`</span> at the same time as the <span class="in">`-`</span></span>
-<span id="cb14-513"><a href="#cb14-513" aria-hidden="true" tabindex="-1"></a>key, on Mac type <span class="in">`option + -`</span>) will write <span class="in">`&lt;-`</span> in a single keystroke.*</span>
-<span id="cb14-514"><a href="#cb14-514" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-515"><a href="#cb14-515" aria-hidden="true" tabindex="-1"></a><span class="fu">## Variables</span></span>
-<span id="cb14-516"><a href="#cb14-516" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-517"><a href="#cb14-517" aria-hidden="true" tabindex="-1"></a>A variable is a symbolic name for (or reference to) information.</span>
-<span id="cb14-518"><a href="#cb14-518" aria-hidden="true" tabindex="-1"></a>Variables in computer programming are analogous to "buckets", where</span>
-<span id="cb14-519"><a href="#cb14-519" aria-hidden="true" tabindex="-1"></a>information can be maintained and referenced. On the outside of the</span>
-<span id="cb14-520"><a href="#cb14-520" aria-hidden="true" tabindex="-1"></a>bucket is a name. When referring to the bucket, we use the name of the</span>
-<span id="cb14-521"><a href="#cb14-521" aria-hidden="true" tabindex="-1"></a>bucket, not the data stored in the bucket.</span>
+<span id="cb14-512"><a href="#cb14-512" aria-hidden="true" tabindex="-1"></a><span class="fu">## Variables</span></span>
+<span id="cb14-513"><a href="#cb14-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-514"><a href="#cb14-514" aria-hidden="true" tabindex="-1"></a>A variable is a symbolic name for (or reference to) information.</span>
+<span id="cb14-515"><a href="#cb14-515" aria-hidden="true" tabindex="-1"></a>Variables in computer programming are analogous to "buckets", where</span>
+<span id="cb14-516"><a href="#cb14-516" aria-hidden="true" tabindex="-1"></a>information can be maintained and referenced. On the outside of the</span>
+<span id="cb14-517"><a href="#cb14-517" aria-hidden="true" tabindex="-1"></a>bucket is a name. When referring to the bucket, we use the name of the</span>
+<span id="cb14-518"><a href="#cb14-518" aria-hidden="true" tabindex="-1"></a>bucket, not the data stored in the bucket.</span>
+<span id="cb14-519"><a href="#cb14-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-520"><a href="#cb14-520" aria-hidden="true" tabindex="-1"></a>In the example above, we created a variable or a 'bucket' called <span class="in">`x`</span>.</span>
+<span id="cb14-521"><a href="#cb14-521" aria-hidden="true" tabindex="-1"></a>Inside we put a value, <span class="in">`3`</span>.</span>
 <span id="cb14-522"><a href="#cb14-522" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-523"><a href="#cb14-523" aria-hidden="true" tabindex="-1"></a>In the example above, we created a variable or a 'bucket' called <span class="in">`x`</span>.</span>
-<span id="cb14-524"><a href="#cb14-524" aria-hidden="true" tabindex="-1"></a>Inside we put a value, <span class="in">`3`</span>.</span>
-<span id="cb14-525"><a href="#cb14-525" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-526"><a href="#cb14-526" aria-hidden="true" tabindex="-1"></a>Let's create another variable called <span class="in">`y`</span> and give it a value of 5.</span>
-<span id="cb14-527"><a href="#cb14-527" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-530"><a href="#cb14-530" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-531"><a href="#cb14-531" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb14-532"><a href="#cb14-532" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb14-533"><a href="#cb14-533" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-534"><a href="#cb14-534" aria-hidden="true" tabindex="-1"></a>When assigning a value to an variable, R does not print anything to the</span>
-<span id="cb14-535"><a href="#cb14-535" aria-hidden="true" tabindex="-1"></a>console. You can force to print the value by using parentheses or by</span>
-<span id="cb14-536"><a href="#cb14-536" aria-hidden="true" tabindex="-1"></a>typing the variable name.</span>
-<span id="cb14-537"><a href="#cb14-537" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-540"><a href="#cb14-540" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-541"><a href="#cb14-541" aria-hidden="true" tabindex="-1"></a>y</span>
-<span id="cb14-542"><a href="#cb14-542" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb14-543"><a href="#cb14-543" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-544"><a href="#cb14-544" aria-hidden="true" tabindex="-1"></a>You can also view information on the variable by looking in your</span>
-<span id="cb14-545"><a href="#cb14-545" aria-hidden="true" tabindex="-1"></a><span class="in">`Environment`</span> window in the upper right-hand corner of the RStudio</span>
-<span id="cb14-546"><a href="#cb14-546" aria-hidden="true" tabindex="-1"></a>interface.</span>
-<span id="cb14-547"><a href="#cb14-547" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-548"><a href="#cb14-548" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-549"><a href="#cb14-549" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Environment_2_annotated.png" width="500"/&gt;</span>
-<span id="cb14-550"><a href="#cb14-550" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb14-551"><a href="#cb14-551" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-552"><a href="#cb14-552" aria-hidden="true" tabindex="-1"></a>Now we can reference these buckets by name to perform mathematical</span>
-<span id="cb14-553"><a href="#cb14-553" aria-hidden="true" tabindex="-1"></a>operations on the values contained within. What do you get in the</span>
-<span id="cb14-554"><a href="#cb14-554" aria-hidden="true" tabindex="-1"></a>console for the following operation:</span>
-<span id="cb14-555"><a href="#cb14-555" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-558"><a href="#cb14-558" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-559"><a href="#cb14-559" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span>
-<span id="cb14-560"><a href="#cb14-560" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-523"><a href="#cb14-523" aria-hidden="true" tabindex="-1"></a>Let's create another variable called <span class="in">`y`</span> and give it a value of 5.</span>
+<span id="cb14-524"><a href="#cb14-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-527"><a href="#cb14-527" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-528"><a href="#cb14-528" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb14-529"><a href="#cb14-529" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-530"><a href="#cb14-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-531"><a href="#cb14-531" aria-hidden="true" tabindex="-1"></a>When assigning a value to an variable, R does not print anything to the</span>
+<span id="cb14-532"><a href="#cb14-532" aria-hidden="true" tabindex="-1"></a>console. You can force to print the value by using parentheses or by</span>
+<span id="cb14-533"><a href="#cb14-533" aria-hidden="true" tabindex="-1"></a>typing the variable name.</span>
+<span id="cb14-534"><a href="#cb14-534" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-537"><a href="#cb14-537" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-538"><a href="#cb14-538" aria-hidden="true" tabindex="-1"></a>y</span>
+<span id="cb14-539"><a href="#cb14-539" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-540"><a href="#cb14-540" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-541"><a href="#cb14-541" aria-hidden="true" tabindex="-1"></a>You can also view information on the variable by looking in your</span>
+<span id="cb14-542"><a href="#cb14-542" aria-hidden="true" tabindex="-1"></a><span class="in">`Environment`</span> window in the upper right-hand corner of the RStudio</span>
+<span id="cb14-543"><a href="#cb14-543" aria-hidden="true" tabindex="-1"></a>interface.</span>
+<span id="cb14-544"><a href="#cb14-544" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-545"><a href="#cb14-545" aria-hidden="true" tabindex="-1"></a>::: center</span>
+<span id="cb14-546"><a href="#cb14-546" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Environment_2_annotated.png" width="500"/&gt;</span>
+<span id="cb14-547"><a href="#cb14-547" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-548"><a href="#cb14-548" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-549"><a href="#cb14-549" aria-hidden="true" tabindex="-1"></a>Now we can reference these buckets by name to perform mathematical</span>
+<span id="cb14-550"><a href="#cb14-550" aria-hidden="true" tabindex="-1"></a>operations on the values contained within. What do you get in the</span>
+<span id="cb14-551"><a href="#cb14-551" aria-hidden="true" tabindex="-1"></a>console for the following operation:</span>
+<span id="cb14-552"><a href="#cb14-552" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-555"><a href="#cb14-555" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-556"><a href="#cb14-556" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> y</span>
+<span id="cb14-557"><a href="#cb14-557" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-558"><a href="#cb14-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-559"><a href="#cb14-559" aria-hidden="true" tabindex="-1"></a>Try assigning the results of this operation to another variable called</span>
+<span id="cb14-560"><a href="#cb14-560" aria-hidden="true" tabindex="-1"></a><span class="in">`number`</span>.</span>
 <span id="cb14-561"><a href="#cb14-561" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-562"><a href="#cb14-562" aria-hidden="true" tabindex="-1"></a>Try assigning the results of this operation to another variable called</span>
-<span id="cb14-563"><a href="#cb14-563" aria-hidden="true" tabindex="-1"></a><span class="in">`number`</span>.</span>
-<span id="cb14-564"><a href="#cb14-564" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-567"><a href="#cb14-567" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-568"><a href="#cb14-568" aria-hidden="true" tabindex="-1"></a>number <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
-<span id="cb14-569"><a href="#cb14-569" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-564"><a href="#cb14-564" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-565"><a href="#cb14-565" aria-hidden="true" tabindex="-1"></a>number <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb14-566"><a href="#cb14-566" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-567"><a href="#cb14-567" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-568"><a href="#cb14-568" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb14-569"><a href="#cb14-569" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
 <span id="cb14-570"><a href="#cb14-570" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-571"><a href="#cb14-571" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb14-572"><a href="#cb14-572" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
-<span id="cb14-573"><a href="#cb14-573" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-574"><a href="#cb14-574" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Try changing the value of the variable <span class="in">`x`</span> to 5. What happens to</span>
-<span id="cb14-575"><a href="#cb14-575" aria-hidden="true" tabindex="-1"></a>    <span class="in">`number`</span>?</span>
-<span id="cb14-576"><a href="#cb14-576" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Now try changing the value of variable <span class="in">`y`</span> to contain the value 10.</span>
-<span id="cb14-577"><a href="#cb14-577" aria-hidden="true" tabindex="-1"></a>    What do you need to do, to update the variable <span class="in">`number`</span>?</span>
-<span id="cb14-578"><a href="#cb14-578" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb14-579"><a href="#cb14-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-580"><a href="#cb14-580" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tips on variable names</span></span>
-<span id="cb14-581"><a href="#cb14-581" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-582"><a href="#cb14-582" aria-hidden="true" tabindex="-1"></a>Variables can be given almost any name, such as <span class="in">`x`</span>,</span>
-<span id="cb14-583"><a href="#cb14-583" aria-hidden="true" tabindex="-1"></a><span class="in">`current_temperature`</span>, or <span class="in">`subject_id`</span>. However, there are some rules /</span>
-<span id="cb14-584"><a href="#cb14-584" aria-hidden="true" tabindex="-1"></a>suggestions you should keep in mind:</span>
-<span id="cb14-585"><a href="#cb14-585" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-586"><a href="#cb14-586" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Make your names explicit and not too long.</span>
-<span id="cb14-587"><a href="#cb14-587" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Avoid names starting with a number (<span class="in">`2x`</span> is not valid but <span class="in">`x2`</span> is)</span>
-<span id="cb14-588"><a href="#cb14-588" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Avoid names of fundamental functions in R (e.g., <span class="in">`if`</span>, <span class="in">`else`</span>,</span>
-<span id="cb14-589"><a href="#cb14-589" aria-hidden="true" tabindex="-1"></a>    <span class="in">`for`</span>, see <span class="co">[</span><span class="ot">here</span><span class="co">](https://statisticsglobe.com/r-functions-list/)</span> for</span>
-<span id="cb14-590"><a href="#cb14-590" aria-hidden="true" tabindex="-1"></a>    a complete list). In general, even if it's allowed, it's best to not</span>
-<span id="cb14-591"><a href="#cb14-591" aria-hidden="true" tabindex="-1"></a>    use other function names (e.g., <span class="in">`c`</span>, <span class="in">`T`</span>, <span class="in">`mean`</span>, <span class="in">`data`</span>) as</span>
-<span id="cb14-592"><a href="#cb14-592" aria-hidden="true" tabindex="-1"></a>    variable names. When in doubt check the help to see if the name is</span>
-<span id="cb14-593"><a href="#cb14-593" aria-hidden="true" tabindex="-1"></a>    already in use.</span>
-<span id="cb14-594"><a href="#cb14-594" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Avoid dots (<span class="in">`.`</span>) within a variable name as in <span class="in">`my.dataset`</span>. There</span>
-<span id="cb14-595"><a href="#cb14-595" aria-hidden="true" tabindex="-1"></a>    are many functions in R with dots in their names for historical</span>
-<span id="cb14-596"><a href="#cb14-596" aria-hidden="true" tabindex="-1"></a>    reasons, but because dots have a special meaning in R (for methods)</span>
-<span id="cb14-597"><a href="#cb14-597" aria-hidden="true" tabindex="-1"></a>    and other programming languages, it's best to avoid them.</span>
-<span id="cb14-598"><a href="#cb14-598" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use nouns for object names and verbs for function names</span>
-<span id="cb14-599"><a href="#cb14-599" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Keep in mind that **R is case sensitive** (e.g., <span class="in">`genome_length`</span> is</span>
-<span id="cb14-600"><a href="#cb14-600" aria-hidden="true" tabindex="-1"></a>    different from <span class="in">`Genome_length`</span>)</span>
-<span id="cb14-601"><a href="#cb14-601" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Be consistent with the styling of your code (where you put spaces,</span>
-<span id="cb14-602"><a href="#cb14-602" aria-hidden="true" tabindex="-1"></a>    how you name variable, etc.). In R, two popular style guides are</span>
-<span id="cb14-603"><a href="#cb14-603" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">Hadley Wickham's style guide</span><span class="co">](http://adv-r.had.co.nz/Style.html)</span></span>
-<span id="cb14-604"><a href="#cb14-604" aria-hidden="true" tabindex="-1"></a>    and</span>
-<span id="cb14-605"><a href="#cb14-605" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">Google's</span><span class="co">](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html)</span>.</span>
-<span id="cb14-606"><a href="#cb14-606" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-607"><a href="#cb14-607" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interacting with data in R</span></span>
-<span id="cb14-608"><a href="#cb14-608" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-609"><a href="#cb14-609" aria-hidden="true" tabindex="-1"></a>R is commonly used for handling big data, and so it only makes sense</span>
-<span id="cb14-610"><a href="#cb14-610" aria-hidden="true" tabindex="-1"></a>that we learn about R in the context of some kind of relevant data.</span>
-<span id="cb14-611"><a href="#cb14-611" aria-hidden="true" tabindex="-1"></a>Let's take a few minutes to familiarize ourselves with the data.</span>
-<span id="cb14-612"><a href="#cb14-612" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-613"><a href="#cb14-613" aria-hidden="true" tabindex="-1"></a><span class="fu">### Visualizing the provided files</span></span>
-<span id="cb14-614"><a href="#cb14-614" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-615"><a href="#cb14-615" aria-hidden="true" tabindex="-1"></a>You can access the files we need for this workshop by clicking on the</span>
-<span id="cb14-616"><a href="#cb14-616" aria-hidden="true" tabindex="-1"></a><span class="in">`data/`</span> directory in the "Files" tab. Within here, you should find the</span>
-<span id="cb14-617"><a href="#cb14-617" aria-hidden="true" tabindex="-1"></a>three files that we will be working with. **We will discuss these files</span>
-<span id="cb14-618"><a href="#cb14-618" aria-hidden="true" tabindex="-1"></a>a bit later in the lesson.**</span>
-<span id="cb14-619"><a href="#cb14-619" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-620"><a href="#cb14-620" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Data_files_annotated.png" width="500"/&gt;</span>
+<span id="cb14-571"><a href="#cb14-571" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Try changing the value of the variable <span class="in">`x`</span> to 5. What happens to</span>
+<span id="cb14-572"><a href="#cb14-572" aria-hidden="true" tabindex="-1"></a>    <span class="in">`number`</span>?</span>
+<span id="cb14-573"><a href="#cb14-573" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Now try changing the value of variable <span class="in">`y`</span> to contain the value 10.</span>
+<span id="cb14-574"><a href="#cb14-574" aria-hidden="true" tabindex="-1"></a>    What do you need to do, to update the variable <span class="in">`number`</span>?</span>
+<span id="cb14-575"><a href="#cb14-575" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-576"><a href="#cb14-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-577"><a href="#cb14-577" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tips on variable names</span></span>
+<span id="cb14-578"><a href="#cb14-578" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-579"><a href="#cb14-579" aria-hidden="true" tabindex="-1"></a>Variables can be given almost any name, such as <span class="in">`x`</span>,</span>
+<span id="cb14-580"><a href="#cb14-580" aria-hidden="true" tabindex="-1"></a><span class="in">`current_temperature`</span>, or <span class="in">`subject_id`</span>. However, there are some rules /</span>
+<span id="cb14-581"><a href="#cb14-581" aria-hidden="true" tabindex="-1"></a>suggestions you should keep in mind:</span>
+<span id="cb14-582"><a href="#cb14-582" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-583"><a href="#cb14-583" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Make your names explicit and not too long.</span>
+<span id="cb14-584"><a href="#cb14-584" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Avoid names starting with a number (<span class="in">`2x`</span> is not valid but <span class="in">`x2`</span> is)</span>
+<span id="cb14-585"><a href="#cb14-585" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Avoid names of fundamental functions in R (e.g., <span class="in">`if`</span>, <span class="in">`else`</span>,</span>
+<span id="cb14-586"><a href="#cb14-586" aria-hidden="true" tabindex="-1"></a>    <span class="in">`for`</span>, see <span class="co">[</span><span class="ot">here</span><span class="co">](https://statisticsglobe.com/r-functions-list/)</span> for</span>
+<span id="cb14-587"><a href="#cb14-587" aria-hidden="true" tabindex="-1"></a>    a complete list). In general, even if it's allowed, it's best to not</span>
+<span id="cb14-588"><a href="#cb14-588" aria-hidden="true" tabindex="-1"></a>    use other function names (e.g., <span class="in">`c`</span>, <span class="in">`T`</span>, <span class="in">`mean`</span>, <span class="in">`data`</span>) as</span>
+<span id="cb14-589"><a href="#cb14-589" aria-hidden="true" tabindex="-1"></a>    variable names. When in doubt check the help to see if the name is</span>
+<span id="cb14-590"><a href="#cb14-590" aria-hidden="true" tabindex="-1"></a>    already in use.</span>
+<span id="cb14-591"><a href="#cb14-591" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Avoid dots (<span class="in">`.`</span>) within a variable name as in <span class="in">`my.dataset`</span>. There</span>
+<span id="cb14-592"><a href="#cb14-592" aria-hidden="true" tabindex="-1"></a>    are many functions in R with dots in their names for historical</span>
+<span id="cb14-593"><a href="#cb14-593" aria-hidden="true" tabindex="-1"></a>    reasons, but because dots have a special meaning in R (for methods)</span>
+<span id="cb14-594"><a href="#cb14-594" aria-hidden="true" tabindex="-1"></a>    and other programming languages, it's best to avoid them.</span>
+<span id="cb14-595"><a href="#cb14-595" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use nouns for object names and verbs for function names</span>
+<span id="cb14-596"><a href="#cb14-596" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Keep in mind that **R is case sensitive** (e.g., <span class="in">`genome_length`</span> is</span>
+<span id="cb14-597"><a href="#cb14-597" aria-hidden="true" tabindex="-1"></a>    different from <span class="in">`Genome_length`</span>)</span>
+<span id="cb14-598"><a href="#cb14-598" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Be consistent with the styling of your code (where you put spaces,</span>
+<span id="cb14-599"><a href="#cb14-599" aria-hidden="true" tabindex="-1"></a>    how you name variable, etc.). In R, two popular style guides are</span>
+<span id="cb14-600"><a href="#cb14-600" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">Hadley Wickham's style guide</span><span class="co">](http://adv-r.had.co.nz/Style.html)</span></span>
+<span id="cb14-601"><a href="#cb14-601" aria-hidden="true" tabindex="-1"></a>    and</span>
+<span id="cb14-602"><a href="#cb14-602" aria-hidden="true" tabindex="-1"></a>    <span class="co">[</span><span class="ot">Google's</span><span class="co">](http://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html)</span>.</span>
+<span id="cb14-603"><a href="#cb14-603" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-604"><a href="#cb14-604" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interacting with data in R</span></span>
+<span id="cb14-605"><a href="#cb14-605" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-606"><a href="#cb14-606" aria-hidden="true" tabindex="-1"></a>R is commonly used for handling big data, and so it only makes sense</span>
+<span id="cb14-607"><a href="#cb14-607" aria-hidden="true" tabindex="-1"></a>that we learn about R in the context of some kind of relevant data.</span>
+<span id="cb14-608"><a href="#cb14-608" aria-hidden="true" tabindex="-1"></a>Let's take a few minutes to familiarize ourselves with the data.</span>
+<span id="cb14-609"><a href="#cb14-609" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-610"><a href="#cb14-610" aria-hidden="true" tabindex="-1"></a><span class="fu">### Visualizing the provided files</span></span>
+<span id="cb14-611"><a href="#cb14-611" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-612"><a href="#cb14-612" aria-hidden="true" tabindex="-1"></a>You can access the files we need for this workshop by clicking on the</span>
+<span id="cb14-613"><a href="#cb14-613" aria-hidden="true" tabindex="-1"></a><span class="in">`data/`</span> directory in the "Files" tab. Within here, you should find the</span>
+<span id="cb14-614"><a href="#cb14-614" aria-hidden="true" tabindex="-1"></a>three files that we will be working with. **We will discuss these files</span>
+<span id="cb14-615"><a href="#cb14-615" aria-hidden="true" tabindex="-1"></a>a bit later in the lesson.**</span>
+<span id="cb14-616"><a href="#cb14-616" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-617"><a href="#cb14-617" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Data_files_annotated.png" width="500"/&gt;</span>
+<span id="cb14-618"><a href="#cb14-618" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-619"><a href="#cb14-619" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: If you wanted to add files onto the Posit Cloud server you could</span></span>
+<span id="cb14-620"><a href="#cb14-620" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; do this with the "Upload" button in the "Files" tab.</span></span>
 <span id="cb14-621"><a href="#cb14-621" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-622"><a href="#cb14-622" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: If you wanted to add files onto the Posit Cloud server you could</span></span>
-<span id="cb14-623"><a href="#cb14-623" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; do this with the "Upload" button in the "Files" tab.</span></span>
-<span id="cb14-624"><a href="#cb14-624" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-625"><a href="#cb14-625" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: Adding files when working in RStudio locally is a bit different.</span></span>
-<span id="cb14-626"><a href="#cb14-626" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Please reference [this</span></span>
-<span id="cb14-627"><a href="#cb14-627" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; lesson](../docs/lessons/01a_introR-R-and-RStudio.html#adding-files-to-your-working-directory)</span></span>
-<span id="cb14-628"><a href="#cb14-628" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; for instructions to do this.</span></span>
-<span id="cb14-629"><a href="#cb14-629" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-630"><a href="#cb14-630" aria-hidden="true" tabindex="-1"></a><span class="fu">### The dataset</span></span>
-<span id="cb14-631"><a href="#cb14-631" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-632"><a href="#cb14-632" aria-hidden="true" tabindex="-1"></a>In this example dataset, we have collected whole brain samples from 12</span>
-<span id="cb14-633"><a href="#cb14-633" aria-hidden="true" tabindex="-1"></a>mice and want to evaluate expression differences between them. The</span>
-<span id="cb14-634"><a href="#cb14-634" aria-hidden="true" tabindex="-1"></a>expression data represents normalized count data obtained from</span>
-<span id="cb14-635"><a href="#cb14-635" aria-hidden="true" tabindex="-1"></a>RNA-sequencing of the 12 brain samples. This data is stored in a comma</span>
-<span id="cb14-636"><a href="#cb14-636" aria-hidden="true" tabindex="-1"></a>separated values (CSV) file as a 2-dimensional matrix, with **each row</span>
-<span id="cb14-637"><a href="#cb14-637" aria-hidden="true" tabindex="-1"></a>corresponding to a gene and each column corresponding to a sample**.</span>
-<span id="cb14-638"><a href="#cb14-638" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-639"><a href="#cb14-639" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-640"><a href="#cb14-640" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/counts_view.png" width="800"/&gt;</span>
-<span id="cb14-641"><a href="#cb14-641" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb14-642"><a href="#cb14-642" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-643"><a href="#cb14-643" aria-hidden="true" tabindex="-1"></a><span class="fu">### The metadata</span></span>
-<span id="cb14-644"><a href="#cb14-644" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-645"><a href="#cb14-645" aria-hidden="true" tabindex="-1"></a>We have another file in which we identify **information about the data**</span>
-<span id="cb14-646"><a href="#cb14-646" aria-hidden="true" tabindex="-1"></a>or **metadata**. Our metadata is also stored in a CSV file. In this</span>
-<span id="cb14-647"><a href="#cb14-647" aria-hidden="true" tabindex="-1"></a>file, each row corresponds to a sample and each column contains some</span>
-<span id="cb14-648"><a href="#cb14-648" aria-hidden="true" tabindex="-1"></a>information about each sample.</span>
-<span id="cb14-649"><a href="#cb14-649" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-650"><a href="#cb14-650" aria-hidden="true" tabindex="-1"></a>The first column contains the row names, and **note that these are</span>
-<span id="cb14-651"><a href="#cb14-651" aria-hidden="true" tabindex="-1"></a>identical to the column names in our expression data file above**</span>
-<span id="cb14-652"><a href="#cb14-652" aria-hidden="true" tabindex="-1"></a>(albeit, in a slightly different order). The next few columns contain</span>
-<span id="cb14-653"><a href="#cb14-653" aria-hidden="true" tabindex="-1"></a>information about our samples that allow us to categorize them. For</span>
-<span id="cb14-654"><a href="#cb14-654" aria-hidden="true" tabindex="-1"></a>example, the second column contains genotype information for each</span>
-<span id="cb14-655"><a href="#cb14-655" aria-hidden="true" tabindex="-1"></a>sample. Each sample is classified in one of two categories: Wt (wild</span>
-<span id="cb14-656"><a href="#cb14-656" aria-hidden="true" tabindex="-1"></a>type) or KO (knockout). *What types of categories do you observe in the</span>
-<span id="cb14-657"><a href="#cb14-657" aria-hidden="true" tabindex="-1"></a>remaining columns?*</span>
-<span id="cb14-658"><a href="#cb14-658" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-659"><a href="#cb14-659" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-660"><a href="#cb14-660" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/metadata_view.png" width="400"/&gt;</span>
-<span id="cb14-661"><a href="#cb14-661" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb14-662"><a href="#cb14-662" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-663"><a href="#cb14-663" aria-hidden="true" tabindex="-1"></a>R is particularly good at handling this type of **categorical data**.</span>
-<span id="cb14-664"><a href="#cb14-664" aria-hidden="true" tabindex="-1"></a>Rather than simply storing this information as text, the data is</span>
-<span id="cb14-665"><a href="#cb14-665" aria-hidden="true" tabindex="-1"></a>represented in a specific data structure which allows the user to sort</span>
-<span id="cb14-666"><a href="#cb14-666" aria-hidden="true" tabindex="-1"></a>and manipulate the data in a quick and efficient manner. We will discuss</span>
-<span id="cb14-667"><a href="#cb14-667" aria-hidden="true" tabindex="-1"></a>this in more detail as we go through the different lessons in R!</span>
-<span id="cb14-668"><a href="#cb14-668" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-669"><a href="#cb14-669" aria-hidden="true" tabindex="-1"></a><span class="fu">### The functional analysis results</span></span>
-<span id="cb14-670"><a href="#cb14-670" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-671"><a href="#cb14-671" aria-hidden="true" tabindex="-1"></a>We will be using the results of the functional analysis to learn about</span>
-<span id="cb14-672"><a href="#cb14-672" aria-hidden="true" tabindex="-1"></a>packages/functions from the [Tidyverse suite of integrated</span>
-<span id="cb14-673"><a href="#cb14-673" aria-hidden="true" tabindex="-1"></a>packages](https://www.tidyverse.org/packages/). These packages are</span>
-<span id="cb14-674"><a href="#cb14-674" aria-hidden="true" tabindex="-1"></a>designed to work together to make common data science operations like</span>
-<span id="cb14-675"><a href="#cb14-675" aria-hidden="true" tabindex="-1"></a>data wrangling, tidying, reading/writing, parsing, and visualizing, more</span>
-<span id="cb14-676"><a href="#cb14-676" aria-hidden="true" tabindex="-1"></a>user-friendly.</span>
-<span id="cb14-677"><a href="#cb14-677" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-678"><a href="#cb14-678" aria-hidden="true" tabindex="-1"></a><span class="fu">## Best practices</span></span>
-<span id="cb14-679"><a href="#cb14-679" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-680"><a href="#cb14-680" aria-hidden="true" tabindex="-1"></a>Before we move on to more complex concepts and getting familiar with the</span>
-<span id="cb14-681"><a href="#cb14-681" aria-hidden="true" tabindex="-1"></a>language, we want to point out a few things about best practices when</span>
-<span id="cb14-682"><a href="#cb14-682" aria-hidden="true" tabindex="-1"></a>working with R which will help you stay organized in the long run:</span>
-<span id="cb14-683"><a href="#cb14-683" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-684"><a href="#cb14-684" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Code and workflow are more reproducible if we can document</span>
-<span id="cb14-685"><a href="#cb14-685" aria-hidden="true" tabindex="-1"></a>    everything that we do. Our end goal is not just to "do stuff", but</span>
-<span id="cb14-686"><a href="#cb14-686" aria-hidden="true" tabindex="-1"></a>    to do it in a way that anyone can easily and exactly replicate our</span>
-<span id="cb14-687"><a href="#cb14-687" aria-hidden="true" tabindex="-1"></a>    workflow and results. **All code should be written in the script</span>
-<span id="cb14-688"><a href="#cb14-688" aria-hidden="true" tabindex="-1"></a>    editor and saved to file, rather than working in the console.**</span>
-<span id="cb14-689"><a href="#cb14-689" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The **R console** should be mainly used to inspect objects, test a</span>
-<span id="cb14-690"><a href="#cb14-690" aria-hidden="true" tabindex="-1"></a>    function or get help.</span>
-<span id="cb14-691"><a href="#cb14-691" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`#`</span> signs to comment. **Comment liberally** in your R scripts.</span>
-<span id="cb14-692"><a href="#cb14-692" aria-hidden="true" tabindex="-1"></a>    This will help future you and other collaborators know what each</span>
-<span id="cb14-693"><a href="#cb14-693" aria-hidden="true" tabindex="-1"></a>    line of code (or code block) was meant to do. Anything to the right</span>
-<span id="cb14-694"><a href="#cb14-694" aria-hidden="true" tabindex="-1"></a>    of a <span class="in">`#`</span> is ignored by R. *A shortcut for this is*</span>
-<span id="cb14-695"><a href="#cb14-695" aria-hidden="true" tabindex="-1"></a>    &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt; if you want to comment</span>
-<span id="cb14-696"><a href="#cb14-696" aria-hidden="true" tabindex="-1"></a>    an entire chunk of text.</span>
+<span id="cb14-622"><a href="#cb14-622" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: Adding files when working in RStudio locally is a bit different.</span></span>
+<span id="cb14-623"><a href="#cb14-623" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Please reference [this</span></span>
+<span id="cb14-624"><a href="#cb14-624" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; lesson](../docs/lessons/01a_introR-R-and-RStudio.html#adding-files-to-your-working-directory)</span></span>
+<span id="cb14-625"><a href="#cb14-625" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; for instructions to do this.</span></span>
+<span id="cb14-626"><a href="#cb14-626" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-627"><a href="#cb14-627" aria-hidden="true" tabindex="-1"></a><span class="fu">### The dataset</span></span>
+<span id="cb14-628"><a href="#cb14-628" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-629"><a href="#cb14-629" aria-hidden="true" tabindex="-1"></a>In this example dataset, we have collected whole brain samples from 12</span>
+<span id="cb14-630"><a href="#cb14-630" aria-hidden="true" tabindex="-1"></a>mice and want to evaluate expression differences between them. The</span>
+<span id="cb14-631"><a href="#cb14-631" aria-hidden="true" tabindex="-1"></a>expression data represents normalized count data obtained from</span>
+<span id="cb14-632"><a href="#cb14-632" aria-hidden="true" tabindex="-1"></a>RNA-sequencing of the 12 brain samples. This data is stored in a comma</span>
+<span id="cb14-633"><a href="#cb14-633" aria-hidden="true" tabindex="-1"></a>separated values (CSV) file as a 2-dimensional matrix, with **each row</span>
+<span id="cb14-634"><a href="#cb14-634" aria-hidden="true" tabindex="-1"></a>corresponding to a gene and each column corresponding to a sample**.</span>
+<span id="cb14-635"><a href="#cb14-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-636"><a href="#cb14-636" aria-hidden="true" tabindex="-1"></a>::: center</span>
+<span id="cb14-637"><a href="#cb14-637" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/counts_view.png" width="800"/&gt;</span>
+<span id="cb14-638"><a href="#cb14-638" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-639"><a href="#cb14-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-640"><a href="#cb14-640" aria-hidden="true" tabindex="-1"></a><span class="fu">### The metadata</span></span>
+<span id="cb14-641"><a href="#cb14-641" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-642"><a href="#cb14-642" aria-hidden="true" tabindex="-1"></a>We have another file in which we identify **information about the data**</span>
+<span id="cb14-643"><a href="#cb14-643" aria-hidden="true" tabindex="-1"></a>or **metadata**. Our metadata is also stored in a CSV file. In this</span>
+<span id="cb14-644"><a href="#cb14-644" aria-hidden="true" tabindex="-1"></a>file, each row corresponds to a sample and each column contains some</span>
+<span id="cb14-645"><a href="#cb14-645" aria-hidden="true" tabindex="-1"></a>information about each sample.</span>
+<span id="cb14-646"><a href="#cb14-646" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-647"><a href="#cb14-647" aria-hidden="true" tabindex="-1"></a>The first column contains the row names, and **note that these are</span>
+<span id="cb14-648"><a href="#cb14-648" aria-hidden="true" tabindex="-1"></a>identical to the column names in our expression data file above**</span>
+<span id="cb14-649"><a href="#cb14-649" aria-hidden="true" tabindex="-1"></a>(albeit, in a slightly different order). The next few columns contain</span>
+<span id="cb14-650"><a href="#cb14-650" aria-hidden="true" tabindex="-1"></a>information about our samples that allow us to categorize them. For</span>
+<span id="cb14-651"><a href="#cb14-651" aria-hidden="true" tabindex="-1"></a>example, the second column contains genotype information for each</span>
+<span id="cb14-652"><a href="#cb14-652" aria-hidden="true" tabindex="-1"></a>sample. Each sample is classified in one of two categories: Wt (wild</span>
+<span id="cb14-653"><a href="#cb14-653" aria-hidden="true" tabindex="-1"></a>type) or KO (knockout). *What types of categories do you observe in the</span>
+<span id="cb14-654"><a href="#cb14-654" aria-hidden="true" tabindex="-1"></a>remaining columns?*</span>
+<span id="cb14-655"><a href="#cb14-655" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-656"><a href="#cb14-656" aria-hidden="true" tabindex="-1"></a>::: center</span>
+<span id="cb14-657"><a href="#cb14-657" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/metadata_view.png" width="400"/&gt;</span>
+<span id="cb14-658"><a href="#cb14-658" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-659"><a href="#cb14-659" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-660"><a href="#cb14-660" aria-hidden="true" tabindex="-1"></a>R is particularly good at handling this type of **categorical data**.</span>
+<span id="cb14-661"><a href="#cb14-661" aria-hidden="true" tabindex="-1"></a>Rather than simply storing this information as text, the data is</span>
+<span id="cb14-662"><a href="#cb14-662" aria-hidden="true" tabindex="-1"></a>represented in a specific data structure which allows the user to sort</span>
+<span id="cb14-663"><a href="#cb14-663" aria-hidden="true" tabindex="-1"></a>and manipulate the data in a quick and efficient manner. We will discuss</span>
+<span id="cb14-664"><a href="#cb14-664" aria-hidden="true" tabindex="-1"></a>this in more detail as we go through the different lessons in R!</span>
+<span id="cb14-665"><a href="#cb14-665" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-666"><a href="#cb14-666" aria-hidden="true" tabindex="-1"></a><span class="fu">### The functional analysis results</span></span>
+<span id="cb14-667"><a href="#cb14-667" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-668"><a href="#cb14-668" aria-hidden="true" tabindex="-1"></a>We will be using the results of the functional analysis to learn about</span>
+<span id="cb14-669"><a href="#cb14-669" aria-hidden="true" tabindex="-1"></a>packages/functions from the [Tidyverse suite of integrated</span>
+<span id="cb14-670"><a href="#cb14-670" aria-hidden="true" tabindex="-1"></a>packages](https://www.tidyverse.org/packages/). These packages are</span>
+<span id="cb14-671"><a href="#cb14-671" aria-hidden="true" tabindex="-1"></a>designed to work together to make common data science operations like</span>
+<span id="cb14-672"><a href="#cb14-672" aria-hidden="true" tabindex="-1"></a>data wrangling, tidying, reading/writing, parsing, and visualizing, more</span>
+<span id="cb14-673"><a href="#cb14-673" aria-hidden="true" tabindex="-1"></a>user-friendly.</span>
+<span id="cb14-674"><a href="#cb14-674" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-675"><a href="#cb14-675" aria-hidden="true" tabindex="-1"></a><span class="fu">## Best practices</span></span>
+<span id="cb14-676"><a href="#cb14-676" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-677"><a href="#cb14-677" aria-hidden="true" tabindex="-1"></a>Before we move on to more complex concepts and getting familiar with the</span>
+<span id="cb14-678"><a href="#cb14-678" aria-hidden="true" tabindex="-1"></a>language, we want to point out a few things about best practices when</span>
+<span id="cb14-679"><a href="#cb14-679" aria-hidden="true" tabindex="-1"></a>working with R which will help you stay organized in the long run:</span>
+<span id="cb14-680"><a href="#cb14-680" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-681"><a href="#cb14-681" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Code and workflow are more reproducible if we can document</span>
+<span id="cb14-682"><a href="#cb14-682" aria-hidden="true" tabindex="-1"></a>    everything that we do. Our end goal is not just to "do stuff", but</span>
+<span id="cb14-683"><a href="#cb14-683" aria-hidden="true" tabindex="-1"></a>    to do it in a way that anyone can easily and exactly replicate our</span>
+<span id="cb14-684"><a href="#cb14-684" aria-hidden="true" tabindex="-1"></a>    workflow and results. **All code should be written in the script</span>
+<span id="cb14-685"><a href="#cb14-685" aria-hidden="true" tabindex="-1"></a>    editor and saved to file, rather than working in the console.**</span>
+<span id="cb14-686"><a href="#cb14-686" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The **R console** should be mainly used to inspect objects, test a</span>
+<span id="cb14-687"><a href="#cb14-687" aria-hidden="true" tabindex="-1"></a>    function or get help.</span>
+<span id="cb14-688"><a href="#cb14-688" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`#`</span> signs to comment. **Comment liberally** in your R scripts.</span>
+<span id="cb14-689"><a href="#cb14-689" aria-hidden="true" tabindex="-1"></a>    This will help future you and other collaborators know what each</span>
+<span id="cb14-690"><a href="#cb14-690" aria-hidden="true" tabindex="-1"></a>    line of code (or code block) was meant to do. Anything to the right</span>
+<span id="cb14-691"><a href="#cb14-691" aria-hidden="true" tabindex="-1"></a>    of a <span class="in">`#`</span> is ignored by R. *A shortcut for this is*</span>
+<span id="cb14-692"><a href="#cb14-692" aria-hidden="true" tabindex="-1"></a>    &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt; if you want to comment</span>
+<span id="cb14-693"><a href="#cb14-693" aria-hidden="true" tabindex="-1"></a>    an entire chunk of text.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
