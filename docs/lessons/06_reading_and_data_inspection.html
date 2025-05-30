@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2017-09-08">
+
+<title>Introduction to R - Reading in and inspecting data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Introduction to R</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/schedule.html" rel="" target="">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://bioinformatics.sph.harvard.edu/" rel="" target="">
+ <span class="menu-text">HBC</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/hbctraining/intro_r_rmd" rel="" target="">
+ <span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="mailto:hbctraining@hsph.harvard.edu" rel="" target="">
+ <span class="menu-text">Contact us</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/02_introR-syntax-and-data-structures.html">Day 1 Self-learning:</a></li><li class="breadcrumb-item"><a href="../lessons/06_reading_and_data_inspection.html">Reading in and inspecting data</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Day 1:</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/01_introR-R-and-RStudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to R and RStudio</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Day 1 Self-learning:</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/02_introR-syntax-and-data-structures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Syntax and Data Structures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/03_introR-functions-and-arguments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/06_reading_and_data_inspection.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Reading in and inspecting data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Day 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/Day2_activities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 2 Activities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/05_introR-data-wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data subsetting with base R: vectors and factors</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Day 2 Self-learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/04_introR_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Packages and libraries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/07_introR-data-wrangling2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data wrangling: dataframes, matrices, and lists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/08_identifying-matching-elements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced R, logical operators for matching</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/09_reordering-to-match-datasets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advanced R, reordering to match datasets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/10_setting_up_to_plot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting and data visualization in R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Day 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/Day3_activities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 3 Activities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/11_ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting and data visualization in R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Day 3 Self-learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/11b_Custom_Functions_ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Custom functions for consistent plots</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/12_boxplot_exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting and data visualization in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/13_exporting_data_and_plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Saving data and plots to file</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/14_finding_help.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting and finding help</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/15_tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tidyverse data wrangling</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+ <span class="menu-text">Day 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/Day4_activities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Day 4 Activities</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#reading-data-into-r" id="toc-reading-data-into-r" class="nav-link" data-scroll-target="#reading-data-into-r">Reading data into R</a>
+  <ul class="collapse">
+  <li><a href="#the-basics" id="toc-the-basics" class="nav-link" data-scroll-target="#the-basics">The basics</a></li>
+  <li><a href="#metadata" id="toc-metadata" class="nav-link" data-scroll-target="#metadata">Metadata</a></li>
+  <li><a href="#the-read.csv-function" id="toc-the-read.csv-function" class="nav-link" data-scroll-target="#the-read.csv-function">The <code>read.csv()</code> function</a></li>
+  <li><a href="#create-a-data-frame-by-reading-in-the-file" id="toc-create-a-data-frame-by-reading-in-the-file" class="nav-link" data-scroll-target="#create-a-data-frame-by-reading-in-the-file">Create a data frame by reading in the file</a></li>
+  </ul></li>
+  <li><a href="#inspecting-data-structures" id="toc-inspecting-data-structures" class="nav-link" data-scroll-target="#inspecting-data-structures">Inspecting data structures</a>
+  <ul class="collapse">
+  <li><a href="#list-of-functions-for-data-inspection" id="toc-list-of-functions-for-data-inspection" class="nav-link" data-scroll-target="#list-of-functions-for-data-inspection">List of functions for data inspection</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Reading in and inspecting data</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Meeta Mistry, Mary Piper, Radhika Khetani </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 8, 2017</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Demonstrate how to read existing data into R</li>
+<li>Utilize base R functions to inspect data structures</li>
+</ul>
+</section>
+<section id="reading-data-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="reading-data-into-r">Reading data into R</h2>
+<section id="the-basics" class="level3">
+<h3 class="anchored" data-anchor-id="the-basics">The basics</h3>
+<p>Regardless of the specific analysis in R we are performing, we usually need to bring data in for any analysis being done in R, so learning how to read in data is a crucial component of learning to use R.</p>
+<p>Many functions exist to read data in, and the function in R you use will depend on the file format being read in. Below we have a table with some examples of functions that can be used for importing some common text data types (plain text).</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 14%">
+<col style="width: 25%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Data type</th>
+<th style="text-align: left;">Extension</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Package</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Comma separated values</td>
+<td style="text-align: left;">csv</td>
+<td style="text-align: left;"><code>read.csv()</code></td>
+<td style="text-align: left;">utils (default)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>read_csv()</code></td>
+<td style="text-align: left;">readr (tidyverse)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tab separated values</td>
+<td style="text-align: left;">tsv</td>
+<td style="text-align: left;"><code>read_tsv()</code></td>
+<td style="text-align: left;">readr</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Other delimited formats</td>
+<td style="text-align: left;">txt</td>
+<td style="text-align: left;"><code>read.table()</code></td>
+<td style="text-align: left;">utils</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>read_table()</code></td>
+<td style="text-align: left;">readr</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>read_delim()</code></td>
+<td style="text-align: left;">readr</td>
+</tr>
+</tbody>
+</table>
+<p>For example, if we have text file where the columns are separated by commas (comma-separated values or comma-delimited), you could use the function <code>read.csv</code>. However, if the data are separated by a different delimiter in a text file (e.g.&nbsp;“:”, “;”, ” “,”), you could use the generic <code>read.table</code> function and specify the delimiter (<code>sep = " "</code>) as an argument in the function.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>"\t"</code> delimiter is shorthand for tab.</p>
+</div>
+</div>
+<p>In the above table we refer to base R functions as being contained in the “utils” package. In addition to base R functions, we have also listed functions from some other packages that can be used to import data, specifically the “readr” package that installs when you install the “tidyverse” suite of packages.</p>
+<p>In addition to plain text files, you can also import data from other statistical analysis packages and Excel using functions from different packages.</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 14%">
+<col style="width: 25%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Data type</th>
+<th style="text-align: left;">Extension</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Package</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Stata version 13-14</td>
+<td style="text-align: left;">dta</td>
+<td style="text-align: left;"><code>readdta()</code></td>
+<td style="text-align: left;">haven</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stata version 7-12</td>
+<td style="text-align: left;">dta</td>
+<td style="text-align: left;"><code>read.dta()</code></td>
+<td style="text-align: left;">foreign</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SPSS</td>
+<td style="text-align: left;">sav</td>
+<td style="text-align: left;"><code>read.spss()</code></td>
+<td style="text-align: left;">foreign</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SAS</td>
+<td style="text-align: left;">sas7bdat</td>
+<td style="text-align: left;"><code>read.sas7bdat()</code></td>
+<td style="text-align: left;">sas7bdat</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Excel</td>
+<td style="text-align: left;">xlsx, xls</td>
+<td style="text-align: left;"><code>read_excel()</code></td>
+<td style="text-align: left;">readxl (tidyverse)</td>
+</tr>
+</tbody>
+</table>
+<p>Note, that these lists are not comprehensive, and may other functions exist for importing data. Once you have been using R for a bit, maybe you will have a preference for which functions you prefer to use for which data type.</p>
+</section>
+<section id="metadata" class="level3">
+<h3 class="anchored" data-anchor-id="metadata">Metadata</h3>
+<p>When working with large datasets, you will very likely be working with “metadata” file which contains the information about each sample in your dataset.</p>
+<p><img src="../img/metadata_view.png" width="400"></p>
+<p>The metadata is very important information and we encourage you to think about creating a document with as much metadata you can record before you bring the data into R. <a href="https://datamanagement.hms.harvard.edu/metadata-overview">Here is some additional reading on metadata</a> from the <a href="https://datamanagement.hms.harvard.edu/">HMS Data Management Working Group</a>.</p>
+</section>
+<section id="the-read.csv-function" class="level3">
+<h3 class="anchored" data-anchor-id="the-read.csv-function">The <code>read.csv()</code> function</h3>
+<p>Let’s bring in the metadata file we downloaded earlier (<code>mouse_exp_design.csv</code> or <code>mouse_exp_design.txt</code>) using the <code>read.csv</code> function.</p>
+<p>First, check the arguments for the function using the <code>?</code> to ensure that you are entering all the information appropriately:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>?read.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="../img/read.table-help.png" width="450"></p>
+<p>The first thing you will notice is that you’ve pulled up the documentation for <code>read.table()</code>, this is because that is the parent function and all the other functions are in the same family.</p>
+<p>The next item on the documentation page is the function <strong>Description</strong>, which specifies that the output of this set of functions is going to be a <strong>data frame</strong> - “<em>Reads a file in table format and <strong>creates a data frame from it</strong>, with cases corresponding to lines and variables to fields in the file.</em>”</p>
+<p>In usage, all of the arguments listed for <code>read.table()</code> are the default values for all of the family members unless otherwise specified for a given function. Let’s take a look at 2 examples: 1. <strong>The separator</strong> - * in the case of <code>read.table()</code> it is <code>sep = ""</code> (space or tab) * whereas for <code>read.csv()</code> it is <code>sep = ","</code> (a comma). 2. <strong>The <code>header</code></strong> - This argument refers to the column headers that may (<code>TRUE</code>) or may not (<code>FALSE</code>) exist <strong>in the plain text file you are reading in</strong>. * in the case of <code>read.table()</code> it is <code>header = FALSE</code> (by default, it assumes you do not have column names) * whereas for <code>read.csv()</code> it is <code>header = TRUE</code> (by default, it assumes that all your columns have names listed).</p>
+<p><strong><em>The take-home from the “Usage” section for <code>read.csv()</code> is that it has one mandatory argument, the path to the file and filename in quotations; in our case that is <code>data/mouse_exp_design.csv</code> or <code>data/mouse_exp_design.txt</code>.</em></strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The <code>stringsAsFactors</code> argument
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that the <code>read.table {utils}</code> family of functions has an argument called <code>stringsAsFactors</code>, which by default is set to FALSE (you can double check this by searching the Help tab for <code>read.table</code> or running <code>?read.table</code> in the console).</p>
+<p>If <code>stringsAsFactors = TRUE</code>, any function in this family of functions will coerce <code>character</code> columns in the data you are reading in to <code>factor</code> columns (i.e., coerce from <code>vector</code> to <code>factor</code>) in the resulting data frame.</p>
+<p>If you want to maintain the <code>character vector</code> data structure (e.g., for gene names), you will want to make sure that <code>stringsAsFactors = FALSE</code>.</p>
+</div>
+</div>
+</section>
+<section id="create-a-data-frame-by-reading-in-the-file" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-data-frame-by-reading-in-the-file">Create a data frame by reading in the file</h3>
+<p>At this point, please check the extension for the <code>mouse_exp_design</code> file within your <code>data</code> folder. You will have to type it accordingly within the <code>read.csv()</code> function.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>read.csv</code> is not fussy about extensions for plain text files, so even though the file we are reading in is a comma-separated value file, it will be read in properly even with a <code>.txt</code> extension.</p>
+</div>
+</div>
+<p>Let’s read in the <code>mouse_exp_design</code> file and create a new data frame called <code>metadata</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"../data/mouse_exp_design.csv"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># OR </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># metadata &lt;- read.csv(file="../data/mouse_exp_design.txt")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>RStudio supports the automatic completion of code using the <kbd>Tab</kbd> key. This is especially helpful for when reading in files to ensure the correct file path. The tab completion feature also provides a shortcut to listing objects, and inline help for functions. <strong>Tab completion is your friend!</strong> We encourage you to use it whenever possible.</p>
+</div>
+</div>
+<details>
+<summary>
+<b>Click here to see how to import data using the <kbd>Import Dataset</kbd> button</b>
+</summary>
+<br>You can also use the <kbd>Import Dataset</kbd> button in your Environment pane to import data. This option is not as appealing because it can lack reproducibility if not documented properly, but it can be helpful when getting started. In order to use the <kbd>Import Dataset</kbd>:<br><br>
+<ol>
+<li>
+Left-click the <kbd>Import Dataset</kbd> button in the Environment pane
+</li>
+<li>
+Left-click <kbd>From Text (base…)</kbd>
+</li>
+<li>
+Navigate to the file you would like to import and select <kbd>Open</kbd>
+</li>
+<li>
+Type the name you would like the imported object to be called in the <code>Name</code> textbox.
+</li>
+<li>
+Select the delimiter that your file is using in the <code>Separator</code> dropdown menu
+</li>
+<li>
+Left-click <kbd>Import</kbd>
+</li>
+</ol>
+These steps are summarized in the GIF below:<br><br> <img src="../img/Import_dataset.gif" width="1000"><br><br> Now the dataset has been imported into your environment.<br><br> ::: callout-note If you are going to use this method, it could impact the reproducibility of your work, because the steps to do that import are not recorded anywhere. If you are going to use this method of importing data, it is <b><i>STRONGLY RECOMMENDED</i></b> that you copy the command that read the dataset in and is present in the console to an Rscript file. In the future, you can run that line of code from the Rscript file to recreate the data object. :::
+<blockquote class="blockquote">
+</blockquote>
+<hr>
+</details>
+<p>Go to your Global environment and click on the name of the data frame you just created.</p>
+<p><img src="../img/metadata_env.png" width="300"></p>
+<p>When you do this the metadata table will pop up on the top left hand corner of RStudio, right next to the R script.</p>
+<p><img src="../img/metadata_display.png" width="300"></p>
+<p>You should see a subtle coloring (blue-gray) of the first row and first column, the rest of the table will have a white background. This is because your first row and first columns have different properties than the rest of the table, they are the names of the rows and columns respectively.</p>
+<p><img src="../img/metadata_display_row_cols.png" width="300"></p>
+<p>Earlier we noted that the file we just read in had column names (first row of values) and how <code>read.csv()</code> deals with “headers”. In addition to column headers, <code>read.csv()</code> also assumes that the first column contains the row names. Not all functions in the <code>read.table()</code> family of functions will do this and depending on which one you use, you may have to specify an additional argument to properly assign the row names and column names.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Row names and column names are really handy when subsetting data structures and they are also helpful to identify samples or genes. We almost always use them with data frames.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Download <a href="https://github.com/hbctraining/Intro-to-R-flipped/raw/master/data/project-summary.txt">this tab-delimited <code>.txt</code> file</a> and save it in your project’s <code>data</code> folder.</li>
+<li>Read it in to R using <code>read.table()</code> with the approriate arguments and store it as the variable <code>proj_summary</code>. To figure out the appropriate arguments to use with <code>read.table()</code>, keep the following in mind:
+<ul>
+<li>all the columns in the input text file have column name/headers</li>
+<li>you want the first column of the text file to be used as row names (hint: look up the input for the <code>row.names =</code> argument in <code>read.table()</code>)</li>
+</ul></li>
+<li>Display the contents of <code>proj_summary</code> in your console</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="inspecting-data-structures" class="level2">
+<h2 class="anchored" data-anchor-id="inspecting-data-structures">Inspecting data structures</h2>
+<p>There are a wide selection of base functions in R that are useful for inspecting your data and summarizing it. Let’s use the <code>metadata</code> file that we created to test out data inspection functions.</p>
+<p>Take a look at the dataframe by typing out the variable name <code>metadata</code> and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns contain categorical information about the sample <code>genotype</code>(WT or KO), <code>celltype</code> (typeA or typeB), and <code>replicate number</code> (1,2, or 3).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>metadata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         genotype celltype replicate
+sample1        Wt    typeA         1
+sample2        Wt    typeA         2
+sample3        Wt    typeA         3
+sample4        KO    typeA         1
+sample5        KO    typeA         2
+sample6        KO    typeA         3
+sample7        Wt    typeB         1
+sample8        Wt    typeB         2
+sample9        Wt    typeB         3
+sample10       KO    typeB         1
+sample11       KO    typeB         2
+sample12       KO    typeB         3</code></pre>
+</div>
+</div>
+<p>Suppose we had a larger file, we might not want to display all the contents in the console. Instead we could check the top (the first 6 lines) of this <code>data.frame</code> using the function <code>head()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(metadata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        genotype celltype replicate
+sample1       Wt    typeA         1
+sample2       Wt    typeA         2
+sample3       Wt    typeA         3
+sample4       KO    typeA         1
+sample5       KO    typeA         2
+sample6       KO    typeA         3</code></pre>
+</div>
+</div>
+<section id="list-of-functions-for-data-inspection" class="level3">
+<h3 class="anchored" data-anchor-id="list-of-functions-for-data-inspection">List of functions for data inspection</h3>
+<p>We already saw how the functions <code>head()</code> and <code>str()</code> (in the releveling section) can be useful to check the content and the structure of a <code>data.frame</code>. Below is a non-exhaustive list of functions to get a sense of the content/structure of data. The list has been divided into functions that work on all types of objects, some that work only on vectors/factors (1 dimensional objects), and others that work on data frames and matrices (2 dimensional objects).</p>
+<p>We have some exercises below that will allow you to gain more familiarity with these. You will definitely be using some of them in the next few homework sections.</p>
+<ul>
+<li>All data structures - content display:
+<ul>
+<li><strong><code>str()</code>:</strong> compact display of data contents (similar to what you see in the Global environment)</li>
+<li><strong><code>class()</code>:</strong> displays the data type for vectors (e.g.&nbsp;character, numeric, etc.) and data structure for dataframes, matrices, lists</li>
+<li><strong><code>summary()</code>:</strong> detailed display of the contents of a given object, including descriptive statistics, frequencies</li>
+<li><strong><code>head()</code>:</strong> prints the first 6 entries (elements for 1-D objects, rows for 2-D objects)</li>
+<li><strong><code>tail()</code>:</strong> prints the last 6 entries (elements for 1-D objects, rows for 2-D objects)</li>
+</ul></li>
+<li>Vector and factor variables:
+<ul>
+<li><strong><code>length()</code>:</strong> returns the number of elements in a vector or factor</li>
+</ul></li>
+<li>Dataframe and matrix variables:
+<ul>
+<li><strong><code>dim()</code>:</strong> returns dimensions of the dataset (number_of_rows, number_of_columns) [Note, row numbers will always be displayed before column numbers in R]</li>
+<li><strong><code>nrow()</code>:</strong> returns the number of rows in the dataset</li>
+<li><strong><code>ncol()</code>:</strong> returns the number of columns in the dataset</li>
+<li><strong><code>rownames()</code>:</strong> returns the row names in the dataset<br>
+</li>
+<li><strong><code>colnames()</code>:</strong> returns the column names in the dataset</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Use the <code>class()</code> function on <code>glengths</code> and <code>metadata</code>, how does the output differ between the two?</li>
+<li>Use the <code>summary()</code> function on the <code>proj_summary</code> dataframe, what is the median “rRNA_rate”?</li>
+<li>How long is the <code>samplegroup</code> factor?</li>
+<li>What are the dimensions of the <code>proj_summary</code> dataframe?</li>
+<li>When you use the <code>rownames()</code> function on <code>metadata</code>, what is the <em>data structure</em> of the output?</li>
+<li>[Optional] How many elements in (how long is) the output of <code>colnames(proj_summary)</code>? Don’t count, but use another function to determine this.</li>
+</ul>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> 'Reading in and inspecting data'</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "Friday, September 8, 2017"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">authors:</span><span class="co"> Meeta Mistry, Mary Piper, Radhika Khetani</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Objectives</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Demonstrate how to read existing data into R</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Utilize base R functions to inspect data structures</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading data into R</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### The basics</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>Regardless of the specific analysis in R we are performing, we usually need to bring data in for any analysis being done in R, so learning how to read in data is a crucial component of learning to use R.</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>Many functions exist to read data in, and the function in R you use will depend on the file format being read in. Below we have a table with some examples of functions that can be used for importing some common text data types (plain text).</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>| Data type               | Extension | Function          | Package            |</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>|:------------------------|:----------|:------------------|:-------------------|</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>| Comma separated values  | csv       | <span class="in">`read.csv()`</span>      | utils (default)    |</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>|                         |           | <span class="in">`read_csv()`</span>      | readr (tidyverse)  |</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>| Tab separated values    | tsv       | <span class="in">`read_tsv()`</span>      | readr              |</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>| Other delimited formats | txt       | <span class="in">`read.table()`</span>    | utils              |</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>|                         |           | <span class="in">`read_table()`</span>    | readr              |</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>|                         |           | <span class="in">`read_delim()`</span>    | readr              |</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>For example, if we have text file where the columns are separated by commas (comma-separated values or comma-delimited), you could use the function <span class="in">`read.csv`</span>. However, if the data are separated by a different delimiter in a text file (e.g. ":", ";", " ", "\t"), you could use the generic <span class="in">`read.table`</span> function and specify the delimiter (<span class="in">`sep = " "`</span>) as an argument in the function. </span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>The <span class="in">`"\t"`</span> delimiter is shorthand for tab.</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>In the above table we refer to base R functions as being contained in the "utils" package. In addition to base R functions, we have also listed functions from some other packages that can be used to import data, specifically the "readr" package that installs when you install the "tidyverse" suite of packages.</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>In addition to plain text files, you can also import data from other statistical analysis packages and Excel using functions from different packages. </span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>| Data type               | Extension | Function          | Package            |</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>|:------------------------|:----------|:------------------|:-------------------|</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>| Stata version 13-14     | dta       | <span class="in">`readdta()`</span>       | haven              |</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>| Stata version 7-12      | dta       | <span class="in">`read.dta()`</span>      | foreign            |</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>| SPSS                    | sav       | <span class="in">`read.spss()`</span>     | foreign            |</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>| SAS                     | sas7bdat  | <span class="in">`read.sas7bdat()`</span> | sas7bdat           |</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>| Excel                   | xlsx, xls | <span class="in">`read_excel()`</span>    | readxl (tidyverse) |</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>Note, that these lists are not comprehensive, and may other functions exist for importing data. Once you have been using R for a bit, maybe you will have a preference for which functions you prefer to use for which data type.</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Metadata</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>When working with large datasets, you will very likely be working with "metadata" file which contains the information about each sample in your dataset.</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_view.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"400"</span><span class="kw">&gt;</span> </span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>The metadata is very important information and we encourage you to think about creating a document with as much metadata you can record before you bring the data into R. <span class="co">[</span><span class="ot">Here is some additional reading on metadata</span><span class="co">](https://datamanagement.hms.harvard.edu/metadata-overview)</span> from the <span class="co">[</span><span class="ot">HMS Data Management Working Group</span><span class="co">](https://datamanagement.hms.harvard.edu/)</span>.</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### The `read.csv()` function</span></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>Let's bring in the metadata file we downloaded earlier (<span class="in">`mouse_exp_design.csv`</span> or <span class="in">`mouse_exp_design.txt`</span>) using the <span class="in">`read.csv`</span> function. </span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>First, check the arguments for the function using the <span class="in">`?`</span> to ensure that you are entering all the information appropriately:</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>?read.csv</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/read.table-help.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"450"</span><span class="kw">&gt;</span> </span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>The first thing you will notice is that you've pulled up the documentation for <span class="in">`read.table()`</span>, this is because that is the parent function and all the other functions are in the same family. </span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>The next item on the documentation page is the function **Description**, which specifies that the output of this set of functions is going to be a **data frame** - "*Reads a file in table format and **creates a data frame from it**, with cases corresponding to lines and variables to fields in the file.*"</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>In usage, all of the arguments listed for <span class="in">`read.table()`</span> are the default values for all of the family members unless otherwise specified for a given function. Let's take a look at 2 examples:</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**The separator** - </span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>in the case of <span class="in">`read.table()`</span> it is <span class="in">`sep = ""`</span> (space or tab)</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>whereas for <span class="in">`read.csv()`</span> it is <span class="in">`sep = ","`</span> (a comma).</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The `header`** - This argument refers to the column headers that may (`TRUE`) or may not (`FALSE`) exist **in the plain text file you are reading in**. </span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>in the case of <span class="in">`read.table()`</span> it is <span class="in">`header = FALSE`</span> (by default, it assumes you do not have column names)</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>whereas for <span class="in">`read.csv()`</span> it is <span class="in">`header = TRUE`</span> (by default, it assumes that all your columns have names listed). </span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>***The take-home from the "Usage" section for `read.csv()` is that it has one mandatory argument, the path to the file and filename in quotations; in our case that is `data/mouse_exp_design.csv` or `data/mouse_exp_design.txt`.***</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="fu"># The `stringsAsFactors` argument</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>Note that the <span class="in">`read.table {utils}`</span> family of functions has an argument called <span class="in">`stringsAsFactors`</span>, which by default is set to FALSE (you can double check this by searching the Help tab for <span class="in">`read.table`</span> or running <span class="in">`?read.table`</span> in the console). </span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>If <span class="in">`stringsAsFactors = TRUE`</span>, any function in this family of functions will coerce <span class="in">`character`</span> columns in the data you are reading in to <span class="in">`factor`</span> columns (i.e., coerce from <span class="in">`vector`</span> to <span class="in">`factor`</span>) in the resulting data frame. </span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>If you want to maintain the <span class="in">`character vector`</span> data structure (e.g., for gene names), you will want to make sure that <span class="in">`stringsAsFactors = FALSE`</span>.</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Create a data frame by reading in the file</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>At this point, please check the extension for the <span class="in">`mouse_exp_design`</span> file within your <span class="in">`data`</span> folder. You will have to type it accordingly within the <span class="in">`read.csv()`</span> function.</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="in">`read.csv`</span> is not fussy about extensions for plain text files, so even though the file we are reading in is a comma-separated value file, it will be read in properly even with a <span class="in">`.txt`</span> extension.</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>Let's read in the <span class="in">`mouse_exp_design`</span> file and create a new data frame called <span class="in">`metadata`</span>.</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"../data/mouse_exp_design.csv"</span>)</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="co"># OR </span></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="co"># metadata &lt;- read.csv(file="../data/mouse_exp_design.txt")</span></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>RStudio supports the automatic completion of code using the <span class="kw">&lt;kbd&gt;</span>Tab<span class="kw">&lt;/kbd&gt;</span> key. This is especially helpful for when reading in files to ensure the correct file path. The tab completion feature also provides a shortcut to listing objects, and inline help for functions. **Tab completion is your friend!** We encourage you to use it whenever possible.</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;summary&gt;&lt;b&gt;</span>Click here to see how to import data using the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button<span class="kw">&lt;/b&gt;&lt;/summary&gt;</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span>You can also use the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button in your Environment pane to import data. This option is not as appealing because it can lack reproducibility if not documented properly, but it can be helpful when getting started. In order to use the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span>:<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ol&gt;&lt;li&gt;</span>Left-click the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button in the Environment pane<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Left-click <span class="kw">&lt;kbd&gt;</span>From Text (base...)<span class="kw">&lt;/kbd&gt;&lt;/li&gt;</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Navigate to the file you would like to import and select <span class="kw">&lt;kbd&gt;</span>Open<span class="kw">&lt;/kbd&gt;&lt;/li&gt;</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Type the name you would like the imported object to be called in the <span class="kw">&lt;code&gt;</span>Name<span class="kw">&lt;/code&gt;</span> textbox.<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Select the delimiter that your file is using in the <span class="kw">&lt;code&gt;</span>Separator<span class="kw">&lt;/code&gt;</span> dropdown menu<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Left-click <span class="kw">&lt;kbd&gt;</span>Import<span class="kw">&lt;/kbd&gt;&lt;/li&gt;&lt;/ol&gt;</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>These steps are summarized in the GIF below:<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Import_dataset.gif"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"1000"</span><span class="kw">&gt;&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>Now the dataset has been imported into your environment.<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>If you are going to use this method, it could impact the reproducibility of your work, because the steps to do that import are not recorded anywhere. If you are going to use this method of importing data, it is <span class="kw">&lt;b&gt;&lt;i&gt;</span>STRONGLY RECOMMENDED<span class="kw">&lt;/i&gt;&lt;/b&gt;</span> that you copy the command that read the dataset in and is present in the console to an Rscript file. In the future, you can run that line of code from the Rscript file to recreate the data object.</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;blockquote&gt;</span></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/blockquote&gt;</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>Go to your Global environment and click on the name of the data frame you just created. </span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_env.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>When you do this the metadata table will pop up on the top left hand corner of RStudio, right next to the R script.</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_display.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>You should see a subtle coloring (blue-gray) of the first row and first column, the rest of the table will have a white background. This is because your first row and first columns have different properties than the rest of the table, they are the names of the rows and columns respectively. </span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_display_row_cols.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>Earlier we noted that the file we just read in had column names (first row of values) and how <span class="in">`read.csv()`</span> deals with "headers". In addition to column headers, <span class="in">`read.csv()`</span> also assumes that the first column contains the row names. Not all functions in the <span class="in">`read.table()`</span> family of functions will do this and depending on which one you use, you may have to specify an additional argument to properly assign the row names and column names.</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>Row names and column names are really handy when subsetting data structures and they are also helpful to identify samples or genes. We almost always use them with data frames.</span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1</span></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Download <span class="co">[</span><span class="ot">this tab-delimited `.txt` file</span><span class="co">](https://github.com/hbctraining/Intro-to-R-flipped/raw/master/data/project-summary.txt)</span> and save it in your  project's <span class="in">`data`</span> folder.</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Read it in to R using <span class="in">`read.table()`</span> with the approriate arguments and store it as the variable <span class="in">`proj_summary`</span>. To figure out the appropriate arguments to use with <span class="in">`read.table()`</span>, keep the following in mind:</span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all the columns in the input text file have column name/headers</span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>you want the first column of the text file to be used as row names (hint: look up the input for the <span class="in">`row.names =`</span> argument in <span class="in">`read.table()`</span>)</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Display the contents of <span class="in">`proj_summary`</span> in your console</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inspecting data structures</span></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>There are a wide selection of base functions in R that are useful for inspecting your data and summarizing it. Let's use the <span class="in">`metadata`</span> file that we created to test out data inspection functions. </span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>Take a look at the dataframe by typing out the variable name <span class="in">`metadata`</span> and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns contain categorical information about the sample <span class="in">`genotype`</span>(WT or KO),  <span class="in">`celltype`</span> (typeA or typeB), and <span class="in">`replicate number`</span> (1,2, or 3).</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>metadata</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>Suppose we had a larger file, we might not want to display all the contents in the console. Instead we could check the top (the first 6 lines) of this <span class="in">`data.frame`</span> using the function <span class="in">`head()`</span>:</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(metadata)</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### List of functions for data inspection</span></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>We already saw how the functions <span class="in">`head()`</span> and <span class="in">`str()`</span> (in the releveling section) can be useful to check the content and the structure of a <span class="in">`data.frame`</span>. Below is a non-exhaustive list of functions to get a sense of the content/structure of data. The list has been divided into functions that work on all types of objects, some that work only on vectors/factors (1 dimensional objects), and others that work on data frames and matrices (2 dimensional objects).</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>We have some exercises below that will allow you to gain more familiarity with these. You will definitely be using some of them in the next few homework sections.</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>All data structures - content display:</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`str()`:** compact display of data contents (similar to what you see in the Global environment)</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`class()`:** displays the data type for vectors (e.g. character, numeric, etc.) and data structure for dataframes, matrices, lists</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`summary()`:** detailed display of the contents of a given object, including descriptive statistics, frequencies</span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`head()`:**  prints the first 6 entries (elements for 1-D objects, rows for 2-D objects)</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`tail()`:** prints the last 6 entries (elements for 1-D objects, rows for 2-D objects)</span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Vector and factor variables: </span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`length()`:** returns the number of elements in a vector or factor</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Dataframe and matrix variables:</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`dim()`:** returns dimensions of the dataset (number_of_rows, number_of_columns) <span class="co">[</span><span class="ot">Note, row numbers will always be displayed before column numbers in R</span><span class="co">]</span></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`nrow()`:** returns the number of rows in the dataset</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`ncol()`:** returns the number of columns in the dataset</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`rownames()`:** returns the row names in the dataset  </span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`colnames()`:** returns the column names in the dataset</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2</span></span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use the <span class="in">`class()`</span> function on <span class="in">`glengths`</span> and <span class="in">`metadata`</span>, how does the output differ between the two?</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use the <span class="in">`summary()`</span> function on the <span class="in">`proj_summary`</span> dataframe, what is the median "rRNA_rate"?</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How long is the <span class="in">`samplegroup`</span> factor?</span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>What are the dimensions of the <span class="in">`proj_summary`</span> dataframe?</span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>When you use the <span class="in">`rownames()`</span> function on <span class="in">`metadata`</span>, what is the *data structure* of the output?</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Optional</span><span class="co">]</span> How many elements in (how long is) the output of <span class="in">`colnames(proj_summary)`</span>? Don't count, but use another function to determine this.</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>:::</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. <br> These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited. <br> Some materials used are adapted from work that is Copyright © <a href="http://datacarpentry.org/">Data Carpentry</a>. All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
