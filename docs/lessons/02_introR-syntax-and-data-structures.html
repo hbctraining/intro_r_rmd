@@ -456,34 +456,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="vectors" class="level3">
 <h3 class="anchored" data-anchor-id="vectors">Vectors</h3>
 <p>A vector is the most common and basic data structure in R, and is pretty much the workhorse of R. It’s basically just a collection of values, mainly either numbers,</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/vector2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">numeric vector</figcaption>
-</figure>
-</div>
+<p><img src="../img/vector2.png" class="img-fluid"></p>
 <p>or characters,</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/vector1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">character vector</figcaption>
-</figure>
-</div>
+<p><img src="../img/vector1.png" class="img-fluid"></p>
 <p>or logical values,</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/vector5-logical.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">logical vector</figcaption>
-</figure>
-</div>
+<p><img src="../img/vector5-logical.png" class="img-fluid"></p>
 <p><strong>Note that all values in a vector must be of the same data type.</strong> If you try to create a vector with more than a single data type, R will try to coerce it into a single data type.</p>
 <p>For example, if you were to try to create the following vector:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/vector3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">mixed vector</figcaption>
-</figure>
-</div>
+<p><img src="../img/vector3.png" class="img-fluid"></p>
 <p>R will coerce it into:</p>
 <div class="center">
 <p><img src="../img/vector4.png" width="400"></p>
@@ -555,12 +535,7 @@ Exercises
 <h3 class="anchored" data-anchor-id="factors">Factors</h3>
 <p>A <strong>factor</strong> is a special type of vector that is used to <strong>store categorical data</strong>. Each unique category is referred to as a <strong>factor level</strong> (i.e.&nbsp;category = level). Factors are built on top of integer vectors such that each <strong>factor level</strong> is assigned an <strong>integer value</strong>, creating value-label pairs.</p>
 <p>For instance, if we have four animals and the first animal is female, the second and third are male, and the fourth is female, we could create a factor that appears like a vector, but has integer values stored under-the-hood. The integer value assigned is a one for females and a two for males. The numbers are assigned in alphabetical order, so because the f- in females comes before the m- in males in the alphabet, females get assigned a one and males a two. In later lessons we will show you how you could change these assignments.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/factors_sm.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">factors</figcaption>
-</figure>
-</div>
+<p><img src="../img/factors_sm.png" class="img-fluid"></p>
 <p>Let’s create a factor vector and explore a bit more. We’ll start by creating a character vector describing three different levels of expression. Perhaps the first value represents expression in mouse1, the second value represents expression in mouse2, and so on and so forth:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector and store the vector as a variable called 'expression'</span></span>
@@ -572,19 +547,9 @@ Exercises
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>expression <span class="ot">&lt;-</span> <span class="fu">factor</span>(expression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>So, what exactly happened when we applied the <code>factor()</code> function?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/factors_new.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">factor_new</figcaption>
-</figure>
-</div>
+<p><img src="../img/factors_new.png" class="img-fluid"></p>
 <p>The expression vector is categorical, in that all the values in the vector belong to a set of categories; in this case, the categories are <code>low</code>, <code>medium</code>, and <code>high</code>. By turning the expression vector into a factor, the <strong>categories are assigned integers alphabetically</strong>, with high=1, low=2, medium=3. This in effect assigns the different factor levels. You can view the newly created factor variable and the levels in the <strong>Environment</strong> window.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/factors.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Factor variables in environment</figcaption>
-</figure>
-</div>
+<p><img src="../img/factors.png" class="img-fluid"></p>
 <p>So now that we have an idea of what factors are, when would you ever want to use them?</p>
 <p>Factors are extremely valuable for many operations often performed in R. For instance, factors can give order to values with no intrinsic order. In the previous ‘expression’ vector, if I wanted the low category to be less than the medium category, then we could do this using factors. Also, factors are necessary for many statistical methods. For example, descriptive statistics can be obtained for character vectors if you have the categorical information stored as a factor. Also, if you want to denote which category is your base level for a statistical comparison, then you would need to have your category variable stored as a factor with the base level assigned to 1. Anytime that it is helpful to have the categories thought of as groups in an analysis, the factor function makes this possible. For instance, if you want to color your plots by treatment type, then you would need the treatment variable to be a factor.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -608,23 +573,13 @@ Exercises
 <section id="matrix" class="level3">
 <h3 class="anchored" data-anchor-id="matrix">Matrix</h3>
 <p>A <code>matrix</code> in R is a collection of vectors of <strong>same length and identical datatype</strong>. Vectors can be combined as columns in the matrix or by row, to create a 2-dimensional structure.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/matrix.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">matrix</figcaption>
-</figure>
-</div>
+<p><img src="../img/matrix.png" class="img-fluid"></p>
 <p>Matrices are used commonly as part of the mathematical machinery of statistics. They are usually of numeric datatype and used in computational algorithms to serve as a checkpoint. For example, if input data is not of identical data type (numeric, character, etc.), the <code>matrix()</code> function will throw an error and stop any downstream code execution.</p>
 </section>
 <section id="data-frame" class="level3">
 <h3 class="anchored" data-anchor-id="data-frame">Data Frame</h3>
 <p>A <code>data.frame</code> is the <em>de facto</em> data structure for most tabular data and what we use for statistics and plotting. A <code>data.frame</code> is similar to a matrix in that it’s a collection of vectors of the <strong>same length</strong> and each vector represents a column. However, in a dataframe <strong>each vector can be of a different data type</strong> (e.g., characters, integers, factors). In the data frame pictured below, the first column is character, the second column is numeric, the third is character, and the fourth is logical.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/dataframe.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">dataframe</figcaption>
-</figure>
-</div>
+<p><img src="../img/dataframe.png" class="img-fluid"></p>
 <p>A data frame is the most common way of storing data in R, and if used systematically makes data analysis easier.</p>
 <p>We can create a dataframe by bringing <strong>vectors</strong> together to <strong>form the columns</strong>. We do this using the <code>data.frame()</code> function, and giving the function the different vectors we would like to bind together. <em>This function will only work for vectors of the same length.</em></p>
 <div class="cell">
@@ -666,12 +621,7 @@ Exercises
 <section id="lists" class="level3">
 <h3 class="anchored" data-anchor-id="lists">Lists</h3>
 <p>Lists are a data structure in R that can be perhaps a bit daunting at first, but soon become amazingly useful. A list is a data structure that can hold any number of any types of other data structures.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/list.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">list</figcaption>
-</figure>
-</div>
+<p><img src="../img/list.png" class="img-fluid"></p>
 <p>If you have variables of different data structures you wish to combine, you can put all of those into one list object by using the <code>list()</code> function and placing all the items you wish to combine within parentheses:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(species, df, number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1056,21 +1006,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>A vector is the most common and basic data structure in R, and is pretty much the workhorse of R. It's basically just a collection of values, mainly either numbers,</span>
 <span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a><span class="al">![numeric vector](../img/vector2.png)</span></span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/vector2.png)</span></span>
 <span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>or characters,</span>
 <span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a><span class="al">![character vector](../img/vector1.png)</span></span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/vector1.png)</span></span>
 <span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>or logical values,</span>
 <span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a><span class="al">![logical vector](../img/vector5-logical.png)</span></span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/vector5-logical.png)</span></span>
 <span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>**Note that all values in a vector must be of the same data type.** If you try to create a vector with more than a single data type, R will try to coerce it into a single data type.</span>
 <span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>For example, if you were to try to create the following vector:</span>
 <span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a><span class="al">![mixed vector](../img/vector3.png)</span></span>
+<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/vector3.png)</span></span>
 <span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a>R will coerce it into:</span>
 <span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a></span>
@@ -1138,7 +1088,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-140"><a href="#cb16-140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-141"><a href="#cb16-141" aria-hidden="true" tabindex="-1"></a>For instance, if we have four animals and the first animal is female, the second and third are male, and the fourth is female, we could create a factor that appears like a vector, but has integer values stored under-the-hood. The integer value assigned is a one for females and a two for males. The numbers are assigned in alphabetical order, so because the f- in females comes before the m- in males in the alphabet, females get assigned a one and males a two. In later lessons we will show you how you could change these assignments.</span>
 <span id="cb16-142"><a href="#cb16-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-143"><a href="#cb16-143" aria-hidden="true" tabindex="-1"></a><span class="al">![factors](../img/factors_sm.png)</span></span>
+<span id="cb16-143"><a href="#cb16-143" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/factors_sm.png)</span></span>
 <span id="cb16-144"><a href="#cb16-144" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-145"><a href="#cb16-145" aria-hidden="true" tabindex="-1"></a>Let's create a factor vector and explore a bit more. We'll start by creating a character vector describing three different levels of expression. Perhaps the first value represents expression in mouse1, the second value represents expression in mouse2, and so on and so forth:</span>
 <span id="cb16-146"><a href="#cb16-146" aria-hidden="true" tabindex="-1"></a></span>
@@ -1156,11 +1106,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-162"><a href="#cb16-162" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-163"><a href="#cb16-163" aria-hidden="true" tabindex="-1"></a>So, what exactly happened when we applied the <span class="in">`factor()`</span> function?</span>
 <span id="cb16-164"><a href="#cb16-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-165"><a href="#cb16-165" aria-hidden="true" tabindex="-1"></a><span class="al">![factor_new](../img/factors_new.png)</span></span>
+<span id="cb16-165"><a href="#cb16-165" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/factors_new.png)</span></span>
 <span id="cb16-166"><a href="#cb16-166" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-167"><a href="#cb16-167" aria-hidden="true" tabindex="-1"></a>The expression vector is categorical, in that all the values in the vector belong to a set of categories; in this case, the categories are <span class="in">`low`</span>, <span class="in">`medium`</span>, and <span class="in">`high`</span>. By turning the expression vector into a factor, the **categories are assigned integers alphabetically**, with high=1, low=2, medium=3. This in effect assigns the different factor levels. You can view the newly created factor variable and the levels in the **Environment** window.</span>
 <span id="cb16-168"><a href="#cb16-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-169"><a href="#cb16-169" aria-hidden="true" tabindex="-1"></a><span class="al">![Factor variables in environment](../img/factors.png)</span></span>
+<span id="cb16-169"><a href="#cb16-169" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/factors.png)</span></span>
 <span id="cb16-170"><a href="#cb16-170" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-171"><a href="#cb16-171" aria-hidden="true" tabindex="-1"></a>So now that we have an idea of what factors are, when would you ever want to use them?</span>
 <span id="cb16-172"><a href="#cb16-172" aria-hidden="true" tabindex="-1"></a></span>
@@ -1180,7 +1130,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-186"><a href="#cb16-186" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-187"><a href="#cb16-187" aria-hidden="true" tabindex="-1"></a>A <span class="in">`matrix`</span> in R is a collection of vectors of **same length and identical datatype**. Vectors can be combined as columns in the matrix or by row, to create a 2-dimensional structure.</span>
 <span id="cb16-188"><a href="#cb16-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-189"><a href="#cb16-189" aria-hidden="true" tabindex="-1"></a><span class="al">![matrix](../img/matrix.png)</span></span>
+<span id="cb16-189"><a href="#cb16-189" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/matrix.png)</span></span>
 <span id="cb16-190"><a href="#cb16-190" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-191"><a href="#cb16-191" aria-hidden="true" tabindex="-1"></a>Matrices are used commonly as part of the mathematical machinery of statistics. They are usually of numeric datatype and used in computational algorithms to serve as a checkpoint. For example, if input data is not of identical data type (numeric, character, etc.), the <span class="in">`matrix()`</span> function will throw an error and stop any downstream code execution.</span>
 <span id="cb16-192"><a href="#cb16-192" aria-hidden="true" tabindex="-1"></a></span>
@@ -1188,7 +1138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-194"><a href="#cb16-194" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-195"><a href="#cb16-195" aria-hidden="true" tabindex="-1"></a>A <span class="in">`data.frame`</span> is the *de facto* data structure for most tabular data and what we use for statistics and plotting. A `data.frame` is similar to a matrix in that it's a collection of vectors of the **same length** and each vector represents a column. However, in a dataframe **each vector can be of a different data type** (e.g., characters, integers, factors). In the data frame pictured below, the first column is character, the second column is numeric, the third is character, and the fourth is logical.</span>
 <span id="cb16-196"><a href="#cb16-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-197"><a href="#cb16-197" aria-hidden="true" tabindex="-1"></a><span class="al">![dataframe](../img/dataframe.png)</span></span>
+<span id="cb16-197"><a href="#cb16-197" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/dataframe.png)</span></span>
 <span id="cb16-198"><a href="#cb16-198" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-199"><a href="#cb16-199" aria-hidden="true" tabindex="-1"></a>A data frame is the most common way of storing data in R, and if used systematically makes data analysis easier.</span>
 <span id="cb16-200"><a href="#cb16-200" aria-hidden="true" tabindex="-1"></a></span>
@@ -1224,7 +1174,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-236"><a href="#cb16-236" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-237"><a href="#cb16-237" aria-hidden="true" tabindex="-1"></a>Lists are a data structure in R that can be perhaps a bit daunting at first, but soon become amazingly useful. A list is a data structure that can hold any number of any types of other data structures.</span>
 <span id="cb16-238"><a href="#cb16-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-239"><a href="#cb16-239" aria-hidden="true" tabindex="-1"></a><span class="al">![list](../img/list.png)</span></span>
+<span id="cb16-239"><a href="#cb16-239" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/list.png)</span></span>
 <span id="cb16-240"><a href="#cb16-240" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-241"><a href="#cb16-241" aria-hidden="true" tabindex="-1"></a>If you have variables of different data structures you wish to combine, you can put all of those into one list object by using the <span class="in">`list()`</span> function and placing all the items you wish to combine within parentheses:</span>
 <span id="cb16-242"><a href="#cb16-242" aria-hidden="true" tabindex="-1"></a></span>
