@@ -357,6 +357,6 @@ II. **Complete the exercises**:
 
 ## Cheatsheets
 
--   [base R cheatsheet](../cheatsheets/base-r.pdf)
--   [RStudio cheatsheet](../cheatsheets/rstudio-ide.pdf)
--   [ggplot2 cheatsheet](../cheatsheets/data-visualization-2.1.pdf)
+-   [base R cheatsheet](cheatsheets/base-r.pdf)
+-   [RStudio cheatsheet](cheatsheets/rstudio-ide.pdf)
+-   [ggplot2 cheatsheet](cheatsheets/data-visualization-2.1.pdf)
