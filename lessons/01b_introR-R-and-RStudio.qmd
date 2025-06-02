@@ -89,7 +89,7 @@ Before you are able to use Posit Cloud, you will need to make a free account on 
 
 <img src="../img/Join_workspace_annotated.png" width="600"/>
 
-Left-click the "Join" Button and it will take you to a webpage that looks like the one below:
+Once you hit the "Join" Button and it will take you to a webpage that looks like the one below:
 
 <img src="../img/Open_hamburger_annotated.png" width="600"/>
 
@@ -97,11 +97,7 @@ You have now joined the Harvard Chan Bioinformatics Core's Introduction to R wor
 
 ## Overview of Posit Cloud Workspaces
 
-Left-click on the Hamburger button in the top left to reveal your available workspaces.
-
-<img src="../img/Open_hamburger_2_annotated.png" width="600"/>
-
-On the top of the left-hand panel you should see a section called "Spaces". Within it you should see three options:
+In the left-hand panel you should see a section called "Spaces". Within it you should see three options:
 
 -   **Your Workspace** - This is where you can use Posit Cloud's resources in accordance with your account's limits. If it is the free account then it would be 25 compute hours per month and 1GB of RAM.
 
@@ -146,7 +142,7 @@ The RStudio interface should now look like this:
 
 <img src="../img/Initial_state_annotated.png" width="800"/>
 
-Next, we are going to create an Rscript to keep a record of our work, but first we will implement good data management practices and create a folder to hold this script. In the bottom-right panel there should be a button that has a folder with a green plus on it and says "New Folder", left-click this button:
+Next, we are going to create an Rscript to keep a record of our work, but first we will implement **good data management practices** and create a folder to hold this script. In the bottom-right panel there should be a button that has a folder with a green plus on it and says "New Folder", click this button:
 
 <img src="../img/New_folder.png" width="800"/>
 
@@ -154,15 +150,14 @@ Next, we are going to create an Rscript to keep a record of our work, but first 
 Depending on the size of your window, the "New Folder" button may just have the icon or the icon and the word "Folder".
 :::
 
-A window should pop-up prompting you to provide a name for the folder. Type "scripts" into the text box and left-click "OK":
+A window should pop-up prompting you to provide a name for the folder. Type "scripts" into the text box and click "OK":
 
 <img src="../img/New_folder_2_annotated.png" width="800"/>
 
 Now in the bottom-left panel, you will see a "scripts" folder.
 
-<img src="../img/Added_folder_annotated.png" width="800"/>
 
-Now we will create the Rscript that we will write our code in. In order to create an Rscript, left-click "File" in the top-left, then "New File" and then left-click "R Script".
+Next, we will **create the Rscript** that we will write our code in. In order to create an Rscript, click on the "File" menu option in the top-left, then "New File" and then select "R Script".
 
 <img src="../img/Create_R_script_annotated.png" width="800"/>
 
@@ -170,17 +165,11 @@ This will create an R Script as the top panel on the left side of your RStudio w
 
 <img src="../img/Added_R_script_annotated.png" width="800"/>
 
-Before we go any further, let's save our new R Script by left-clicking "File" in the top-left and left-clicking "Save As...".
+Before we go any further, let's **save our new R Script** by following the steps listed below:
 
-<img src="../img/Save_as_annotated.png" width="800"/>
-
-We are going to place this new R Script within our newly created "scripts" folder, so left-click the "scripts" folder.
-
-<img src="../img/Select_scripts_folder_annotated.png" width="800"/>
-
-Let's name our R Script as "Intro-to-R.R" in the text field and left-click "Save".
-
-<img src="../img/Save_R_script_annotated.png" width="800"/>
+1. Click on the "File" menu option in the top-left and find "Save As...".
+2. You will see a finder window pop-up showng you working directory. Click the "scripts" folder.
+3. Let's name our R Script as "Intro-to-R.R" in the text field and click on the "Save" button
 
 Now our RStudio window should look like this:
 
