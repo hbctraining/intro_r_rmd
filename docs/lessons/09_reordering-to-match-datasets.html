@@ -470,12 +470,7 @@ Exercises
 <ol type="1">
 <li>Now that we know how to reorder using indices, let’s try to use it to reorder the contents of one vector to match the contents of another. Let’s create the vectors <code>first</code> and <code>second</code> as detailed below:</li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/match1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">matching4</figcaption>
-</figure>
-</div>
+<p><img src="../img/match1.png" class="img-fluid"></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>first <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>,<span class="st">"E"</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>second <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"B"</span>,<span class="st">"D"</span>,<span class="st">"E"</span>,<span class="st">"A"</span>,<span class="st">"C"</span>)  <span class="co"># same letters but different order</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -519,23 +514,13 @@ Exercises
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reordering and saving the output to a variable</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>second_reordered <span class="ot">&lt;-</span> second[reorder_idx]  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/match3-reordered.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">matching7</figcaption>
-</figure>
-</div>
+<p><img src="../img/match3-reordered.png" class="img-fluid"></p>
 <p>Now that we know how <code>match()</code> works, let’s change vector <code>second</code> so that only a subset are retained:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>first <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>,<span class="st">"E"</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>second <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"D"</span>,<span class="st">"B"</span>,<span class="st">"A"</span>)  <span class="co"># remove values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/match2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">matching5</figcaption>
-</figure>
-</div>
+<p><img src="../img/match2.png" class="img-fluid"></p>
 <p>And try to <code>match()</code> again:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">match</span>(first,second)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -995,7 +980,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb33-86"><a href="#cb33-86" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-87"><a href="#cb33-87" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Now that we know how to reorder using indices, let's try to use it to reorder the contents of one vector to match the contents of another. Let's create the vectors <span class="in">`first`</span> and <span class="in">`second`</span> as detailed below:</span>
 <span id="cb33-88"><a href="#cb33-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-89"><a href="#cb33-89" aria-hidden="true" tabindex="-1"></a><span class="al">![matching4](../img/match1.png)</span></span>
+<span id="cb33-89"><a href="#cb33-89" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/match1.png)</span></span>
 <span id="cb33-90"><a href="#cb33-90" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-93"><a href="#cb33-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb33-94"><a href="#cb33-94" aria-hidden="true" tabindex="-1"></a>first <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>,<span class="st">"E"</span>)</span>
@@ -1048,7 +1033,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb33-149"><a href="#cb33-149" aria-hidden="true" tabindex="-1"></a>second_reordered <span class="ot">&lt;-</span> second[reorder_idx]  </span>
 <span id="cb33-150"><a href="#cb33-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb33-151"><a href="#cb33-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-152"><a href="#cb33-152" aria-hidden="true" tabindex="-1"></a><span class="al">![matching7](../img/match3-reordered.png)</span></span>
+<span id="cb33-152"><a href="#cb33-152" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/match3-reordered.png)</span></span>
 <span id="cb33-153"><a href="#cb33-153" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-154"><a href="#cb33-154" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-155"><a href="#cb33-155" aria-hidden="true" tabindex="-1"></a>Now that we know how <span class="in">`match()`</span> works, let's change vector <span class="in">`second`</span> so that only a subset are retained:</span>
@@ -1058,7 +1043,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb33-161"><a href="#cb33-161" aria-hidden="true" tabindex="-1"></a>second <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"D"</span>,<span class="st">"B"</span>,<span class="st">"A"</span>)  <span class="co"># remove values</span></span>
 <span id="cb33-162"><a href="#cb33-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb33-163"><a href="#cb33-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-164"><a href="#cb33-164" aria-hidden="true" tabindex="-1"></a><span class="al">![matching5](../img/match2.png)</span></span>
+<span id="cb33-164"><a href="#cb33-164" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/match2.png)</span></span>
 <span id="cb33-165"><a href="#cb33-165" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-166"><a href="#cb33-166" aria-hidden="true" tabindex="-1"></a>And try to <span class="in">`match()`</span> again:</span>
 <span id="cb33-167"><a href="#cb33-167" aria-hidden="true" tabindex="-1"></a></span>

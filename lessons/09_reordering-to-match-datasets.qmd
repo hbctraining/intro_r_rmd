@@ -72,7 +72,7 @@ reorder_teach <- teaching_team[c(5, 4, 10, 6, 9, 2, 8, 1, 7, 3)]
 
 1. Now that we know how to reorder using indices, let's try to use it to reorder the contents of one vector to match the contents of another. Let's create the vectors `first` and `second` as detailed below:
 
-![matching4](../img/match1.png)
+![](../img/match1.png)
 
 ```{r}
 first <- c("A","B","C","D","E")
@@ -125,7 +125,7 @@ If the output looks good, we can save the reordered vector to a new variable.
 second_reordered <- second[reorder_idx]  
 ```
 
-![matching7](../img/match3-reordered.png)
+![](../img/match3-reordered.png)
 
 
 Now that we know how `match()` works, let's change vector `second` so that only a subset are retained:
@@ -135,7 +135,7 @@ first <- c("A","B","C","D","E")
 second <- c("D","B","A")  # remove values
 ```
 
-![matching5](../img/match2.png)
+![](../img/match2.png)
 
 And try to `match()` again:
 
