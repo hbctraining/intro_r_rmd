@@ -35,7 +35,7 @@ Let's start by creating a vector called age:
 age <- c(15, 22, 45, 52, 73, 81)
 ```
 
-![vector indices](../img/vector-index.png)
+![](../img/vector-index.png)
 
 Suppose we only wanted the fifth value of this vector, we would use the following syntax:
 
@@ -74,9 +74,9 @@ Alternatively, if you wanted the reverse could try `4:1` for instance, and see w
 
 1. Create a vector called alphabets with the following letters, C, D, X, L, F.
 2. Use the associated indices along with `[ ]` to do the following:
-	* only display C, D and F
-	* display all except X
-	* display the letters in the opposite order (F, L, X, D, C)
+	* Only display C, D and F
+	* Display all except X
+	* Display the letters in the opposite order (F, L, X, D, C)
 
 :::
 
