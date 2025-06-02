@@ -93,7 +93,9 @@ Here we have the code to install `ggplot2`, through Bioconductor:
 BiocManager::install("ggplot2")
 ```
 
-> The code above may not be familiar to you - it is essentially using a new operator, a double colon `::` to execute a function from a particular package. This is the syntax: `package::function_name()`.
+::: callout-note
+The code above may not be familiar to you - it is essentially using a new operator, a double colon `::` to execute a function from a particular package. This is the syntax: `package::function_name()`.
+:::
 
 ### Package installation from source
 
@@ -118,7 +120,8 @@ library(ggplot2)
 
 You can also check what is loaded in your current environment by using `sessionInfo()` or `search()` and you should see your package listed as:
 
-```         
+```{r}
+#| eval: false
 other attached packages:
 [1] ggplot2_2.0.0
 ```
