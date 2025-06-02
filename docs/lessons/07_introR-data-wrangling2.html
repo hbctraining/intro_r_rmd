@@ -406,12 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dataframes" class="level3">
 <h3 class="anchored" data-anchor-id="dataframes">Dataframes</h3>
 <p>Dataframes (and matrices) have 2 dimensions (rows and columns), so if we want to select some specific data from it we need to specify the “coordinates” we want from it. We use the same square bracket notation but rather than providing a single index, there are <em>two indices required</em>. Within the square bracket, <strong>row numbers come first followed by column numbers (and the two are separated by a comma)</strong>. Let’s explore the <code>metadata</code> dataframe, shown below are the first six samples:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/metadata.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">metadata</figcaption>
-</figure>
-</div>
+<p><img src="../img/metadata.png" class="img-fluid"></p>
 <p>Let’s say we wanted to extract the wild type (<code>Wt</code>) value that is present in the first row and the first column. To extract it, just like with vectors, we give the name of the data frame that we want to extract from, followed by the square brackets. Now inside the square brackets we give the coordinates or indices for the rows in which the value(s) are present, followed by a comma, then the coordinates or indices for the columns in which the value(s) are present. We know the wild type value is in the first row if we count from the top, so we put a one, then a comma. The wild type value is also in the first column, counting from left to right, so we put a one in the columns space too.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract value 'Wt'</span></span>
@@ -1131,7 +1126,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>Dataframes (and matrices) have 2 dimensions (rows and columns), so if we want to select some specific data from it we need to specify the "coordinates" we want from it. We use the same square bracket notation but rather than providing a single index, there are *two indices required*. Within the square bracket, **row numbers come first followed by column numbers (and the two are separated by a comma)**. Let's explore the <span class="in">`metadata`</span> dataframe, shown below are the first six samples:</span>
 <span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a><span class="al">![metadata](../img/metadata.png)</span></span>
+<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/metadata.png)</span></span>
 <span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>Let's say we wanted to extract the wild type (<span class="in">`Wt`</span>) value that is present in the first row and the first column. To extract it, just like with vectors, we give the name of the data frame that we want to extract from, followed by the square brackets. Now inside the square brackets we give the coordinates or indices for the rows in which the value(s) are present, followed by a comma, then the coordinates or indices for the columns in which the value(s) are present. We know the wild type value is in the first row if we count from the top, so we put a one, then a comma. The wild type value is also in the first column, counting from left to right, so we put a one in the columns space too. </span>
 <span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a></span>

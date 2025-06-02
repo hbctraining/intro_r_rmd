@@ -495,12 +495,7 @@ ENSMUSG00000000049  0.2567330</code></pre>
 </div>
 <p>The returned logical vector denotes which elements in <code>A</code> are also in <code>B</code> - the first and third elements, which are 1 and 5.</p>
 <p>We saw previously that we could use the output from a logical expression to subset data by returning only the values corresponding to <code>TRUE</code>. Therefore, we can use the output logical vector to subset our data, and return only those elements in <code>A</code>, which are also in <code>B</code> by returning only the TRUE values:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/in-operator1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">matching1</figcaption>
-</figure>
-</div>
+<p><img src="../img/in-operator1.png" class="img-fluid"></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>intersection <span class="ot">&lt;-</span> A <span class="sc">%in%</span> B</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>intersection</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -508,24 +503,14 @@ ENSMUSG00000000049  0.2567330</code></pre>
 <pre><code>[1]  TRUE FALSE  TRUE FALSE FALSE FALSE</code></pre>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/in-operator2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">matching2</figcaption>
-</figure>
-</div>
+<p><img src="../img/in-operator2.png" class="img-fluid"></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>A[intersection]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 5</code></pre>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../img/in-operator3.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">matching3</figcaption>
-</figure>
-</div>
+<p><img src="../img/in-operator3.png" class="img-fluid"></p>
 <p>In these previous examples, the vectors were so small that it’s easy to check every logical value by eye; but this is not practical when we work with large datasets (e.g.&nbsp;a vector with 1000 logical values). Instead, we can use <code>any</code> function. Given a logical vector, this function will tell you whether <strong>at least one value</strong> is <code>TRUE</code>. It provides us a quick way to assess if <strong>any of the values contained in vector A are also in vector B</strong>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(A <span class="sc">%in%</span> B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -546,7 +531,7 @@ ENSMUSG00000000049  0.2567330</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<a href="../results/answer_keys/07_matching_answer_key.md#exercise-1-solution">Exercises</a>
+<a href="../lessons/answer_keys/07_matching_answer_key.html#exercise-1-solution">Exercises</a>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -626,7 +611,7 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<a href="../results/answer_keys/07_matching_answer_key.md#exercise-2-solution">Exercises</a>
+<a href="../lessons/answer_keys/07_matching_answer_key.html#exercise-2-solution">Exercises</a>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1022,20 +1007,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb37-99"><a href="#cb37-99" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-100"><a href="#cb37-100" aria-hidden="true" tabindex="-1"></a>We saw previously that we could use the output from a logical expression to subset data by returning only the values corresponding to <span class="in">`TRUE`</span>. Therefore, we can use the output logical vector to subset our data, and return only those elements in <span class="in">`A`</span>, which are also in <span class="in">`B`</span> by returning only the TRUE values:</span>
 <span id="cb37-101"><a href="#cb37-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-102"><a href="#cb37-102" aria-hidden="true" tabindex="-1"></a><span class="al">![matching1](../img/in-operator1.png)</span></span>
+<span id="cb37-102"><a href="#cb37-102" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/in-operator1.png)</span></span>
 <span id="cb37-103"><a href="#cb37-103" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-106"><a href="#cb37-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb37-107"><a href="#cb37-107" aria-hidden="true" tabindex="-1"></a>intersection <span class="ot">&lt;-</span> A <span class="sc">%in%</span> B</span>
 <span id="cb37-108"><a href="#cb37-108" aria-hidden="true" tabindex="-1"></a>intersection</span>
 <span id="cb37-109"><a href="#cb37-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb37-110"><a href="#cb37-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-111"><a href="#cb37-111" aria-hidden="true" tabindex="-1"></a><span class="al">![matching2](../img/in-operator2.png)</span></span>
+<span id="cb37-111"><a href="#cb37-111" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/in-operator2.png)</span></span>
 <span id="cb37-112"><a href="#cb37-112" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-115"><a href="#cb37-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb37-116"><a href="#cb37-116" aria-hidden="true" tabindex="-1"></a>A[intersection]</span>
 <span id="cb37-117"><a href="#cb37-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb37-118"><a href="#cb37-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-119"><a href="#cb37-119" aria-hidden="true" tabindex="-1"></a><span class="al">![matching3](../img/in-operator3.png)</span></span>
+<span id="cb37-119"><a href="#cb37-119" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/in-operator3.png)</span></span>
 <span id="cb37-120"><a href="#cb37-120" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-121"><a href="#cb37-121" aria-hidden="true" tabindex="-1"></a>In these previous examples, the vectors were so small that it's easy to check every logical value by eye; but this is not practical when we work with large datasets (e.g. a vector with 1000 logical values). Instead, we can use <span class="in">`any`</span> function. Given a logical vector, this function will tell you whether **at least one value** is `TRUE`. It provides us a quick way to assess if **any of the values contained in vector A are also in vector B**:</span>
 <span id="cb37-122"><a href="#cb37-122" aria-hidden="true" tabindex="-1"></a></span>
@@ -1050,7 +1035,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb37-135"><a href="#cb37-135" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb37-136"><a href="#cb37-136" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-137"><a href="#cb37-137" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb37-138"><a href="#cb37-138" aria-hidden="true" tabindex="-1"></a><span class="fu"># [Exercises](../results/answer_keys/07_matching_answer_key.md#exercise-1-solution)</span></span>
+<span id="cb37-138"><a href="#cb37-138" aria-hidden="true" tabindex="-1"></a><span class="fu"># [Exercises](answer_keys/07_matching_answer_key.qmd#exercise-1-solution)</span></span>
 <span id="cb37-139"><a href="#cb37-139" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-140"><a href="#cb37-140" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Using the <span class="in">`A`</span> and <span class="in">`B`</span> vectors created above, evaluate each element in <span class="in">`B`</span> to see if there is a match in <span class="in">`A`</span></span>
 <span id="cb37-141"><a href="#cb37-141" aria-hidden="true" tabindex="-1"></a></span>
@@ -1106,7 +1091,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb37-201"><a href="#cb37-201" aria-hidden="true" tabindex="-1"></a>**Looks like all of the samples are there, but they need to be reordered. To reorder our genomic samples, we will learn different ways to reorder data in our next lesson. But before that, let's work on exercise 2 to consolidate concepts from this lesson.**</span>
 <span id="cb37-202"><a href="#cb37-202" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-203"><a href="#cb37-203" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb37-204"><a href="#cb37-204" aria-hidden="true" tabindex="-1"></a><span class="fu"># [Exercises](../results/answer_keys/07_matching_answer_key.md#exercise-2-solution)</span></span>
+<span id="cb37-204"><a href="#cb37-204" aria-hidden="true" tabindex="-1"></a><span class="fu"># [Exercises](answer_keys/07_matching_answer_key.qmd#exercise-2-solution)</span></span>
 <span id="cb37-205"><a href="#cb37-205" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-206"><a href="#cb37-206" aria-hidden="true" tabindex="-1"></a>We have a list of 6 marker genes that we are very interested in. Our goal is to extract count data for these genes using the <span class="in">`%in%`</span> operator from the <span class="in">`rpkm_data`</span> data frame, instead of scrolling through <span class="in">`rpkm_data`</span> and finding them manually.</span>
 <span id="cb37-207"><a href="#cb37-207" aria-hidden="true" tabindex="-1"></a></span>
