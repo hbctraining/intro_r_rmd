@@ -77,7 +77,8 @@ If you would like to practice with the `map()` family of functions, we have [add
 Because the input was 12 columns of information the output of `map_dbl()` is a *named* vector of length 12. 
 
 ```{r}
-# Named vectors have a name assigned to each element instead of just referring to them as indices ([1], [2] and so on)
+# Named vectors have a name assigned to each element 
+# instead of just referring to them as indices ([1], [2] and so on)
 samplemeans
 
 # Check length of the vector before adding it to the data frame
