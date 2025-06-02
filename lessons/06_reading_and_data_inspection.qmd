@@ -125,11 +125,13 @@ RStudio supports the automatic completion of code using the <kbd>Tab</kbd> key. 
 These steps are summarized in the GIF below:<br><br>
 <img src="../img/Import_dataset.gif" width="1000"><br><br>
 Now the dataset has been imported into your environment.<br><br>
+
 ::: callout-note
+
 If you are going to use this method, it could impact the reproducibility of your work, because the steps to do that import are not recorded anywhere. If you are going to use this method of importing data, it is <b><i>STRONGLY RECOMMENDED</i></b> that you copy the command that read the dataset in and is present in the console to an Rscript file. In the future, you can run that line of code from the Rscript file to recreate the data object.
+
 :::
-<blockquote>
-</blockquote>
+
 <hr />
 </details>
 
