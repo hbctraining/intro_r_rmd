@@ -78,3 +78,8 @@ main img,
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
+/* Hides Quarto's page title box */
+.quarto-title-block {
+  display: none !important;
+}

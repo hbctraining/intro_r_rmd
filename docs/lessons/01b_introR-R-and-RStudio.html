@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-05-30">
 
-<title>Introduction to R and RStudio – Introduction to R</title>
+<title>Introduction to R - Introduction to R and RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -70,23 +70,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e5cb4ee4193d6a2f28a249434e39fb42.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -95,10 +89,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -110,65 +102,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introduction to R</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../lessons/schedule.html"> 
-<span class="menu-text">Schedule</span></a>
+    <a class="nav-link" href="../lessons/schedule.html" rel="" target="">
+ <span class="menu-text">Schedule</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://bioinformatics.sph.harvard.edu/"> 
-<span class="menu-text">HBC</span></a>
+    <a class="nav-link" href="https://bioinformatics.sph.harvard.edu/" rel="" target="">
+ <span class="menu-text">HBC</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/hbctraining/intro_r_rmd"> 
-<span class="menu-text">GitHub</span></a>
+    <a class="nav-link" href="https://github.com/hbctraining/intro_r_rmd" rel="" target="">
+ <span class="menu-text">GitHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="mailto:hbctraining@hsph.harvard.edu"> 
-<span class="menu-text">Contact us</span></a>
+    <a class="nav-link" href="mailto:hbctraining@hsph.harvard.edu" rel="" target="">
+ <span class="menu-text">Contact us</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Day 1:</a></li><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Introduction to R and RStudio</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Day 1:</a></li><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Introduction to R and RStudio</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Day 1:</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -183,9 +175,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Day 1 Self-learning:</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -212,9 +204,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Day 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -235,9 +227,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text">Day 2 Self-learning</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -276,9 +268,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Day 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,9 +291,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Day 3 Self-learning</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -340,9 +332,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
  <span class="menu-text">Day 4</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -358,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -409,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Day 1:</a></li><li class="breadcrumb-item"><a href="../lessons/01b_introR-R-and-RStudio.html">Introduction to R and RStudio</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Introduction to R and RStudio</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -436,9 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <p>Approximate time: 45 minutes</p>
 <section id="learning-objectives" class="level2">
@@ -715,7 +705,7 @@ Warning
 <section id="keyboard-shortcuts-in-rstudio" class="level3">
 <h3 class="anchored" data-anchor-id="keyboard-shortcuts-in-rstudio">Keyboard shortcuts in RStudio</h3>
 <p>In addition to some of the shortcuts described earlier in this lesson, we have listed a few more that can be helpful as you work in RStudio.</p>
-<table class="caption-top table">
+<table class="table">
 <colgroup>
 <col style="width: 44%">
 <col style="width: 55%">
@@ -937,7 +927,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -969,27 +970,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -1041,27 +1022,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1071,17 +1035,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1093,129 +1048,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1259,7 +1092,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1285,32 +1117,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1398,7 +1204,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why use R?</span></span>
 <span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/why_R.png" width="600"/&gt;</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/why_R.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>R is a powerful, extensible environment. It has a wide range of statistics and general data analysis and visualization capabilities.</span>
 <span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
@@ -1417,7 +1223,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>RStudio is freely available open-source Integrated Development Environment (IDE). RStudio provides an environment with many features to make using R easier and is a great alternative to working on R in the terminal.</span>
 <span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/rstudio_logo.png" width="300"/&gt;</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/rstudio_logo.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Graphical user interface, not just a command prompt</span>
 <span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Great learning tool</span>
@@ -1434,7 +1240,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Your analyses are available from any computer in the world</span>
 <span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Sharing Rstudio projects can be easier</span>
 <span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Posit_cloud_logo.png" width="300"/&gt;</span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Posit_cloud_logo.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>However, there are restrictions on the free accounts that come from Posit Cloud including:</span>
 <span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a></span>
@@ -1457,11 +1263,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a>Before you are able to use Posit Cloud, you will need to make a free account on Posit by following <span class="co">[</span><span class="ot">this link</span><span class="co">](https://posit.cloud/)</span> if you have not done so already. Once you have made an account on Posit Cloud, the instructors to the workshop will have shared a link with you to join the Introduction to R workspace hosted by the Harvard Chan Bioinformatics Core. This will take you to a webpage that looks like this:</span>
 <span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Join_workspace_annotated.png" width="600"/&gt;</span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Join_workspace_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>Left-click the "Join" Button and it will take you to a webpage that looks like the one below:</span>
 <span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Open_hamburger_annotated.png" width="600"/&gt;</span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Open_hamburger_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a>You have now joined the Harvard Chan Bioinformatics Core's Introduction to R workspace on Posit Cloud.</span>
 <span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a></span>
@@ -1469,7 +1275,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a>Left-click on the Hamburger button in the top left to reveal your available workspaces.</span>
 <span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Open_hamburger_2_annotated.png" width="600"/&gt;</span>
+<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Open_hamburger_2_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a>On the top of the left-hand panel you should see a section called "Spaces". Within it you should see three options:</span>
 <span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a></span>
@@ -1481,7 +1287,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a>Select the **Introduction to R** workspace. This will be the workspace that we will be working within for this workshop.</span>
 <span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Select_workspace_annotated.png" width="600"/&gt;</span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Select_workspace_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a><span class="fu">## What is a project in RStudio?</span></span>
 <span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a></span>
@@ -1502,7 +1308,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a>We have already begun setting up the project for you and you should see a project called "Intro-to-R" within the **Introduction to R** workspace:</span>
 <span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Start_project_annotated.png" width="600"/&gt;</span>
+<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Start_project_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: We have instructions on how to create an RStudio project locally in </span><span class="co">[</span><span class="ot">this lesson</span><span class="co">](01a_introR-R-and-RStudio.html#create-a-new-project-directory-in-rstudio)</span><span class="at">.</span></span>
 <span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a></span>
@@ -1510,45 +1316,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a>The RStudio interface should now look like this:</span>
 <span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Initial_state_annotated.png" width="800"/&gt;</span>
+<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Initial_state_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-142"><a href="#cb14-142" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a>Next, we are going to create an Rscript to keep a record of our work, but first we will implement good data management practices and create a folder to hold this script. In the bottom-right panel there should be a button that has a folder with a green plus on it and says "New Folder", left-click this button:</span>
 <span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/New_folder.png" width="800"/&gt;</span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/New_folder.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: Depending on the size of your window, the "New Folder" button may just have the icon or the icon and the word "Folder".</span></span>
 <span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a>A window should pop-up prompting you to provide a name for the folder. Type "scripts" into the text box and left-click "OK":</span>
 <span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/New_folder_2_annotated.png" width="800"/&gt;</span>
+<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/New_folder_2_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a>Now in the bottom-left panel, you will see a "scripts" folder.</span>
 <span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Added_folder_annotated.png" width="800"/&gt;</span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Added_folder_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a>Now we will create the Rscript that we will write our code in. In order to create an Rscript, left-click "File" in the top-left, then "New File" and then left-click "R Script".</span>
 <span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Create_R_script_annotated.png" width="800"/&gt;</span>
+<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Create_R_script_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-160"><a href="#cb14-160" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-161"><a href="#cb14-161" aria-hidden="true" tabindex="-1"></a>This will create an R Script as the top panel on the left side of your RStudio window.</span>
 <span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Added_R_script_annotated.png" width="800"/&gt;</span>
+<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Added_R_script_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a>Before we go any further, let's save our new R Script by left-clicking "File" in the top-left and left-clicking "Save As...".</span>
 <span id="cb14-166"><a href="#cb14-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Save_as_annotated.png" width="800"/&gt;</span>
+<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Save_as_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-168"><a href="#cb14-168" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-169"><a href="#cb14-169" aria-hidden="true" tabindex="-1"></a>We are going to place this new R Script within our newly created "scripts" folder, so left-click the "scripts" folder.</span>
 <span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Select_scripts_folder_annotated.png" width="800"/&gt;</span>
+<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Select_scripts_folder_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a>Let's name our R Script as "Intro-to-R.R" in the text field and left-click "Save".</span>
 <span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Save_R_script_annotated.png" width="800"/&gt;</span>
+<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Save_R_script_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-176"><a href="#cb14-176" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a>Now our RStudio window should look like this:</span>
 <span id="cb14-178"><a href="#cb14-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-179"><a href="#cb14-179" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/RStudio_established_annotated.png" width="800"/&gt;</span>
+<span id="cb14-179"><a href="#cb14-179" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/RStudio_established_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## RStudio Interface</span></span>
 <span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a></span>
@@ -1575,11 +1381,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-205"><a href="#cb14-205" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a>You can visualize your working directory by selecting the <span class="in">`Files`</span> tab from the **Files/Plots/Packages/Help** window.</span>
 <span id="cb14-207"><a href="#cb14-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Files_tab_annotated.png" width="400"/&gt;</span>
+<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Files_tab_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"400"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a>If you wanted to choose a different directory to be your working directory, you could navigate to a different folder in the <span class="in">`Files`</span> tab, then, click on the <span class="in">`More`</span> dropdown menu which appears as a Cog and select <span class="in">`Set As Working Directory`</span>.</span>
 <span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Set_working_directory_annotated.png" width="400"/&gt;</span>
+<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Set_working_directory_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"400"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
 <span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
@@ -1590,7 +1396,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-220"><a href="#cb14-220" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-221"><a href="#cb14-221" aria-hidden="true" tabindex="-1"></a>When finished, your working directory should look like this:</span>
 <span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Directories_made_annotated.png" width="400"/&gt;</span>
+<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Directories_made_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"400"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-224"><a href="#cb14-224" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting up</span></span>
@@ -1600,7 +1406,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-230"><a href="#cb14-230" aria-hidden="true" tabindex="-1"></a>Click on "Code" at the top of your RStudio screen and left-click "Soft Wrap Long Lines" in the pull down menu.</span>
 <span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Soft_wrap.gif" width="600"/&gt;</span>
+<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Soft_wrap.gif"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interacting with R</span></span>
@@ -1636,18 +1442,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Run_script_1.gif" width="700"/&gt;</span>
+<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Run_script_1.gif"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"700"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-276"><a href="#cb14-276" aria-hidden="true" tabindex="-1"></a>Alternatively, you can send code to the console from the script editor to be run by pressing the <span class="in">`Ctrl`</span> and <span class="in">`Return/Enter`</span> keys at the same time as a shortcut.</span>
 <span id="cb14-277"><a href="#cb14-277" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-278"><a href="#cb14-278" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-279"><a href="#cb14-279" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Run_script_2.gif" width="700"/&gt;</span>
+<span id="cb14-279"><a href="#cb14-279" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Run_script_2.gif"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"700"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-280"><a href="#cb14-280" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-281"><a href="#cb14-281" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-282"><a href="#cb14-282" aria-hidden="true" tabindex="-1"></a>You should see the command run in the console and output the result.</span>
 <span id="cb14-283"><a href="#cb14-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Console_commands_annotated.png" width="600"/&gt;</span>
+<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Console_commands_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"600"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-285"><a href="#cb14-285" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-286"><a href="#cb14-286" aria-hidden="true" tabindex="-1"></a>What happens if we do that same command without the comment symbol <span class="in">`#`</span>? Re-run the command after removing the <span class="sc">\#</span> sign in the front:</span>
 <span id="cb14-287"><a href="#cb14-287" aria-hidden="true" tabindex="-1"></a></span>
@@ -1692,12 +1498,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-328"><a href="#cb14-328" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a>| key | action |</span>
 <span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a>|--------------------------------|----------------------------------------|</span>
-<span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Enter&lt;/kbd&gt; | Run command from the script editor in the console |</span>
-<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;ESC&lt;/kbd&gt; | Escape the current command to return to the command prompt |</span>
-<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;1&lt;/kbd&gt; | Move cursor from console to script editor |</span>
-<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;2&lt;/kbd&gt; | Move cursor from script editor to console |</span>
-<span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Tab&lt;/kbd&gt; | Use this key to complete a file path |</span>
-<span id="cb14-336"><a href="#cb14-336" aria-hidden="true" tabindex="-1"></a>| &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt; | Comment the block of highlighted text |</span>
+<span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a>| <span class="kw">&lt;kbd&gt;</span>Ctrl<span class="kw">&lt;/kbd&gt;</span>+<span class="kw">&lt;kbd&gt;</span>Enter<span class="kw">&lt;/kbd&gt;</span> | Run command from the script editor in the console |</span>
+<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a>| <span class="kw">&lt;kbd&gt;</span>ESC<span class="kw">&lt;/kbd&gt;</span> | Escape the current command to return to the command prompt |</span>
+<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a>| <span class="kw">&lt;kbd&gt;</span>Ctrl<span class="kw">&lt;/kbd&gt;</span>+<span class="kw">&lt;kbd&gt;</span>1<span class="kw">&lt;/kbd&gt;</span> | Move cursor from console to script editor |</span>
+<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a>| <span class="kw">&lt;kbd&gt;</span>Ctrl<span class="kw">&lt;/kbd&gt;</span>+<span class="kw">&lt;kbd&gt;</span>2<span class="kw">&lt;/kbd&gt;</span> | Move cursor from script editor to console |</span>
+<span id="cb14-335"><a href="#cb14-335" aria-hidden="true" tabindex="-1"></a>| <span class="kw">&lt;kbd&gt;</span>Tab<span class="kw">&lt;/kbd&gt;</span> | Use this key to complete a file path |</span>
+<span id="cb14-336"><a href="#cb14-336" aria-hidden="true" tabindex="-1"></a>| <span class="kw">&lt;kbd&gt;</span>Ctrl<span class="kw">&lt;/kbd&gt;</span>+<span class="kw">&lt;kbd&gt;</span>Shift<span class="kw">&lt;/kbd&gt;</span>+<span class="kw">&lt;kbd&gt;</span>C<span class="kw">&lt;/kbd&gt;</span> | Comment the block of highlighted text |</span>
 <span id="cb14-337"><a href="#cb14-337" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-338"><a href="#cb14-338" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
 <span id="cb14-339"><a href="#cb14-339" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
@@ -1753,7 +1559,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-395"><a href="#cb14-395" aria-hidden="true" tabindex="-1"></a>You can also view information on the variable by looking in your <span class="in">`Environment`</span> window in the upper right-hand corner of the RStudio interface.</span>
 <span id="cb14-396"><a href="#cb14-396" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-397"><a href="#cb14-397" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-398"><a href="#cb14-398" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Environment_2_annotated.png" width="500"/&gt;</span>
+<span id="cb14-398"><a href="#cb14-398" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Environment_2_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"500"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-399"><a href="#cb14-399" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-400"><a href="#cb14-400" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-401"><a href="#cb14-401" aria-hidden="true" tabindex="-1"></a>Now we can reference these buckets by name to perform mathematical operations on the values contained within. What do you get in the console for the following operation:</span>
@@ -1796,7 +1602,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-442"><a href="#cb14-442" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-443"><a href="#cb14-443" aria-hidden="true" tabindex="-1"></a>You can access the files we need for this workshop by clicking on the <span class="in">`data/`</span> directory within the "Files" tab. Within here, you should find the four files that we will be working with.</span>
 <span id="cb14-444"><a href="#cb14-444" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-445"><a href="#cb14-445" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/Data_files_annotated.png" width="500"/&gt;</span>
+<span id="cb14-445"><a href="#cb14-445" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Data_files_annotated.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"500"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-446"><a href="#cb14-446" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-447"><a href="#cb14-447" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Note: If you wanted to add files onto the Posit Cloud server you could do this with the "Upload" button in the "Files" tab.</span></span>
 <span id="cb14-448"><a href="#cb14-448" aria-hidden="true" tabindex="-1"></a></span>
@@ -1807,7 +1613,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-453"><a href="#cb14-453" aria-hidden="true" tabindex="-1"></a>In this example dataset, we have collected whole brain samples from 12 mice and want to evaluate expression differences between them. The expression data represents normalized count data obtained from RNA-sequencing of the 12 brain samples. This data is stored in a comma separated values (CSV) file as a 2-dimensional matrix, with **each row corresponding to a gene and each column corresponding to a sample**.</span>
 <span id="cb14-454"><a href="#cb14-454" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-455"><a href="#cb14-455" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-456"><a href="#cb14-456" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/counts_view.png" width="800"/&gt;</span>
+<span id="cb14-456"><a href="#cb14-456" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/counts_view.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-457"><a href="#cb14-457" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-458"><a href="#cb14-458" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-459"><a href="#cb14-459" aria-hidden="true" tabindex="-1"></a><span class="fu">### The metadata</span></span>
@@ -1817,7 +1623,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-463"><a href="#cb14-463" aria-hidden="true" tabindex="-1"></a>The first column contains the row names, and **note that these are identical to the column names in our expression data file above** (albeit, in a slightly different order). The next few columns contain information about our samples that allow us to categorize them. For example, the second column contains genotype information for each sample. Each sample is classified in one of two categories: Wt (wild type) or KO (knockout). *What types of categories do you observe in the remaining columns?*</span>
 <span id="cb14-464"><a href="#cb14-464" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-465"><a href="#cb14-465" aria-hidden="true" tabindex="-1"></a>::: center</span>
-<span id="cb14-466"><a href="#cb14-466" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/metadata_view.png" width="400"/&gt;</span>
+<span id="cb14-466"><a href="#cb14-466" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_view.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"400"</span><span class="kw">/&gt;</span></span>
 <span id="cb14-467"><a href="#cb14-467" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb14-468"><a href="#cb14-468" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-469"><a href="#cb14-469" aria-hidden="true" tabindex="-1"></a>R is particularly good at handling this type of **categorical data**. Rather than simply storing this information as text, the data ican be represented in a specific data structure which allows the user to sort and manipulate the data in a quick and efficient manner. We will discuss this in more detail as we go through the different lessons in R!</span>
@@ -1836,8 +1642,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-482"><a href="#cb14-482" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-483"><a href="#cb14-483" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Code and workflows are more reproducible if we can document everything that we do. Our end goal is not just to "do stuff", but to do it in a way that anyone can easily and exactly replicate our workflow and results. **All code should be written in the script editor and saved to file, rather than working in the console.**</span>
 <span id="cb14-484"><a href="#cb14-484" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The **R console** should be mainly used to inspect objects, test a function or get help.</span>
-<span id="cb14-485"><a href="#cb14-485" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`#`</span> signs to comment. **Comment liberally** in your R scripts. This will help future you and other collaborators know what each line of code (or code block) was meant to do. Anything to the right of a <span class="in">`#`</span> is ignored by R. *A shortcut for this is* &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Shift&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt; if you want to comment an entire chunk of text.</span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb14-485"><a href="#cb14-485" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`#`</span> signs to comment. **Comment liberally** in your R scripts. This will help future you and other collaborators know what each line of code (or code block) was meant to do. Anything to the right of a <span class="in">`#`</span> is ignored by R. *A shortcut for this is* <span class="kw">&lt;kbd&gt;</span>Ctrl<span class="kw">&lt;/kbd&gt;</span>+<span class="kw">&lt;kbd&gt;</span>Shift<span class="kw">&lt;/kbd&gt;</span>+<span class="kw">&lt;kbd&gt;</span>C<span class="kw">&lt;/kbd&gt;</span> if you want to comment an entire chunk of text.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1845,15 +1651,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">
-<p>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. <br> These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited. <br> Some materials used are adapted from work that is Copyright © <a href="http://datacarpentry.org/">Data Carpentry</a>. All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</p>
-</div>
+    <div class="nav-footer-center">This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. <br> These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited. <br> Some materials used are adapted from work that is Copyright © <a href="http://datacarpentry.org/">Data Carpentry</a>. All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-
 
 
 
