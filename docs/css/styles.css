@@ -101,3 +101,11 @@ main img,
 {
   display: none !important;
 }
+
+/* Make sure images aren't larger than window size */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

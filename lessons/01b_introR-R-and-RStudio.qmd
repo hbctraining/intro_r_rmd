@@ -53,7 +53,9 @@ RStudio is freely available open-source Integrated Development Environment (IDE)
 -   Platform agnostic
 -   Open source
 
-> Note: If you are using these materials for a locally installed version of RStudio, please use [this lesson](01a_introR-R-and-RStudio.html) instead.
+::: callout-note
+If you are using these materials for a locally installed version of RStudio, please use [this lesson](01a_introR-R-and-RStudio.html) instead.
+:::
 
 ## What is Posit Cloud?
 
@@ -132,9 +134,13 @@ We have already begun setting up the project for you and you should see a projec
 
 <img src="../img/Start_project_annotated.png" width="600"/>
 
-> Note: We have instructions on how to create an RStudio project locally in [this lesson](01a_introR-R-and-RStudio.html#create-a-new-project-directory-in-rstudio).
+::: callout-note
+We have instructions on how to create an RStudio project locally in [this lesson](01a_introR-R-and-RStudio.html#create-a-new-project-directory-in-rstudio).
+:::
 
-> Note: Once you have opened the "Intro-to-R" on Posit Cloud for the first time, it will make a derived duplicate of the project that you are working on in our **Introduction to R** Workspace. In the future, you can click on either R project to come back to the point where you left off.
+::: callout-note
+Once you have opened the "Intro-to-R" on Posit Cloud for the first time, it will make a derived duplicate of the project that you are working on in our **Introduction to R** Workspace. In the future, you can click on either R project to come back to the point where you left off.
+:::
 
 The RStudio interface should now look like this:
 
@@ -144,7 +150,9 @@ Next, we are going to create an Rscript to keep a record of our work, but first 
 
 <img src="../img/New_folder.png" width="800"/>
 
-> Note: Depending on the size of your window, the "New Folder" button may just have the icon or the icon and the word "Folder".
+::: callout-note
+Depending on the size of your window, the "New Folder" button may just have the icon or the icon and the word "Folder".
+:::
 
 A window should pop-up prompting you to provide a name for the folder. Type "scripts" into the text box and left-click "OK":
 
@@ -426,9 +434,13 @@ You can access the files we need for this workshop by clicking on the `data/` di
 
 <img src="../img/Data_files_annotated.png" width="500"/>
 
-> Note: If you wanted to add files onto the Posit Cloud server you could do this with the "Upload" button in the "Files" tab.
+::: callout-note
+If you wanted to add files onto the Posit Cloud server you could do this with the "Upload" button in the "Files" tab.
+:::
 
-> Note: Adding files when working in RStudio locally is a bit different. Please reference [this lesson](01a_introR-R-and-RStudio.html#adding-files-to-your-working-directory) for instructions to do this.
+::: callout-note
+Adding files when working in RStudio locally is a bit different. Please reference [this lesson](01a_introR-R-and-RStudio.html#adding-files-to-your-working-directory) for instructions to do this.
+:::
 
 ### The dataset
 
