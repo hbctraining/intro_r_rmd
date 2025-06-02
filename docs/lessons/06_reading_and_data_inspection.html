@@ -553,7 +553,19 @@ Note
 <p><img src="../img/read.table-help.png" width="450"></p>
 <p>The first thing you will notice is that you’ve pulled up the documentation for <code>read.table()</code>, this is because that is the parent function and all the other functions are in the same family.</p>
 <p>The next item on the documentation page is the function <strong>Description</strong>, which specifies that the output of this set of functions is going to be a <strong>data frame</strong> - “<em>Reads a file in table format and <strong>creates a data frame from it</strong>, with cases corresponding to lines and variables to fields in the file.</em>”</p>
-<p>In usage, all of the arguments listed for <code>read.table()</code> are the default values for all of the family members unless otherwise specified for a given function. Let’s take a look at 2 examples: 1. <strong>The separator</strong> - * in the case of <code>read.table()</code> it is <code>sep = ""</code> (space or tab) * whereas for <code>read.csv()</code> it is <code>sep = ","</code> (a comma). 2. <strong>The <code>header</code></strong> - This argument refers to the column headers that may (<code>TRUE</code>) or may not (<code>FALSE</code>) exist <strong>in the plain text file you are reading in</strong>. * in the case of <code>read.table()</code> it is <code>header = FALSE</code> (by default, it assumes you do not have column names) * whereas for <code>read.csv()</code> it is <code>header = TRUE</code> (by default, it assumes that all your columns have names listed).</p>
+<p>In usage, all of the arguments listed for <code>read.table()</code> are the default values for all of the family members unless otherwise specified for a given function. Let’s take a look at 2 examples:</p>
+<ol type="1">
+<li><strong>The separator</strong> -
+<ul>
+<li>in the case of <code>read.table()</code> it is <code>sep = ""</code> (space or tab)</li>
+<li>whereas for <code>read.csv()</code> it is <code>sep = ","</code> (a comma).</li>
+</ul></li>
+<li><strong>The <code>header</code></strong> - This argument refers to the column headers that may (<code>TRUE</code>) or may not (<code>FALSE</code>) exist <strong>in the plain text file you are reading in</strong>.
+<ul>
+<li>in the case of <code>read.table()</code> it is <code>header = FALSE</code> (by default, it assumes you do not have column names)</li>
+<li>whereas for <code>read.csv()</code> it is <code>header = TRUE</code> (by default, it assumes that all your columns have names listed).</li>
+</ul></li>
+</ol>
 <p><strong><em>The take-home from the “Usage” section for <code>read.csv()</code> is that it has one mandatory argument, the path to the file and filename in quotations; in our case that is <code>data/mouse_exp_design.csv</code> or <code>data/mouse_exp_design.txt</code>.</em></strong></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -589,7 +601,7 @@ Note
 </div>
 <p>Let’s read in the <code>mouse_exp_design</code> file and create a new data frame called <code>metadata</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"../data/mouse_exp_design.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"data/mouse_exp_design.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># OR </span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># metadata &lt;- read.csv(file="../data/mouse_exp_design.txt")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -679,8 +691,8 @@ Exercise 1
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Download <a href="https://github.com/hbctraining/Intro-to-R-flipped/raw/master/data/project-summary.txt">this tab-delimited <code>.txt</code> file</a> and save it in your project’s <code>data</code> folder.</li>
-<li>Read it in to R using <code>read.table()</code> with the approriate arguments and store it as the variable <code>proj_summary</code>. To figure out the appropriate arguments to use with <code>read.table()</code>, keep the following in mind:
+<li>Inside your project’s <code>data</code> folder you should see a file called <code>project-summary.txt</code>.</li>
+<li>Read it in to R using <code>read.table()</code> with the appropriate arguments and store it as the variable <code>proj_summary</code>. To figure out the appropriate arguments to use with <code>read.table()</code>, keep the following in mind:
 <ul>
 <li>all the columns in the input text file have column name/headers</li>
 <li>you want the first column of the text file to be used as row names (hint: look up the input for the <code>row.names =</code> argument in <code>read.table()</code>)</li>
@@ -731,7 +743,7 @@ sample6       KO    typeA         3</code></pre>
 <p>We already saw how the functions <code>head()</code> and <code>str()</code> (in the releveling section) can be useful to check the content and the structure of a <code>data.frame</code>. Below is a non-exhaustive list of functions to get a sense of the content/structure of data. The list has been divided into functions that work on all types of objects, some that work only on vectors/factors (1 dimensional objects), and others that work on data frames and matrices (2 dimensional objects).</p>
 <p>We have some exercises below that will allow you to gain more familiarity with these. You will definitely be using some of them in the next few homework sections.</p>
 <ul>
-<li>All data structures - content display:
+<li><strong>All data structures - content display</strong>:
 <ul>
 <li><strong><code>str()</code>:</strong> compact display of data contents (similar to what you see in the Global environment)</li>
 <li><strong><code>class()</code>:</strong> displays the data type for vectors (e.g.&nbsp;character, numeric, etc.) and data structure for dataframes, matrices, lists</li>
@@ -739,11 +751,11 @@ sample6       KO    typeA         3</code></pre>
 <li><strong><code>head()</code>:</strong> prints the first 6 entries (elements for 1-D objects, rows for 2-D objects)</li>
 <li><strong><code>tail()</code>:</strong> prints the last 6 entries (elements for 1-D objects, rows for 2-D objects)</li>
 </ul></li>
-<li>Vector and factor variables:
+<li><strong>Vector and factor variables</strong>:
 <ul>
 <li><strong><code>length()</code>:</strong> returns the number of elements in a vector or factor</li>
 </ul></li>
-<li>Dataframe and matrix variables:
+<li><strong>Dataframe and matrix variables</strong>:
 <ul>
 <li><strong><code>dim()</code>:</strong> returns dimensions of the dataset (number_of_rows, number_of_columns) [Note, row numbers will always be displayed before column numbers in R]</li>
 <li><strong><code>nrow()</code>:</strong> returns the number of rows in the dataset</li>
@@ -763,14 +775,14 @@ Exercise 2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
+<ol type="1">
 <li>Use the <code>class()</code> function on <code>glengths</code> and <code>metadata</code>, how does the output differ between the two?</li>
 <li>Use the <code>summary()</code> function on the <code>proj_summary</code> dataframe, what is the median “rRNA_rate”?</li>
 <li>How long is the <code>samplegroup</code> factor?</li>
 <li>What are the dimensions of the <code>proj_summary</code> dataframe?</li>
 <li>When you use the <code>rownames()</code> function on <code>metadata</code>, what is the <em>data structure</em> of the output?</li>
-<li>[Optional] How many elements in (how long is) the output of <code>colnames(proj_summary)</code>? Don’t count, but use another function to determine this.</li>
-</ul>
+</ol>
+<p>[Optional] How many elements in (how long is) the output of <code>colnames(proj_summary)</code>? Don’t count, but use another function to determine this.</p>
 </div>
 </div>
 
@@ -1138,150 +1150,153 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>The next item on the documentation page is the function **Description**, which specifies that the output of this set of functions is going to be a **data frame** - "*Reads a file in table format and **creates a data frame from it**, with cases corresponding to lines and variables to fields in the file.*"</span>
 <span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>In usage, all of the arguments listed for <span class="in">`read.table()`</span> are the default values for all of the family members unless otherwise specified for a given function. Let's take a look at 2 examples:</span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**The separator** - </span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>in the case of <span class="in">`read.table()`</span> it is <span class="in">`sep = ""`</span> (space or tab)</span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>whereas for <span class="in">`read.csv()`</span> it is <span class="in">`sep = ","`</span> (a comma).</span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The `header`** - This argument refers to the column headers that may (`TRUE`) or may not (`FALSE`) exist **in the plain text file you are reading in**. </span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>in the case of <span class="in">`read.table()`</span> it is <span class="in">`header = FALSE`</span> (by default, it assumes you do not have column names)</span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>whereas for <span class="in">`read.csv()`</span> it is <span class="in">`header = TRUE`</span> (by default, it assumes that all your columns have names listed). </span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>***The take-home from the "Usage" section for `read.csv()` is that it has one mandatory argument, the path to the file and filename in quotations; in our case that is `data/mouse_exp_design.csv` or `data/mouse_exp_design.txt`.***</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**The separator** - </span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>in the case of <span class="in">`read.table()`</span> it is <span class="in">`sep = ""`</span> (space or tab)</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>whereas for <span class="in">`read.csv()`</span> it is <span class="in">`sep = ","`</span> (a comma).</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**The `header`** - This argument refers to the column headers that may (`TRUE`) or may not (`FALSE`) exist **in the plain text file you are reading in**. </span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>in the case of <span class="in">`read.table()`</span> it is <span class="in">`header = FALSE`</span> (by default, it assumes you do not have column names)</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>whereas for <span class="in">`read.csv()`</span> it is <span class="in">`header = TRUE`</span> (by default, it assumes that all your columns have names listed). </span>
 <span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="fu"># The `stringsAsFactors` argument</span></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>Note that the <span class="in">`read.table {utils}`</span> family of functions has an argument called <span class="in">`stringsAsFactors`</span>, which by default is set to FALSE (you can double check this by searching the Help tab for <span class="in">`read.table`</span> or running <span class="in">`?read.table`</span> in the console). </span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>***The take-home from the "Usage" section for `read.csv()` is that it has one mandatory argument, the path to the file and filename in quotations; in our case that is `data/mouse_exp_design.csv` or `data/mouse_exp_design.txt`.***</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="fu"># The `stringsAsFactors` argument</span></span>
 <span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>If <span class="in">`stringsAsFactors = TRUE`</span>, any function in this family of functions will coerce <span class="in">`character`</span> columns in the data you are reading in to <span class="in">`factor`</span> columns (i.e., coerce from <span class="in">`vector`</span> to <span class="in">`factor`</span>) in the resulting data frame. </span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>Note that the <span class="in">`read.table {utils}`</span> family of functions has an argument called <span class="in">`stringsAsFactors`</span>, which by default is set to FALSE (you can double check this by searching the Help tab for <span class="in">`read.table`</span> or running <span class="in">`?read.table`</span> in the console). </span>
 <span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>If you want to maintain the <span class="in">`character vector`</span> data structure (e.g., for gene names), you will want to make sure that <span class="in">`stringsAsFactors = FALSE`</span>.</span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Create a data frame by reading in the file</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>If <span class="in">`stringsAsFactors = TRUE`</span>, any function in this family of functions will coerce <span class="in">`character`</span> columns in the data you are reading in to <span class="in">`factor`</span> columns (i.e., coerce from <span class="in">`vector`</span> to <span class="in">`factor`</span>) in the resulting data frame. </span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>If you want to maintain the <span class="in">`character vector`</span> data structure (e.g., for gene names), you will want to make sure that <span class="in">`stringsAsFactors = FALSE`</span>.</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>At this point, please check the extension for the <span class="in">`mouse_exp_design`</span> file within your <span class="in">`data`</span> folder. You will have to type it accordingly within the <span class="in">`read.csv()`</span> function.</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### Create a data frame by reading in the file</span></span>
 <span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="in">`read.csv`</span> is not fussy about extensions for plain text files, so even though the file we are reading in is a comma-separated value file, it will be read in properly even with a <span class="in">`.txt`</span> extension.</span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>Let's read in the <span class="in">`mouse_exp_design`</span> file and create a new data frame called <span class="in">`metadata`</span>.</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>At this point, please check the extension for the <span class="in">`mouse_exp_design`</span> file within your <span class="in">`data`</span> folder. You will have to type it accordingly within the <span class="in">`read.csv()`</span> function.</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="in">`read.csv`</span> is not fussy about extensions for plain text files, so even though the file we are reading in is a comma-separated value file, it will be read in properly even with a <span class="in">`.txt`</span> extension.</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"../data/mouse_exp_design.csv"</span>)</span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="co"># OR </span></span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="co"># metadata &lt;- read.csv(file="../data/mouse_exp_design.txt")</span></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>RStudio supports the automatic completion of code using the <span class="kw">&lt;kbd&gt;</span>Tab<span class="kw">&lt;/kbd&gt;</span> key. This is especially helpful for when reading in files to ensure the correct file path. The tab completion feature also provides a shortcut to listing objects, and inline help for functions. **Tab completion is your friend!** We encourage you to use it whenever possible.</span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;summary&gt;&lt;b&gt;</span>Click here to see how to import data using the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button<span class="kw">&lt;/b&gt;&lt;/summary&gt;</span></span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span>You can also use the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button in your Environment pane to import data. This option is not as appealing because it can lack reproducibility if not documented properly, but it can be helpful when getting started. In order to use the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span>:<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ol&gt;&lt;li&gt;</span>Left-click the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button in the Environment pane<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Left-click <span class="kw">&lt;kbd&gt;</span>From Text (base...)<span class="kw">&lt;/kbd&gt;&lt;/li&gt;</span></span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Navigate to the file you would like to import and select <span class="kw">&lt;kbd&gt;</span>Open<span class="kw">&lt;/kbd&gt;&lt;/li&gt;</span></span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Type the name you would like the imported object to be called in the <span class="kw">&lt;code&gt;</span>Name<span class="kw">&lt;/code&gt;</span> textbox.<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Select the delimiter that your file is using in the <span class="kw">&lt;code&gt;</span>Separator<span class="kw">&lt;/code&gt;</span> dropdown menu<span class="kw">&lt;/li&gt;</span></span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Left-click <span class="kw">&lt;kbd&gt;</span>Import<span class="kw">&lt;/kbd&gt;&lt;/li&gt;&lt;/ol&gt;</span></span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>These steps are summarized in the GIF below:<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Import_dataset.gif"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"1000"</span><span class="kw">&gt;&lt;br&gt;&lt;br&gt;</span></span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>Now the dataset has been imported into your environment.<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>Let's read in the <span class="in">`mouse_exp_design`</span> file and create a new data frame called <span class="in">`metadata`</span>.</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"data/mouse_exp_design.csv"</span>)</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="co"># OR </span></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="co"># metadata &lt;- read.csv(file="../data/mouse_exp_design.txt")</span></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>RStudio supports the automatic completion of code using the <span class="kw">&lt;kbd&gt;</span>Tab<span class="kw">&lt;/kbd&gt;</span> key. This is especially helpful for when reading in files to ensure the correct file path. The tab completion feature also provides a shortcut to listing objects, and inline help for functions. **Tab completion is your friend!** We encourage you to use it whenever possible.</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;summary&gt;&lt;b&gt;</span>Click here to see how to import data using the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button<span class="kw">&lt;/b&gt;&lt;/summary&gt;</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span>You can also use the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button in your Environment pane to import data. This option is not as appealing because it can lack reproducibility if not documented properly, but it can be helpful when getting started. In order to use the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span>:<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ol&gt;&lt;li&gt;</span>Left-click the <span class="kw">&lt;kbd&gt;</span>Import Dataset<span class="kw">&lt;/kbd&gt;</span> button in the Environment pane<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Left-click <span class="kw">&lt;kbd&gt;</span>From Text (base...)<span class="kw">&lt;/kbd&gt;&lt;/li&gt;</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Navigate to the file you would like to import and select <span class="kw">&lt;kbd&gt;</span>Open<span class="kw">&lt;/kbd&gt;&lt;/li&gt;</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Type the name you would like the imported object to be called in the <span class="kw">&lt;code&gt;</span>Name<span class="kw">&lt;/code&gt;</span> textbox.<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Select the delimiter that your file is using in the <span class="kw">&lt;code&gt;</span>Separator<span class="kw">&lt;/code&gt;</span> dropdown menu<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;</span>Left-click <span class="kw">&lt;kbd&gt;</span>Import<span class="kw">&lt;/kbd&gt;&lt;/li&gt;&lt;/ol&gt;</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>These steps are summarized in the GIF below:<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/Import_dataset.gif"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"1000"</span><span class="kw">&gt;&lt;br&gt;&lt;br&gt;</span></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>Now the dataset has been imported into your environment.<span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
 <span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>If you are going to use this method, it could impact the reproducibility of your work, because the steps to do that import are not recorded anywhere. If you are going to use this method of importing data, it is <span class="kw">&lt;b&gt;&lt;i&gt;</span>STRONGLY RECOMMENDED<span class="kw">&lt;/i&gt;&lt;/b&gt;</span> that you copy the command that read the dataset in and is present in the console to an Rscript file. In the future, you can run that line of code from the Rscript file to recreate the data object.</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
 <span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>If you are going to use this method, it could impact the reproducibility of your work, because the steps to do that import are not recorded anywhere. If you are going to use this method of importing data, it is <span class="kw">&lt;b&gt;&lt;i&gt;</span>STRONGLY RECOMMENDED<span class="kw">&lt;/i&gt;&lt;/b&gt;</span> that you copy the command that read the dataset in and is present in the console to an Rscript file. In the future, you can run that line of code from the Rscript file to recreate the data object.</span>
 <span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>Go to your Global environment and click on the name of the data frame you just created. </span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;hr</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_env.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>Go to your Global environment and click on the name of the data frame you just created. </span>
 <span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>When you do this the metadata table will pop up on the top left hand corner of RStudio, right next to the R script.</span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_env.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
 <span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_display.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>When you do this the metadata table will pop up on the top left hand corner of RStudio, right next to the R script.</span>
 <span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>You should see a subtle coloring (blue-gray) of the first row and first column, the rest of the table will have a white background. This is because your first row and first columns have different properties than the rest of the table, they are the names of the rows and columns respectively. </span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_display.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
 <span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_display_row_cols.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>You should see a subtle coloring (blue-gray) of the first row and first column, the rest of the table will have a white background. This is because your first row and first columns have different properties than the rest of the table, they are the names of the rows and columns respectively. </span>
 <span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>Earlier we noted that the file we just read in had column names (first row of values) and how <span class="in">`read.csv()`</span> deals with "headers". In addition to column headers, <span class="in">`read.csv()`</span> also assumes that the first column contains the row names. Not all functions in the <span class="in">`read.table()`</span> family of functions will do this and depending on which one you use, you may have to specify an additional argument to properly assign the row names and column names.</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/metadata_display_row_cols.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"300"</span><span class="kw">&gt;</span></span>
 <span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>Row names and column names are really handy when subsetting data structures and they are also helpful to identify samples or genes. We almost always use them with data frames.</span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1</span></span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Download <span class="co">[</span><span class="ot">this tab-delimited `.txt` file</span><span class="co">](https://github.com/hbctraining/Intro-to-R-flipped/raw/master/data/project-summary.txt)</span> and save it in your  project's <span class="in">`data`</span> folder.</span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Read it in to R using <span class="in">`read.table()`</span> with the approriate arguments and store it as the variable <span class="in">`proj_summary`</span>. To figure out the appropriate arguments to use with <span class="in">`read.table()`</span>, keep the following in mind:</span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all the columns in the input text file have column name/headers</span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>you want the first column of the text file to be used as row names (hint: look up the input for the <span class="in">`row.names =`</span> argument in <span class="in">`read.table()`</span>)</span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Display the contents of <span class="in">`proj_summary`</span> in your console</span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>Earlier we noted that the file we just read in had column names (first row of values) and how <span class="in">`read.csv()`</span> deals with "headers". In addition to column headers, <span class="in">`read.csv()`</span> also assumes that the first column contains the row names. Not all functions in the <span class="in">`read.table()`</span> family of functions will do this and depending on which one you use, you may have to specify an additional argument to properly assign the row names and column names.</span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>Row names and column names are really handy when subsetting data structures and they are also helpful to identify samples or genes. We almost always use them with data frames.</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Inside your project's <span class="in">`data`</span> folder you should see a file called <span class="in">`project-summary.txt`</span>.</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Read it in to R using <span class="in">`read.table()`</span> with the appropriate arguments and store it as the variable <span class="in">`proj_summary`</span>. To figure out the appropriate arguments to use with <span class="in">`read.table()`</span>, keep the following in mind:</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>all the columns in the input text file have column name/headers</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>you want the first column of the text file to be used as row names (hint: look up the input for the <span class="in">`row.names =`</span> argument in <span class="in">`read.table()`</span>)</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Display the contents of <span class="in">`proj_summary`</span> in your console</span>
 <span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inspecting data structures</span></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>There are a wide selection of base functions in R that are useful for inspecting your data and summarizing it. Let's use the <span class="in">`metadata`</span> file that we created to test out data inspection functions. </span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inspecting data structures</span></span>
 <span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>Take a look at the dataframe by typing out the variable name <span class="in">`metadata`</span> and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns contain categorical information about the sample <span class="in">`genotype`</span>(WT or KO),  <span class="in">`celltype`</span> (typeA or typeB), and <span class="in">`replicate number`</span> (1,2, or 3).</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>There are a wide selection of base functions in R that are useful for inspecting your data and summarizing it. Let's use the <span class="in">`metadata`</span> file that we created to test out data inspection functions. </span>
 <span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>metadata</span>
-<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>Suppose we had a larger file, we might not want to display all the contents in the console. Instead we could check the top (the first 6 lines) of this <span class="in">`data.frame`</span> using the function <span class="in">`head()`</span>:</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>Take a look at the dataframe by typing out the variable name <span class="in">`metadata`</span> and pressing return; the variable contains information describing the samples in our study. Each row holds information for a single sample, and the columns contain categorical information about the sample <span class="in">`genotype`</span>(WT or KO),  <span class="in">`celltype`</span> (typeA or typeB), and <span class="in">`replicate number`</span> (1,2, or 3).</span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>metadata</span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(metadata)</span>
-<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="fu">### List of functions for data inspection</span></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>Suppose we had a larger file, we might not want to display all the contents in the console. Instead we could check the top (the first 6 lines) of this <span class="in">`data.frame`</span> using the function <span class="in">`head()`</span>:</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(metadata)</span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>We already saw how the functions <span class="in">`head()`</span> and <span class="in">`str()`</span> (in the releveling section) can be useful to check the content and the structure of a <span class="in">`data.frame`</span>. Below is a non-exhaustive list of functions to get a sense of the content/structure of data. The list has been divided into functions that work on all types of objects, some that work only on vectors/factors (1 dimensional objects), and others that work on data frames and matrices (2 dimensional objects).</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### List of functions for data inspection</span></span>
 <span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>We have some exercises below that will allow you to gain more familiarity with these. You will definitely be using some of them in the next few homework sections.</span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>We already saw how the functions <span class="in">`head()`</span> and <span class="in">`str()`</span> (in the releveling section) can be useful to check the content and the structure of a <span class="in">`data.frame`</span>. Below is a non-exhaustive list of functions to get a sense of the content/structure of data. The list has been divided into functions that work on all types of objects, some that work only on vectors/factors (1 dimensional objects), and others that work on data frames and matrices (2 dimensional objects).</span>
 <span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>All data structures - content display:</span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`str()`:** compact display of data contents (similar to what you see in the Global environment)</span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`class()`:** displays the data type for vectors (e.g. character, numeric, etc.) and data structure for dataframes, matrices, lists</span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`summary()`:** detailed display of the contents of a given object, including descriptive statistics, frequencies</span>
-<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`head()`:**  prints the first 6 entries (elements for 1-D objects, rows for 2-D objects)</span>
-<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`tail()`:** prints the last 6 entries (elements for 1-D objects, rows for 2-D objects)</span>
-<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Vector and factor variables: </span>
-<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`length()`:** returns the number of elements in a vector or factor</span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Dataframe and matrix variables:</span>
-<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`dim()`:** returns dimensions of the dataset (number_of_rows, number_of_columns) <span class="co">[</span><span class="ot">Note, row numbers will always be displayed before column numbers in R</span><span class="co">]</span></span>
-<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`nrow()`:** returns the number of rows in the dataset</span>
-<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`ncol()`:** returns the number of columns in the dataset</span>
-<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`rownames()`:** returns the row names in the dataset  </span>
-<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`colnames()`:** returns the column names in the dataset</span>
-<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2</span></span>
-<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use the <span class="in">`class()`</span> function on <span class="in">`glengths`</span> and <span class="in">`metadata`</span>, how does the output differ between the two?</span>
-<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use the <span class="in">`summary()`</span> function on the <span class="in">`proj_summary`</span> dataframe, what is the median "rRNA_rate"?</span>
-<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How long is the <span class="in">`samplegroup`</span> factor?</span>
-<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>What are the dimensions of the <span class="in">`proj_summary`</span> dataframe?</span>
-<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>When you use the <span class="in">`rownames()`</span> function on <span class="in">`metadata`</span>, what is the *data structure* of the output?</span>
-<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Optional</span><span class="co">]</span> How many elements in (how long is) the output of <span class="in">`colnames(proj_summary)`</span>? Don't count, but use another function to determine this.</span>
-<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>We have some exercises below that will allow you to gain more familiarity with these. You will definitely be using some of them in the next few homework sections.</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**All data structures - content display**:</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`str()`:** compact display of data contents (similar to what you see in the Global environment)</span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`class()`:** displays the data type for vectors (e.g. character, numeric, etc.) and data structure for dataframes, matrices, lists</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`summary()`:** detailed display of the contents of a given object, including descriptive statistics, frequencies</span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`head()`:**  prints the first 6 entries (elements for 1-D objects, rows for 2-D objects)</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`tail()`:** prints the last 6 entries (elements for 1-D objects, rows for 2-D objects)</span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Vector and factor variables**: </span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`length()`:** returns the number of elements in a vector or factor</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Dataframe and matrix variables**:</span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`dim()`:** returns dimensions of the dataset (number_of_rows, number_of_columns) <span class="co">[</span><span class="ot">Note, row numbers will always be displayed before column numbers in R</span><span class="co">]</span></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`nrow()`:** returns the number of rows in the dataset</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`ncol()`:** returns the number of columns in the dataset</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`rownames()`:** returns the row names in the dataset  </span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>**`colnames()`:** returns the column names in the dataset</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2</span></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Use the <span class="in">`class()`</span> function on <span class="in">`glengths`</span> and <span class="in">`metadata`</span>, how does the output differ between the two?</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Use the <span class="in">`summary()`</span> function on the <span class="in">`proj_summary`</span> dataframe, what is the median "rRNA_rate"?</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>How long is the <span class="in">`samplegroup`</span> factor?</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>What are the dimensions of the <span class="in">`proj_summary`</span> dataframe?</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>When you use the <span class="in">`rownames()`</span> function on <span class="in">`metadata`</span>, what is the *data structure* of the output?</span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Optional</span><span class="co">]</span> How many elements in (how long is) the output of <span class="in">`colnames(proj_summary)`</span>? Don't count, but use another function to determine this.</span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

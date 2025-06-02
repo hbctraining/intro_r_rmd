@@ -71,6 +71,8 @@ The first thing you will notice is that you've pulled up the documentation for `
 The next item on the documentation page is the function **Description**, which specifies that the output of this set of functions is going to be a **data frame** - "*Reads a file in table format and **creates a data frame from it**, with cases corresponding to lines and variables to fields in the file.*"
 
 In usage, all of the arguments listed for `read.table()` are the default values for all of the family members unless otherwise specified for a given function. Let's take a look at 2 examples:
+
+
 1. **The separator** - 
 	* in the case of `read.table()` it is `sep = ""` (space or tab)
 	* whereas for `read.csv()` it is `sep = ","` (a comma).
@@ -102,7 +104,7 @@ At this point, please check the extension for the `mouse_exp_design` file within
 Let's read in the `mouse_exp_design` file and create a new data frame called `metadata`.
 
 ```{r}
-metadata <- read.csv(file="../data/mouse_exp_design.csv")
+metadata <- read.csv(file="data/mouse_exp_design.csv")
 
 # OR 
 # metadata <- read.csv(file="../data/mouse_exp_design.txt")
@@ -157,8 +159,8 @@ Row names and column names are really handy when subsetting data structures and 
 ::: callout-tip
 # Exercise 1
 
-1. Download [this tab-delimited `.txt` file](https://github.com/hbctraining/Intro-to-R-flipped/raw/master/data/project-summary.txt) and save it in your  project's `data` folder.
-2. Read it in to R using `read.table()` with the approriate arguments and store it as the variable `proj_summary`. To figure out the appropriate arguments to use with `read.table()`, keep the following in mind:
+1. Inside your project's `data` folder you should see a file called `project-summary.txt`.
+2. Read it in to R using `read.table()` with the appropriate arguments and store it as the variable `proj_summary`. To figure out the appropriate arguments to use with `read.table()`, keep the following in mind:
 	- all the columns in the input text file have column name/headers
 	- you want the first column of the text file to be used as row names (hint: look up the input for the `row.names =` argument in `read.table()`)
 3. Display the contents of `proj_summary` in your console
@@ -187,17 +189,17 @@ We already saw how the functions `head()` and `str()` (in the releveling section
 
 We have some exercises below that will allow you to gain more familiarity with these. You will definitely be using some of them in the next few homework sections.
 
-* All data structures - content display:
+* **All data structures - content display**:
 	- **`str()`:** compact display of data contents (similar to what you see in the Global environment)
 	- **`class()`:** displays the data type for vectors (e.g. character, numeric, etc.) and data structure for dataframes, matrices, lists
 	- **`summary()`:** detailed display of the contents of a given object, including descriptive statistics, frequencies
 	- **`head()`:**  prints the first 6 entries (elements for 1-D objects, rows for 2-D objects)
 	- **`tail()`:** prints the last 6 entries (elements for 1-D objects, rows for 2-D objects)
 
-* Vector and factor variables: 
+* **Vector and factor variables**: 
 	- **`length()`:** returns the number of elements in a vector or factor
 
-* Dataframe and matrix variables:
+* **Dataframe and matrix variables**:
 	- **`dim()`:** returns dimensions of the dataset (number_of_rows, number_of_columns) [Note, row numbers will always be displayed before column numbers in R]
 	- **`nrow()`:** returns the number of rows in the dataset
 	- **`ncol()`:** returns the number of columns in the dataset
@@ -207,11 +209,12 @@ We have some exercises below that will allow you to gain more familiarity with t
 ::: callout-tip
 # Exercise 2
 
-* Use the `class()` function on `glengths` and `metadata`, how does the output differ between the two?
-* Use the `summary()` function on the `proj_summary` dataframe, what is the median "rRNA_rate"?
-* How long is the `samplegroup` factor?
-* What are the dimensions of the `proj_summary` dataframe?
-* When you use the `rownames()` function on `metadata`, what is the *data structure* of the output?
-* [Optional] How many elements in (how long is) the output of `colnames(proj_summary)`? Don't count, but use another function to determine this.
+1. Use the `class()` function on `glengths` and `metadata`, how does the output differ between the two?
+2. Use the `summary()` function on the `proj_summary` dataframe, what is the median "rRNA_rate"?
+3. How long is the `samplegroup` factor?
+4. What are the dimensions of the `proj_summary` dataframe?
+5. When you use the `rownames()` function on `metadata`, what is the *data structure* of the output?
+
+[Optional] How many elements in (how long is) the output of `colnames(proj_summary)`? Don't count, but use another function to determine this.
 
 :::
