@@ -79,7 +79,25 @@ main img,
   margin-bottom: 1em;
 }
 
-/* Hides Quarto's page title box */
+/* Remove the box styling */
 .quarto-title-block {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 1em !important;
+  text-align: left !important;
+}
+
+/* Hide only the author, affiliation, date, subtitle, etc */
+.quarto-title-author,
+.quarto-title-affiliation,
+.quarto-title-date,
+.quarto-title-subtitle,
+.quarto-title-lang,
+.quarto-title-abstract,
+.quarto-title-meta,
+#quarto-article-details
+{
   display: none !important;
 }
