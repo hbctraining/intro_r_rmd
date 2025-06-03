@@ -407,7 +407,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="dataframes">Dataframes</h3>
 <p>Dataframes (and matrices) have 2 dimensions (rows and columns), so if we want to select some specific data from it we need to specify the “coordinates” we want from it. We use the same square bracket notation but rather than providing a single index, there are <em>two indices required</em>. Within the square bracket, <strong>row numbers come first followed by column numbers (and the two are separated by a comma)</strong>. Let’s explore the <code>metadata</code> dataframe, shown below are the first six samples:</p>
 <p><img src="../img/metadata.png" class="img-fluid"></p>
-<p>Let’s say we wanted to extract the wild type (<code>Wt</code>) value that is present in the first row and the first column. To extract it, just like with vectors, we give the name of the data frame that we want to extract from, followed by the square brackets. Now inside the square brackets we give the coordinates or indices for the rows in which the value(s) are present, followed by a comma, then the coordinates or indices for the columns in which the value(s) are present. We know the wild type value is in the first row if we count from the top, so we put a one, then a comma. The wild type value is also in the first column, counting from left to right, so we put a one in the columns space too.</p>
+<p>Let’s say we wanted to <strong>extract the wild type (<code>Wt</code>) value that is present in the first row and the first column</strong>.</p>
+<ol type="1">
+<li>To extract it, just like with vectors, we give the name of the data frame that we want to extract from, followed by the square brackets (<code>metadata[ ]</code>).</li>
+<li>Now inside the square brackets we <strong>give the coordinates</strong> or indices for the rows in which the value(s) are present, followed by a comma, then the coordinates or indices for the columns in which the value(s) are present (<code>metadata[rows, columns]</code>).</li>
+</ol>
+<p>We know the wild type value is in the first row if we count from the top, so we put a one, then a comma. The wild type value is also in the first column, counting from left to right, so we put a one in the columns space too.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract value 'Wt'</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">1</span>, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -441,7 +446,9 @@ sample3       Wt    typeA         3</code></pre>
 <pre><code> [1] 1 2 3 1 2 3 1 2 3 1 2 3</code></pre>
 </div>
 </div>
-<p>What kind of data structure does this output appear to be? It looks different from the data frame, and we really just see a series of values output, indicating a vector data structure. This happens be default if just selecting a single column from a data frame. R will drop to the simplest data structure possible. Since a single column in a data frame is really just a vector, R will output a vector data structure as the simplest data structure. Oftentimes we would like to keep our single column as a data frame. To do this, there is an argument we can add when subsetting called <code>drop</code>, meaning do we want to drop down to the simplest data structure. By default it is <code>TRUE</code>, but we can change it’s value to <code>FALSE</code> in order to keep the output as a data frame.</p>
+<p><strong>What kind of data structure does this output appear to be?</strong></p>
+<p>It looks different from the data frame, and we really just see a series of values output, indicating a vector data structure. This happens be default if just selecting a single column from a data frame. <strong>R will drop to the simplest data structure possible.</strong> Since a single column in a data frame is really just a vector, R will output a vector data structure as the simplest data structure.</p>
+<p>Oftentimes we would like to keep our single column as a data frame. To do this, there is an argument we can add when subsetting called <code>drop</code>, meaning do we want to drop down to the simplest data structure. By default it is <code>TRUE</code>, but we can change it’s value to <code>FALSE</code> in order to <strong>keep the output as a data frame</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract third column as a data frame</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>metadata[ , <span class="dv">3</span>, drop <span class="ot">=</span> <span class="cn">FALSE</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -516,7 +523,7 @@ sample6       KO    typeA         3</code></pre>
  [7] "sample7"  "sample8"  "sample9"  "sample10" "sample11" "sample12"</code></pre>
 </div>
 </div>
-<p>If only a single column is to be extracted from a data frame, there is a useful shortcut available. If you type the name of the data frame, then the <code>$</code>, you have the option to choose which column to extract. For instance, let’s extract the entire genotype column from our dataset:</p>
+<p>If only a single column is to be extracted from a data frame, there is <strong>a useful shortcut available</strong>. If you type the name of the data frame, then the <code>$</code>, you have the option to choose which column to extract. For instance, let’s extract the entire genotype column from our dataset:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the genotype column</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>genotype </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -662,7 +669,7 @@ Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="4" type="1">
+<ol type="1">
 <li>Subset the <code>metadata</code> dataframe to return only the rows of data with a genotype of <code>KO</code>.</li>
 </ol>
 </div>
@@ -755,7 +762,9 @@ Exercises
 <pre><code>NULL</code></pre>
 </div>
 </div>
-<p>When we created the list we had combined the <code>species</code> vector with a dataframe <code>df</code> and the <code>number</code> variable. Let’s assign the original names to the components. To do this we can use the assignment operator in a new context. If we add <code>names(list1)</code> to the left side of the assignment arrow to be assigned to, then anything on the right side of the arrow will be assigned. Since we have three components in <code>list1</code>, we need three names to assign. We can create a vector of names using the combine (<code>c()</code>) function, and inside the combine function we give the names to assign to the components in the order we would like. So the first name is assigned to the first component of the list, and so on.</p>
+<p>When we created the list we had combined the <code>species</code> vector with a dataframe <code>df</code> and the <code>number</code> variable.</p>
+<p>Let’s <strong>assign the original names to the components</strong>. To do this we can use the assignment operator in a new context. If we add <code>names(list1)</code> to the left side of the assignment arrow to be assigned to, then anything on the right side of the arrow will be assigned. Since we have three components in <code>list1</code>, we need three names to assign.</p>
+<p>We can <strong>create a vector of names</strong> using the combine (<code>c()</code>) function, and inside the combine function we give the names to assign to the components in the order we would like. So the first name is assigned to the first component of the list, and so on.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Name components of the list</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(list1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"df"</span>, <span class="st">"number"</span>)</span>
@@ -787,7 +796,7 @@ Exercise
 </div>
 <div class="callout-body-container callout-body">
 <p>Let’s practice combining ways to extract data from the data structures we have covered so far:</p>
-<ol start="5" type="1">
+<ol type="1">
 <li>Set names for the <code>random</code> list you created in the last exercise.</li>
 <li>Extract the <code>age</code> component using the <code>$</code> notation</li>
 </ol>
@@ -1115,7 +1124,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>number <span class="ot">&lt;-</span> <span class="dv">9</span></span>
 <span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>list1 <span class="ot">&lt;-</span> <span class="fu">list</span>(species, df, number)</span>
 <span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"../data/mouse_exp_design.csv"</span>)</span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"data/mouse_exp_design.csv"</span>)</span>
 <span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Objectives</span></span>
@@ -1128,271 +1137,284 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a><span class="al">![](../img/metadata.png)</span></span>
 <span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>Let's say we wanted to extract the wild type (<span class="in">`Wt`</span>) value that is present in the first row and the first column. To extract it, just like with vectors, we give the name of the data frame that we want to extract from, followed by the square brackets. Now inside the square brackets we give the coordinates or indices for the rows in which the value(s) are present, followed by a comma, then the coordinates or indices for the columns in which the value(s) are present. We know the wild type value is in the first row if we count from the top, so we put a one, then a comma. The wild type value is also in the first column, counting from left to right, so we put a one in the columns space too. </span>
+<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>Let's say we wanted to **extract the wild type (`Wt`) value that is present in the first row and the first column**. </span>
 <span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-35"><a href="#cb56-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract value 'Wt'</span></span>
-<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">1</span>, <span class="dv">1</span>]</span>
-<span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-42"><a href="#cb56-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-43"><a href="#cb56-43" aria-hidden="true" tabindex="-1"></a>Now let's extract the value <span class="in">`1`</span> from the first row and third column.</span>
-<span id="cb56-44"><a href="#cb56-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-47"><a href="#cb56-47" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-48"><a href="#cb56-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract value '1'</span></span>
-<span id="cb56-49"><a href="#cb56-49" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">1</span>, <span class="dv">3</span>] </span>
-<span id="cb56-50"><a href="#cb56-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-51"><a href="#cb56-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-52"><a href="#cb56-52" aria-hidden="true" tabindex="-1"></a>Now if you only wanted to select based on rows, you would provide the index for the rows and leave the columns index blank. The key here is to include the comma, to let R know that you are accessing a 2-dimensional data structure:</span>
-<span id="cb56-53"><a href="#cb56-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-56"><a href="#cb56-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-57"><a href="#cb56-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract third row</span></span>
-<span id="cb56-58"><a href="#cb56-58" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">3</span>, ] </span>
-<span id="cb56-59"><a href="#cb56-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-60"><a href="#cb56-60" aria-hidden="true" tabindex="-1"></a>What kind of data structure does the output appear to be? We see that it is two-dimensional with row names and column names, so we can surmise that it's likely a data frame.</span>
-<span id="cb56-61"><a href="#cb56-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-62"><a href="#cb56-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-63"><a href="#cb56-63" aria-hidden="true" tabindex="-1"></a>If you were selecting specific columns from the data frame - the rows are left blank:</span>
-<span id="cb56-64"><a href="#cb56-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-67"><a href="#cb56-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-68"><a href="#cb56-68" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract third column</span></span>
-<span id="cb56-69"><a href="#cb56-69" aria-hidden="true" tabindex="-1"></a>metadata[ , <span class="dv">3</span>]   </span>
-<span id="cb56-70"><a href="#cb56-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-71"><a href="#cb56-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-72"><a href="#cb56-72" aria-hidden="true" tabindex="-1"></a>What kind of data structure does this output appear to be? It looks different from the data frame, and we really just see a series of values output, indicating a vector data structure. This happens be default if just selecting a single column from a data frame. R will drop to the simplest data structure possible. Since a single column in a data frame is really just a vector, R will output a vector data structure as the simplest data structure. Oftentimes we would like to keep our single column as a data frame. To do this, there is an argument we can add when subsetting called <span class="in">`drop`</span>, meaning do we want to drop down to the simplest data structure. By default it is <span class="in">`TRUE`</span>, but we can change it's value to <span class="in">`FALSE`</span> in order to keep the output as a data frame.</span>
-<span id="cb56-73"><a href="#cb56-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-76"><a href="#cb56-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-77"><a href="#cb56-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract third column as a data frame</span></span>
-<span id="cb56-78"><a href="#cb56-78" aria-hidden="true" tabindex="-1"></a>metadata[ , <span class="dv">3</span>, drop <span class="ot">=</span> <span class="cn">FALSE</span>] </span>
-<span id="cb56-79"><a href="#cb56-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-35"><a href="#cb56-35" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>To extract it, just like with vectors, we give the name of the data frame that we want to extract from, followed by the square brackets (<span class="in">`metadata[ ]`</span>). </span>
+<span id="cb56-36"><a href="#cb56-36" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Now inside the square brackets we **give the coordinates** or indices for the rows in which the value(s) are present, followed by a comma, then the coordinates or indices for the columns in which the value(s) are present (<span class="in">`metadata[rows, columns]`</span>). </span>
+<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a>We know the wild type value is in the first row if we count from the top, so we put a one, then a comma. The wild type value is also in the first column, counting from left to right, so we put a one in the columns space too. </span>
+<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-43"><a href="#cb56-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-44"><a href="#cb56-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract value 'Wt'</span></span>
+<span id="cb56-45"><a href="#cb56-45" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb56-46"><a href="#cb56-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-47"><a href="#cb56-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-48"><a href="#cb56-48" aria-hidden="true" tabindex="-1"></a>Now let's extract the value <span class="in">`1`</span> from the first row and third column.</span>
+<span id="cb56-49"><a href="#cb56-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-52"><a href="#cb56-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-53"><a href="#cb56-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract value '1'</span></span>
+<span id="cb56-54"><a href="#cb56-54" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">1</span>, <span class="dv">3</span>] </span>
+<span id="cb56-55"><a href="#cb56-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-56"><a href="#cb56-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-57"><a href="#cb56-57" aria-hidden="true" tabindex="-1"></a>Now if you only wanted to select based on rows, you would provide the index for the rows and leave the columns index blank. The key here is to include the comma, to let R know that you are accessing a 2-dimensional data structure:</span>
+<span id="cb56-58"><a href="#cb56-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-61"><a href="#cb56-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-62"><a href="#cb56-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract third row</span></span>
+<span id="cb56-63"><a href="#cb56-63" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">3</span>, ] </span>
+<span id="cb56-64"><a href="#cb56-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-65"><a href="#cb56-65" aria-hidden="true" tabindex="-1"></a>What kind of data structure does the output appear to be? We see that it is two-dimensional with row names and column names, so we can surmise that it's likely a data frame.</span>
+<span id="cb56-66"><a href="#cb56-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-67"><a href="#cb56-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-68"><a href="#cb56-68" aria-hidden="true" tabindex="-1"></a>If you were selecting specific columns from the data frame - the rows are left blank:</span>
+<span id="cb56-69"><a href="#cb56-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-72"><a href="#cb56-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-73"><a href="#cb56-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract third column</span></span>
+<span id="cb56-74"><a href="#cb56-74" aria-hidden="true" tabindex="-1"></a>metadata[ , <span class="dv">3</span>]   </span>
+<span id="cb56-75"><a href="#cb56-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-76"><a href="#cb56-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-77"><a href="#cb56-77" aria-hidden="true" tabindex="-1"></a>**What kind of data structure does this output appear to be?**</span>
+<span id="cb56-78"><a href="#cb56-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-79"><a href="#cb56-79" aria-hidden="true" tabindex="-1"></a>It looks different from the data frame, and we really just see a series of values output, indicating a vector data structure. This happens be default if just selecting a single column from a data frame. **R will drop to the simplest data structure possible.** Since a single column in a data frame is really just a vector, R will output a vector data structure as the simplest data structure. </span>
 <span id="cb56-80"><a href="#cb56-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-81"><a href="#cb56-81" aria-hidden="true" tabindex="-1"></a>Just like with vectors, you can select multiple rows and columns at a time. Within the square brackets, you need to provide a vector of the desired values. </span>
+<span id="cb56-81"><a href="#cb56-81" aria-hidden="true" tabindex="-1"></a>Oftentimes we would like to keep our single column as a data frame. To do this, there is an argument we can add when subsetting called <span class="in">`drop`</span>, meaning do we want to drop down to the simplest data structure. By default it is <span class="in">`TRUE`</span>, but we can change it's value to <span class="in">`FALSE`</span> in order to **keep the output as a data frame**.</span>
 <span id="cb56-82"><a href="#cb56-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-83"><a href="#cb56-83" aria-hidden="true" tabindex="-1"></a>We can extract consecutive rows or columns using the colon (<span class="in">`:`</span>) to create the vector of indices to extract.</span>
-<span id="cb56-84"><a href="#cb56-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-87"><a href="#cb56-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-88"><a href="#cb56-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataframe containing first two columns</span></span>
-<span id="cb56-89"><a href="#cb56-89" aria-hidden="true" tabindex="-1"></a>metadata[ , <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] </span>
-<span id="cb56-90"><a href="#cb56-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-85"><a href="#cb56-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-86"><a href="#cb56-86" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract third column as a data frame</span></span>
+<span id="cb56-87"><a href="#cb56-87" aria-hidden="true" tabindex="-1"></a>metadata[ , <span class="dv">3</span>, drop <span class="ot">=</span> <span class="cn">FALSE</span>] </span>
+<span id="cb56-88"><a href="#cb56-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-89"><a href="#cb56-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-90"><a href="#cb56-90" aria-hidden="true" tabindex="-1"></a>Just like with vectors, you can select multiple rows and columns at a time. Within the square brackets, you need to provide a vector of the desired values. </span>
 <span id="cb56-91"><a href="#cb56-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-92"><a href="#cb56-92" aria-hidden="true" tabindex="-1"></a>Alternatively, we can use the combine function (<span class="in">`c()`</span>) to extract any number of rows or columns. Let's extract the first, third, and sixth rows.</span>
+<span id="cb56-92"><a href="#cb56-92" aria-hidden="true" tabindex="-1"></a>We can extract consecutive rows or columns using the colon (<span class="in">`:`</span>) to create the vector of indices to extract.</span>
 <span id="cb56-93"><a href="#cb56-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-96"><a href="#cb56-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-97"><a href="#cb56-97" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame containing first, third and sixth rows</span></span>
-<span id="cb56-98"><a href="#cb56-98" aria-hidden="true" tabindex="-1"></a>metadata[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">6</span>), ] </span>
+<span id="cb56-97"><a href="#cb56-97" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataframe containing first two columns</span></span>
+<span id="cb56-98"><a href="#cb56-98" aria-hidden="true" tabindex="-1"></a>metadata[ , <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] </span>
 <span id="cb56-99"><a href="#cb56-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-100"><a href="#cb56-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-101"><a href="#cb56-101" aria-hidden="true" tabindex="-1"></a>For larger datasets, it can be tricky to remember the column number that corresponds to a particular variable. (Is celltype in column 1</span>
-<span id="cb56-102"><a href="#cb56-102" aria-hidden="true" tabindex="-1"></a>or 2? oh, right... they are in column 1). In some cases, the column/row number for values can change if the script you are using adds or removes columns/rows. It's, therefore, often better to use column/row names to refer to extract particular values, and it makes your code easier to read and your intentions clearer.</span>
-<span id="cb56-103"><a href="#cb56-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-106"><a href="#cb56-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-107"><a href="#cb56-107" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the celltype column for the first three samples</span></span>
-<span id="cb56-108"><a href="#cb56-108" aria-hidden="true" tabindex="-1"></a>metadata[<span class="fu">c</span>(<span class="st">"sample1"</span>, <span class="st">"sample2"</span>, <span class="st">"sample3"</span>) , <span class="st">"celltype"</span>] </span>
-<span id="cb56-109"><a href="#cb56-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-110"><a href="#cb56-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-111"><a href="#cb56-111" aria-hidden="true" tabindex="-1"></a>It's important to type the names of the columns/rows in the exact way that they are typed in the data frame; for instance if I had spelled <span class="in">`celltype`</span> with a capital <span class="in">`C`</span>, it would not have worked.</span>
+<span id="cb56-101"><a href="#cb56-101" aria-hidden="true" tabindex="-1"></a>Alternatively, we can use the combine function (<span class="in">`c()`</span>) to extract any number of rows or columns. Let's extract the first, third, and sixth rows.</span>
+<span id="cb56-102"><a href="#cb56-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-105"><a href="#cb56-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-106"><a href="#cb56-106" aria-hidden="true" tabindex="-1"></a><span class="co"># Data frame containing first, third and sixth rows</span></span>
+<span id="cb56-107"><a href="#cb56-107" aria-hidden="true" tabindex="-1"></a>metadata[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">6</span>), ] </span>
+<span id="cb56-108"><a href="#cb56-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-109"><a href="#cb56-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-110"><a href="#cb56-110" aria-hidden="true" tabindex="-1"></a>For larger datasets, it can be tricky to remember the column number that corresponds to a particular variable. (Is celltype in column 1</span>
+<span id="cb56-111"><a href="#cb56-111" aria-hidden="true" tabindex="-1"></a>or 2? oh, right... they are in column 1). In some cases, the column/row number for values can change if the script you are using adds or removes columns/rows. It's, therefore, often better to use column/row names to refer to extract particular values, and it makes your code easier to read and your intentions clearer.</span>
 <span id="cb56-112"><a href="#cb56-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-113"><a href="#cb56-113" aria-hidden="true" tabindex="-1"></a>If you need to remind yourself of the column/row names, the following functions are helpful:</span>
-<span id="cb56-114"><a href="#cb56-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-117"><a href="#cb56-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-118"><a href="#cb56-118" aria-hidden="true" tabindex="-1"></a><span class="co"># Check column names of metadata data frame</span></span>
-<span id="cb56-119"><a href="#cb56-119" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(metadata)</span>
-<span id="cb56-120"><a href="#cb56-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-121"><a href="#cb56-121" aria-hidden="true" tabindex="-1"></a><span class="co"># Check row names of metadata data frame</span></span>
-<span id="cb56-122"><a href="#cb56-122" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(metadata)</span>
-<span id="cb56-123"><a href="#cb56-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-124"><a href="#cb56-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-125"><a href="#cb56-125" aria-hidden="true" tabindex="-1"></a>If only a single column is to be extracted from a data frame, there is a useful shortcut available. If you type the name of the data frame, then the <span class="in">`$`</span>, you have the option to choose which column to extract. For instance, let's extract the entire genotype column from our dataset:</span>
-<span id="cb56-126"><a href="#cb56-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-129"><a href="#cb56-129" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-130"><a href="#cb56-130" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the genotype column</span></span>
-<span id="cb56-131"><a href="#cb56-131" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>genotype </span>
+<span id="cb56-115"><a href="#cb56-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-116"><a href="#cb56-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the celltype column for the first three samples</span></span>
+<span id="cb56-117"><a href="#cb56-117" aria-hidden="true" tabindex="-1"></a>metadata[<span class="fu">c</span>(<span class="st">"sample1"</span>, <span class="st">"sample2"</span>, <span class="st">"sample3"</span>) , <span class="st">"celltype"</span>] </span>
+<span id="cb56-118"><a href="#cb56-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-119"><a href="#cb56-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-120"><a href="#cb56-120" aria-hidden="true" tabindex="-1"></a>It's important to type the names of the columns/rows in the exact way that they are typed in the data frame; for instance if I had spelled <span class="in">`celltype`</span> with a capital <span class="in">`C`</span>, it would not have worked.</span>
+<span id="cb56-121"><a href="#cb56-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-122"><a href="#cb56-122" aria-hidden="true" tabindex="-1"></a>If you need to remind yourself of the column/row names, the following functions are helpful:</span>
+<span id="cb56-123"><a href="#cb56-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-126"><a href="#cb56-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-127"><a href="#cb56-127" aria-hidden="true" tabindex="-1"></a><span class="co"># Check column names of metadata data frame</span></span>
+<span id="cb56-128"><a href="#cb56-128" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(metadata)</span>
+<span id="cb56-129"><a href="#cb56-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-130"><a href="#cb56-130" aria-hidden="true" tabindex="-1"></a><span class="co"># Check row names of metadata data frame</span></span>
+<span id="cb56-131"><a href="#cb56-131" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(metadata)</span>
 <span id="cb56-132"><a href="#cb56-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-133"><a href="#cb56-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-134"><a href="#cb56-134" aria-hidden="true" tabindex="-1"></a>The output will always be a vector, and if desired, you can continue to treat it as a vector. For example, if we wanted the genotype information for the first five samples in <span class="in">`metadata`</span>, we can use the square brackets (<span class="in">`[]`</span>) with the indices for the values from the vector to extract:</span>
+<span id="cb56-134"><a href="#cb56-134" aria-hidden="true" tabindex="-1"></a>If only a single column is to be extracted from a data frame, there is **a useful shortcut available**. If you type the name of the data frame, then the <span class="in">`$`</span>, you have the option to choose which column to extract. For instance, let's extract the entire genotype column from our dataset:</span>
 <span id="cb56-135"><a href="#cb56-135" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-138"><a href="#cb56-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-139"><a href="#cb56-139" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the first five values/elements of the genotype column</span></span>
-<span id="cb56-140"><a href="#cb56-140" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>genotype[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb56-139"><a href="#cb56-139" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the genotype column</span></span>
+<span id="cb56-140"><a href="#cb56-140" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>genotype </span>
 <span id="cb56-141"><a href="#cb56-141" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-142"><a href="#cb56-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-143"><a href="#cb56-143" aria-hidden="true" tabindex="-1"></a>Unfortunately, there is no equivalent <span class="in">`$`</span> syntax to select a row by name. </span>
+<span id="cb56-143"><a href="#cb56-143" aria-hidden="true" tabindex="-1"></a>The output will always be a vector, and if desired, you can continue to treat it as a vector. For example, if we wanted the genotype information for the first five samples in <span class="in">`metadata`</span>, we can use the square brackets (<span class="in">`[]`</span>) with the indices for the values from the vector to extract:</span>
 <span id="cb56-144"><a href="#cb56-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-145"><a href="#cb56-145" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb56-146"><a href="#cb56-146" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises</span></span>
-<span id="cb56-147"><a href="#cb56-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-148"><a href="#cb56-148" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Return a data frame with only the <span class="in">`genotype`</span> and <span class="in">`replicate`</span> column values for <span class="in">`sample2`</span> and <span class="in">`sample8`</span>.</span>
-<span id="cb56-149"><a href="#cb56-149" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Return the fourth and ninth values of the <span class="in">`replicate`</span> column.</span>
-<span id="cb56-150"><a href="#cb56-150" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Extract the <span class="in">`replicate`</span> column as a data frame.</span>
-<span id="cb56-151"><a href="#cb56-151" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb56-152"><a href="#cb56-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-153"><a href="#cb56-153" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Selecting using indices with logical operators</span></span>
-<span id="cb56-154"><a href="#cb56-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-155"><a href="#cb56-155" aria-hidden="true" tabindex="-1"></a>With data frames, similar to vectors, we can use logical expressions to extract the rows or columns in the data frame with specific values. First, we need to determine the indices in a rows or columns where a logical expression is <span class="in">`TRUE`</span>, then we can extract those rows or columns from the data frame. </span>
+<span id="cb56-147"><a href="#cb56-147" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-148"><a href="#cb56-148" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the first five values/elements of the genotype column</span></span>
+<span id="cb56-149"><a href="#cb56-149" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>genotype[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb56-150"><a href="#cb56-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-151"><a href="#cb56-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-152"><a href="#cb56-152" aria-hidden="true" tabindex="-1"></a>Unfortunately, there is no equivalent <span class="in">`$`</span> syntax to select a row by name. </span>
+<span id="cb56-153"><a href="#cb56-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-154"><a href="#cb56-154" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb56-155"><a href="#cb56-155" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises</span></span>
 <span id="cb56-156"><a href="#cb56-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-157"><a href="#cb56-157" aria-hidden="true" tabindex="-1"></a>For example, if we want to return only those rows of the data frame with the <span class="in">`celltype`</span> column having a value of <span class="in">`typeA`</span>, we would perform two steps:</span>
-<span id="cb56-158"><a href="#cb56-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-159"><a href="#cb56-159" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Identify which rows in the celltype column have a value of <span class="in">`typeA`</span>.</span>
-<span id="cb56-160"><a href="#cb56-160" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Use those TRUE values to extract those rows from the data frame.</span>
+<span id="cb56-157"><a href="#cb56-157" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Return a data frame with only the <span class="in">`genotype`</span> and <span class="in">`replicate`</span> column values for <span class="in">`sample2`</span> and <span class="in">`sample8`</span>.</span>
+<span id="cb56-158"><a href="#cb56-158" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Return the fourth and ninth values of the <span class="in">`replicate`</span> column.</span>
+<span id="cb56-159"><a href="#cb56-159" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Extract the <span class="in">`replicate`</span> column as a data frame.</span>
+<span id="cb56-160"><a href="#cb56-160" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb56-161"><a href="#cb56-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-162"><a href="#cb56-162" aria-hidden="true" tabindex="-1"></a>To do this we would extract the column of interest as a vector, with the first value corresponding to the first row, the second value corresponding to the second row, so on and so forth. We use that vector in the logical expression. Here we are looking for values to be equal to <span class="in">`typeA`</span>, so our logical expression would be:</span>
+<span id="cb56-162"><a href="#cb56-162" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Selecting using indices with logical operators</span></span>
 <span id="cb56-163"><a href="#cb56-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-166"><a href="#cb56-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-167"><a href="#cb56-167" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>celltype <span class="sc">==</span> <span class="st">"typeA"</span></span>
-<span id="cb56-168"><a href="#cb56-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-169"><a href="#cb56-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-170"><a href="#cb56-170" aria-hidden="true" tabindex="-1"></a>This will output TRUE and FALSE values for the values in the vector. The first six values are <span class="in">`TRUE`</span>, while the last six are <span class="in">`FALSE`</span>. This means the first six rows of our metadata have a vale of <span class="in">`typeA`</span> while the last six do not. We can save these values to a variable, which we can call whatever we would like; let's call it <span class="in">`logical_idx`</span>.</span>
-<span id="cb56-171"><a href="#cb56-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-174"><a href="#cb56-174" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-175"><a href="#cb56-175" aria-hidden="true" tabindex="-1"></a>logical_idx <span class="ot">&lt;-</span> metadata<span class="sc">$</span>celltype <span class="sc">==</span> <span class="st">"typeA"</span></span>
-<span id="cb56-176"><a href="#cb56-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-177"><a href="#cb56-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-178"><a href="#cb56-178" aria-hidden="true" tabindex="-1"></a>Now we can use those <span class="in">`TRUE`</span> and <span class="in">`FALSE`</span> values to extract the rows that correspond to the <span class="in">`TRUE`</span> values from the metadata data frame. We will extract as we normally would a data frame with <span class="in">`metadata[ , ]`</span>, and we need to make sure we put the <span class="in">`logical_idx`</span> in the row's space, since those <span class="in">`TRUE`</span> and <span class="in">`FALSE`</span> values correspond to the ROWS for which the expression is <span class="in">`TRUE`</span>/<span class="in">`FALSE`</span>. We will leave the column's space blank to return all columns.</span>
-<span id="cb56-179"><a href="#cb56-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-182"><a href="#cb56-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-183"><a href="#cb56-183" aria-hidden="true" tabindex="-1"></a>metadata[logical_idx, ]</span>
-<span id="cb56-184"><a href="#cb56-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-185"><a href="#cb56-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-186"><a href="#cb56-186" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Selecting indices with logical operators using the `which()` function</span></span>
-<span id="cb56-187"><a href="#cb56-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-188"><a href="#cb56-188" aria-hidden="true" tabindex="-1"></a>As you might have guessed, we can also use the <span class="in">`which()`</span> function to return the indices for which the logical expression is TRUE. For example, we can find the indices where the <span class="in">`celltype`</span> is <span class="in">`typeA`</span> within the <span class="in">`metadata`</span> dataframe:</span>
-<span id="cb56-189"><a href="#cb56-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-192"><a href="#cb56-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-193"><a href="#cb56-193" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(metadata<span class="sc">$</span>celltype <span class="sc">==</span> <span class="st">"typeA"</span>)</span>
-<span id="cb56-194"><a href="#cb56-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-195"><a href="#cb56-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-196"><a href="#cb56-196" aria-hidden="true" tabindex="-1"></a>This returns the values one through six, indicating that the first 6 values or rows are true, or equal to typeA.  We can save our indices for which rows the logical expression is true to a variable we'll call idx, but, again, you could call it anything you want.</span>
-<span id="cb56-197"><a href="#cb56-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-200"><a href="#cb56-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-201"><a href="#cb56-201" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">which</span>(metadata<span class="sc">$</span>celltype <span class="sc">==</span> <span class="st">"typeA"</span>)</span>
-<span id="cb56-202"><a href="#cb56-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-203"><a href="#cb56-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-204"><a href="#cb56-204" aria-hidden="true" tabindex="-1"></a>Then, we can use these indices to indicate the rows that we would like to return by extracting that data as we have previously, giving the <span class="in">`idx`</span> as the rows that we would like to extract, while returning all columns:</span>
-<span id="cb56-205"><a href="#cb56-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-208"><a href="#cb56-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-209"><a href="#cb56-209" aria-hidden="true" tabindex="-1"></a>metadata[idx, ]</span>
-<span id="cb56-210"><a href="#cb56-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-211"><a href="#cb56-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-212"><a href="#cb56-212" aria-hidden="true" tabindex="-1"></a>Let's try another subsetting. Extract the rows of the metadata data frame for only the replicates 2 and 3. First, let's create the logical expression for the column of interest (<span class="in">`replicate`</span>):</span>
-<span id="cb56-213"><a href="#cb56-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-216"><a href="#cb56-216" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-217"><a href="#cb56-217" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(metadata<span class="sc">$</span>replicate <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
-<span id="cb56-218"><a href="#cb56-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-219"><a href="#cb56-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-220"><a href="#cb56-220" aria-hidden="true" tabindex="-1"></a>This should return the indices for the rows in the <span class="in">`replicate`</span> column within <span class="in">`metadata`</span> that have a value of 2 or 3. Now, we can save those indices to a variable and use that variable to extract those corresponding rows from the <span class="in">`metadata`</span> table.</span>
-<span id="cb56-221"><a href="#cb56-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-224"><a href="#cb56-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-225"><a href="#cb56-225" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">which</span>(metadata<span class="sc">$</span>replicate <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
-<span id="cb56-226"><a href="#cb56-226" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb56-227"><a href="#cb56-227" aria-hidden="true" tabindex="-1"></a>metadata[idx, ]</span>
-<span id="cb56-228"><a href="#cb56-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-229"><a href="#cb56-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-230"><a href="#cb56-230" aria-hidden="true" tabindex="-1"></a>Alternatively, instead of doing this in two steps, we could use nesting to perform in a single step:</span>
-<span id="cb56-231"><a href="#cb56-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-234"><a href="#cb56-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-235"><a href="#cb56-235" aria-hidden="true" tabindex="-1"></a>metadata[<span class="fu">which</span>(metadata<span class="sc">$</span>replicate <span class="sc">&gt;</span> <span class="dv">1</span>), ]</span>
-<span id="cb56-236"><a href="#cb56-236" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-237"><a href="#cb56-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-238"><a href="#cb56-238" aria-hidden="true" tabindex="-1"></a>Either way works, so use the method that is most intuitive for you.</span>
-<span id="cb56-239"><a href="#cb56-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-240"><a href="#cb56-240" aria-hidden="true" tabindex="-1"></a>So far we haven't stored as variables any of the extractions/subsettings that we have performed. Let's save this output to a variable called <span class="in">`sub_meta`</span>:</span>
-<span id="cb56-241"><a href="#cb56-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-244"><a href="#cb56-244" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-245"><a href="#cb56-245" aria-hidden="true" tabindex="-1"></a>sub_meta <span class="ot">&lt;-</span> metadata[<span class="fu">which</span>(metadata<span class="sc">$</span>replicate <span class="sc">&gt;</span> <span class="dv">1</span>), ]</span>
-<span id="cb56-246"><a href="#cb56-246" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-247"><a href="#cb56-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-248"><a href="#cb56-248" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb56-249"><a href="#cb56-249" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise</span></span>
+<span id="cb56-164"><a href="#cb56-164" aria-hidden="true" tabindex="-1"></a>With data frames, similar to vectors, we can use logical expressions to extract the rows or columns in the data frame with specific values. First, we need to determine the indices in a rows or columns where a logical expression is <span class="in">`TRUE`</span>, then we can extract those rows or columns from the data frame. </span>
+<span id="cb56-165"><a href="#cb56-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-166"><a href="#cb56-166" aria-hidden="true" tabindex="-1"></a>For example, if we want to return only those rows of the data frame with the <span class="in">`celltype`</span> column having a value of <span class="in">`typeA`</span>, we would perform two steps:</span>
+<span id="cb56-167"><a href="#cb56-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-168"><a href="#cb56-168" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Identify which rows in the celltype column have a value of <span class="in">`typeA`</span>.</span>
+<span id="cb56-169"><a href="#cb56-169" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Use those TRUE values to extract those rows from the data frame.</span>
+<span id="cb56-170"><a href="#cb56-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-171"><a href="#cb56-171" aria-hidden="true" tabindex="-1"></a>To do this we would extract the column of interest as a vector, with the first value corresponding to the first row, the second value corresponding to the second row, so on and so forth. We use that vector in the logical expression. Here we are looking for values to be equal to <span class="in">`typeA`</span>, so our logical expression would be:</span>
+<span id="cb56-172"><a href="#cb56-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-175"><a href="#cb56-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-176"><a href="#cb56-176" aria-hidden="true" tabindex="-1"></a>metadata<span class="sc">$</span>celltype <span class="sc">==</span> <span class="st">"typeA"</span></span>
+<span id="cb56-177"><a href="#cb56-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-178"><a href="#cb56-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-179"><a href="#cb56-179" aria-hidden="true" tabindex="-1"></a>This will output TRUE and FALSE values for the values in the vector. The first six values are <span class="in">`TRUE`</span>, while the last six are <span class="in">`FALSE`</span>. This means the first six rows of our metadata have a vale of <span class="in">`typeA`</span> while the last six do not. We can save these values to a variable, which we can call whatever we would like; let's call it <span class="in">`logical_idx`</span>.</span>
+<span id="cb56-180"><a href="#cb56-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-183"><a href="#cb56-183" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-184"><a href="#cb56-184" aria-hidden="true" tabindex="-1"></a>logical_idx <span class="ot">&lt;-</span> metadata<span class="sc">$</span>celltype <span class="sc">==</span> <span class="st">"typeA"</span></span>
+<span id="cb56-185"><a href="#cb56-185" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-186"><a href="#cb56-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-187"><a href="#cb56-187" aria-hidden="true" tabindex="-1"></a>Now we can use those <span class="in">`TRUE`</span> and <span class="in">`FALSE`</span> values to extract the rows that correspond to the <span class="in">`TRUE`</span> values from the metadata data frame. We will extract as we normally would a data frame with <span class="in">`metadata[ , ]`</span>, and we need to make sure we put the <span class="in">`logical_idx`</span> in the row's space, since those <span class="in">`TRUE`</span> and <span class="in">`FALSE`</span> values correspond to the ROWS for which the expression is <span class="in">`TRUE`</span>/<span class="in">`FALSE`</span>. We will leave the column's space blank to return all columns.</span>
+<span id="cb56-188"><a href="#cb56-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-191"><a href="#cb56-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-192"><a href="#cb56-192" aria-hidden="true" tabindex="-1"></a>metadata[logical_idx, ]</span>
+<span id="cb56-193"><a href="#cb56-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-194"><a href="#cb56-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-195"><a href="#cb56-195" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Selecting indices with logical operators using the `which()` function</span></span>
+<span id="cb56-196"><a href="#cb56-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-197"><a href="#cb56-197" aria-hidden="true" tabindex="-1"></a>As you might have guessed, we can also use the <span class="in">`which()`</span> function to return the indices for which the logical expression is TRUE. For example, we can find the indices where the <span class="in">`celltype`</span> is <span class="in">`typeA`</span> within the <span class="in">`metadata`</span> dataframe:</span>
+<span id="cb56-198"><a href="#cb56-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-201"><a href="#cb56-201" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-202"><a href="#cb56-202" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(metadata<span class="sc">$</span>celltype <span class="sc">==</span> <span class="st">"typeA"</span>)</span>
+<span id="cb56-203"><a href="#cb56-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-204"><a href="#cb56-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-205"><a href="#cb56-205" aria-hidden="true" tabindex="-1"></a>This returns the values one through six, indicating that the first 6 values or rows are true, or equal to typeA.  We can save our indices for which rows the logical expression is true to a variable we'll call idx, but, again, you could call it anything you want.</span>
+<span id="cb56-206"><a href="#cb56-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-209"><a href="#cb56-209" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-210"><a href="#cb56-210" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">which</span>(metadata<span class="sc">$</span>celltype <span class="sc">==</span> <span class="st">"typeA"</span>)</span>
+<span id="cb56-211"><a href="#cb56-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-212"><a href="#cb56-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-213"><a href="#cb56-213" aria-hidden="true" tabindex="-1"></a>Then, we can use these indices to indicate the rows that we would like to return by extracting that data as we have previously, giving the <span class="in">`idx`</span> as the rows that we would like to extract, while returning all columns:</span>
+<span id="cb56-214"><a href="#cb56-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-217"><a href="#cb56-217" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-218"><a href="#cb56-218" aria-hidden="true" tabindex="-1"></a>metadata[idx, ]</span>
+<span id="cb56-219"><a href="#cb56-219" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-220"><a href="#cb56-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-221"><a href="#cb56-221" aria-hidden="true" tabindex="-1"></a>Let's try another subsetting. Extract the rows of the metadata data frame for only the replicates 2 and 3. First, let's create the logical expression for the column of interest (<span class="in">`replicate`</span>):</span>
+<span id="cb56-222"><a href="#cb56-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-225"><a href="#cb56-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-226"><a href="#cb56-226" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(metadata<span class="sc">$</span>replicate <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb56-227"><a href="#cb56-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-228"><a href="#cb56-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-229"><a href="#cb56-229" aria-hidden="true" tabindex="-1"></a>This should return the indices for the rows in the <span class="in">`replicate`</span> column within <span class="in">`metadata`</span> that have a value of 2 or 3. Now, we can save those indices to a variable and use that variable to extract those corresponding rows from the <span class="in">`metadata`</span> table.</span>
+<span id="cb56-230"><a href="#cb56-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-233"><a href="#cb56-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-234"><a href="#cb56-234" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">which</span>(metadata<span class="sc">$</span>replicate <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb56-235"><a href="#cb56-235" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb56-236"><a href="#cb56-236" aria-hidden="true" tabindex="-1"></a>metadata[idx, ]</span>
+<span id="cb56-237"><a href="#cb56-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-238"><a href="#cb56-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-239"><a href="#cb56-239" aria-hidden="true" tabindex="-1"></a>Alternatively, instead of doing this in two steps, we could use nesting to perform in a single step:</span>
+<span id="cb56-240"><a href="#cb56-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-243"><a href="#cb56-243" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-244"><a href="#cb56-244" aria-hidden="true" tabindex="-1"></a>metadata[<span class="fu">which</span>(metadata<span class="sc">$</span>replicate <span class="sc">&gt;</span> <span class="dv">1</span>), ]</span>
+<span id="cb56-245"><a href="#cb56-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-246"><a href="#cb56-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-247"><a href="#cb56-247" aria-hidden="true" tabindex="-1"></a>Either way works, so use the method that is most intuitive for you.</span>
+<span id="cb56-248"><a href="#cb56-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-249"><a href="#cb56-249" aria-hidden="true" tabindex="-1"></a>So far we haven't stored as variables any of the extractions/subsettings that we have performed. Let's save this output to a variable called <span class="in">`sub_meta`</span>:</span>
 <span id="cb56-250"><a href="#cb56-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-251"><a href="#cb56-251" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Subset the <span class="in">`metadata`</span> dataframe to return only the rows of data with a genotype of <span class="in">`KO`</span>.</span>
-<span id="cb56-252"><a href="#cb56-252" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb56-253"><a href="#cb56-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-254"><a href="#cb56-254" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb56-255"><a href="#cb56-255" aria-hidden="true" tabindex="-1"></a>There are easier methods for subsetting **dataframes** using logical expressions, including the <span class="in">`filter()`</span> and the <span class="in">`subset()`</span> functions. These functions will return the rows of the dataframe for which the logical expression is TRUE, allowing us to subset the data in a single step. We will explore the <span class="in">`filter()`</span> function in more detail in a later lesson.</span>
-<span id="cb56-256"><a href="#cb56-256" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb56-257"><a href="#cb56-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-258"><a href="#cb56-258" aria-hidden="true" tabindex="-1"></a><span class="fu">### Lists</span></span>
+<span id="cb56-253"><a href="#cb56-253" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-254"><a href="#cb56-254" aria-hidden="true" tabindex="-1"></a>sub_meta <span class="ot">&lt;-</span> metadata[<span class="fu">which</span>(metadata<span class="sc">$</span>replicate <span class="sc">&gt;</span> <span class="dv">1</span>), ]</span>
+<span id="cb56-255"><a href="#cb56-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-256"><a href="#cb56-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-257"><a href="#cb56-257" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb56-258"><a href="#cb56-258" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise</span></span>
 <span id="cb56-259"><a href="#cb56-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-260"><a href="#cb56-260" aria-hidden="true" tabindex="-1"></a>Selecting components from a list requires a slightly different notation, even though in theory a list is a vector (that contains multiple data structures). To select a specific component of a list, you need to use double bracket notation <span class="in">`[[]]`</span>. Let's use the <span class="in">`list1`</span> that we created previously, and index the second component:</span>
-<span id="cb56-261"><a href="#cb56-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-264"><a href="#cb56-264" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-265"><a href="#cb56-265" aria-hidden="true" tabindex="-1"></a>list1[[<span class="dv">2</span>]]</span>
-<span id="cb56-266"><a href="#cb56-266" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-267"><a href="#cb56-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-268"><a href="#cb56-268" aria-hidden="true" tabindex="-1"></a>What do you see printed to the console? Using the double bracket notation is useful for **accessing the individual components whilst preserving the original data structure.** When creating this list we know we had originally stored a dataframe in the second component. With the <span class="in">`class`</span> function we can check if that is what we retrieve:</span>
-<span id="cb56-269"><a href="#cb56-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-272"><a href="#cb56-272" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-273"><a href="#cb56-273" aria-hidden="true" tabindex="-1"></a>comp2 <span class="ot">&lt;-</span> list1[[<span class="dv">2</span>]]</span>
-<span id="cb56-274"><a href="#cb56-274" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(comp2)</span>
+<span id="cb56-260"><a href="#cb56-260" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Subset the <span class="in">`metadata`</span> dataframe to return only the rows of data with a genotype of <span class="in">`KO`</span>.</span>
+<span id="cb56-261"><a href="#cb56-261" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-262"><a href="#cb56-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-263"><a href="#cb56-263" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb56-264"><a href="#cb56-264" aria-hidden="true" tabindex="-1"></a>There are easier methods for subsetting **dataframes** using logical expressions, including the <span class="in">`filter()`</span> and the <span class="in">`subset()`</span> functions. These functions will return the rows of the dataframe for which the logical expression is TRUE, allowing us to subset the data in a single step. We will explore the <span class="in">`filter()`</span> function in more detail in a later lesson.</span>
+<span id="cb56-265"><a href="#cb56-265" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-266"><a href="#cb56-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-267"><a href="#cb56-267" aria-hidden="true" tabindex="-1"></a><span class="fu">### Lists</span></span>
+<span id="cb56-268"><a href="#cb56-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-269"><a href="#cb56-269" aria-hidden="true" tabindex="-1"></a>Selecting components from a list requires a slightly different notation, even though in theory a list is a vector (that contains multiple data structures). To select a specific component of a list, you need to use double bracket notation <span class="in">`[[]]`</span>. Let's use the <span class="in">`list1`</span> that we created previously, and index the second component:</span>
+<span id="cb56-270"><a href="#cb56-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-273"><a href="#cb56-273" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-274"><a href="#cb56-274" aria-hidden="true" tabindex="-1"></a>list1[[<span class="dv">2</span>]]</span>
 <span id="cb56-275"><a href="#cb56-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-276"><a href="#cb56-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-277"><a href="#cb56-277" aria-hidden="true" tabindex="-1"></a>You can also reference what is inside the component by adding an additional bracket. For example, in the first component we have a vector stored. </span>
+<span id="cb56-277"><a href="#cb56-277" aria-hidden="true" tabindex="-1"></a>What do you see printed to the console? Using the double bracket notation is useful for **accessing the individual components whilst preserving the original data structure.** When creating this list we know we had originally stored a dataframe in the second component. With the <span class="in">`class`</span> function we can check if that is what we retrieve:</span>
 <span id="cb56-278"><a href="#cb56-278" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-281"><a href="#cb56-281" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-282"><a href="#cb56-282" aria-hidden="true" tabindex="-1"></a>list1[[<span class="dv">1</span>]]</span>
-<span id="cb56-283"><a href="#cb56-283" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-284"><a href="#cb56-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-285"><a href="#cb56-285" aria-hidden="true" tabindex="-1"></a>Now, if we wanted to reference the first element of that vector we would use:</span>
-<span id="cb56-286"><a href="#cb56-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-289"><a href="#cb56-289" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-290"><a href="#cb56-290" aria-hidden="true" tabindex="-1"></a>list1[[<span class="dv">1</span>]][<span class="dv">1</span>]</span>
-<span id="cb56-291"><a href="#cb56-291" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-292"><a href="#cb56-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-293"><a href="#cb56-293" aria-hidden="true" tabindex="-1"></a>You can also do the same for dataframes and matrices, although with larger datasets it is not advisable. Instead, it is better to save the contents of a list component to a variable (as we did above) and further manipulate it. Also, it is important to note that when selecting components we can only **access one at a time**. To access multiple components of a list, see the note below. </span>
-<span id="cb56-294"><a href="#cb56-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-295"><a href="#cb56-295" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb56-296"><a href="#cb56-296" aria-hidden="true" tabindex="-1"></a>Using the single bracket notation also works wth lists. The difference is the class of the information that is retrieved. Using single bracket notation i.e. <span class="in">`list1[1]`</span> will return the contents in a list form and *not the original data structure*. The benefit of this notation is that it allows indexing by vectors so you can access multiple components of the list at once.</span>
-<span id="cb56-297"><a href="#cb56-297" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb56-298"><a href="#cb56-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-299"><a href="#cb56-299" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb56-300"><a href="#cb56-300" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises</span></span>
+<span id="cb56-282"><a href="#cb56-282" aria-hidden="true" tabindex="-1"></a>comp2 <span class="ot">&lt;-</span> list1[[<span class="dv">2</span>]]</span>
+<span id="cb56-283"><a href="#cb56-283" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(comp2)</span>
+<span id="cb56-284"><a href="#cb56-284" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-285"><a href="#cb56-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-286"><a href="#cb56-286" aria-hidden="true" tabindex="-1"></a>You can also reference what is inside the component by adding an additional bracket. For example, in the first component we have a vector stored. </span>
+<span id="cb56-287"><a href="#cb56-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-290"><a href="#cb56-290" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-291"><a href="#cb56-291" aria-hidden="true" tabindex="-1"></a>list1[[<span class="dv">1</span>]]</span>
+<span id="cb56-292"><a href="#cb56-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-293"><a href="#cb56-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-294"><a href="#cb56-294" aria-hidden="true" tabindex="-1"></a>Now, if we wanted to reference the first element of that vector we would use:</span>
+<span id="cb56-295"><a href="#cb56-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-298"><a href="#cb56-298" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-299"><a href="#cb56-299" aria-hidden="true" tabindex="-1"></a>list1[[<span class="dv">1</span>]][<span class="dv">1</span>]</span>
+<span id="cb56-300"><a href="#cb56-300" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-301"><a href="#cb56-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-302"><a href="#cb56-302" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Create a list named <span class="in">`random`</span> with the following components: <span class="in">`metadata`</span>, <span class="in">`age`</span>, <span class="in">`list1`</span>, <span class="in">`samplegroup`</span>, and <span class="in">`number`</span>.</span>
+<span id="cb56-302"><a href="#cb56-302" aria-hidden="true" tabindex="-1"></a>You can also do the same for dataframes and matrices, although with larger datasets it is not advisable. Instead, it is better to save the contents of a list component to a variable (as we did above) and further manipulate it. Also, it is important to note that when selecting components we can only **access one at a time**. To access multiple components of a list, see the note below. </span>
 <span id="cb56-303"><a href="#cb56-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-304"><a href="#cb56-304" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Extract the <span class="in">`samplegroup`</span> component.</span>
-<span id="cb56-305"><a href="#cb56-305" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb56-304"><a href="#cb56-304" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb56-305"><a href="#cb56-305" aria-hidden="true" tabindex="-1"></a>Using the single bracket notation also works wth lists. The difference is the class of the information that is retrieved. Using single bracket notation i.e. <span class="in">`list1[1]`</span> will return the contents in a list form and *not the original data structure*. The benefit of this notation is that it allows indexing by vectors so you can access multiple components of the list at once.</span>
 <span id="cb56-306"><a href="#cb56-306" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb56-307"><a href="#cb56-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-308"><a href="#cb56-308" aria-hidden="true" tabindex="-1"></a>Assigning names to the components in a list can help identify what each list component contains, as well as, facilitating the extraction of values from list components. </span>
-<span id="cb56-309"><a href="#cb56-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-310"><a href="#cb56-310" aria-hidden="true" tabindex="-1"></a>Adding names to components of a list uses the <span class="in">`names()`</span> function. Let's check and see if the <span class="in">`list1`</span> has names for the components:</span>
-<span id="cb56-311"><a href="#cb56-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-314"><a href="#cb56-314" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-315"><a href="#cb56-315" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(list1) </span>
-<span id="cb56-316"><a href="#cb56-316" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-317"><a href="#cb56-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-318"><a href="#cb56-318" aria-hidden="true" tabindex="-1"></a>When we created the list we had combined the <span class="in">`species`</span> vector with  a dataframe <span class="in">`df`</span> and the <span class="in">`number`</span> variable. Let's assign the original names to the components. To do this we can use the assignment operator in a new context. If we add <span class="in">`names(list1)`</span> to the left side of the assignment arrow to be assigned to, then anything on the right side of the arrow will be assigned. Since we have three components in <span class="in">`list1`</span>, we need three names to assign. We can create a vector of names using the combine (<span class="in">`c()`</span>) function, and inside the combine function we give the names to assign to the components in the order we would like. So the first name is assigned to the first component of the list, and so on.</span>
-<span id="cb56-319"><a href="#cb56-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-322"><a href="#cb56-322" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-323"><a href="#cb56-323" aria-hidden="true" tabindex="-1"></a><span class="co"># Name components of the list</span></span>
-<span id="cb56-324"><a href="#cb56-324" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(list1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"df"</span>, <span class="st">"number"</span>)</span>
-<span id="cb56-325"><a href="#cb56-325" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(list1)</span>
-<span id="cb56-326"><a href="#cb56-326" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-327"><a href="#cb56-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-328"><a href="#cb56-328" aria-hidden="true" tabindex="-1"></a>Now that we have named our list components, we can extract components using the <span class="in">`$`</span> similar to extracting columns from a data frame. To obtain a component of a list using the component name, use <span class="in">`list_name$component_name`</span>:</span>
-<span id="cb56-329"><a href="#cb56-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-330"><a href="#cb56-330" aria-hidden="true" tabindex="-1"></a>To extract the <span class="in">`df`</span> dataframe from the <span class="in">`list1`</span> list:</span>
-<span id="cb56-331"><a href="#cb56-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-334"><a href="#cb56-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-335"><a href="#cb56-335" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract 'df' component</span></span>
-<span id="cb56-336"><a href="#cb56-336" aria-hidden="true" tabindex="-1"></a>list1<span class="sc">$</span>df</span>
-<span id="cb56-337"><a href="#cb56-337" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-338"><a href="#cb56-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-339"><a href="#cb56-339" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb56-340"><a href="#cb56-340" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise</span></span>
-<span id="cb56-341"><a href="#cb56-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-342"><a href="#cb56-342" aria-hidden="true" tabindex="-1"></a>Let's practice combining ways to extract data from the data structures we have covered so far:</span>
-<span id="cb56-343"><a href="#cb56-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-344"><a href="#cb56-344" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Set names for the <span class="in">`random`</span> list you created in the last exercise.</span>
-<span id="cb56-345"><a href="#cb56-345" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Extract the <span class="in">`age`</span> component using the <span class="in">`$`</span> notation</span>
-<span id="cb56-346"><a href="#cb56-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-347"><a href="#cb56-347" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb56-348"><a href="#cb56-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-349"><a href="#cb56-349" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb56-350"><a href="#cb56-350" aria-hidden="true" tabindex="-1"></a><span class="fu"># An R package for data wrangling</span></span>
+<span id="cb56-308"><a href="#cb56-308" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb56-309"><a href="#cb56-309" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises</span></span>
+<span id="cb56-310"><a href="#cb56-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-311"><a href="#cb56-311" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Create a list named <span class="in">`random`</span> with the following components: <span class="in">`metadata`</span>, <span class="in">`age`</span>, <span class="in">`list1`</span>, <span class="in">`samplegroup`</span>, and <span class="in">`number`</span>.</span>
+<span id="cb56-312"><a href="#cb56-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-313"><a href="#cb56-313" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Extract the <span class="in">`samplegroup`</span> component.</span>
+<span id="cb56-314"><a href="#cb56-314" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb56-315"><a href="#cb56-315" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-316"><a href="#cb56-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-317"><a href="#cb56-317" aria-hidden="true" tabindex="-1"></a>Assigning names to the components in a list can help identify what each list component contains, as well as, facilitating the extraction of values from list components. </span>
+<span id="cb56-318"><a href="#cb56-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-319"><a href="#cb56-319" aria-hidden="true" tabindex="-1"></a>Adding names to components of a list uses the <span class="in">`names()`</span> function. Let's check and see if the <span class="in">`list1`</span> has names for the components:</span>
+<span id="cb56-320"><a href="#cb56-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-323"><a href="#cb56-323" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-324"><a href="#cb56-324" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(list1) </span>
+<span id="cb56-325"><a href="#cb56-325" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-326"><a href="#cb56-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-327"><a href="#cb56-327" aria-hidden="true" tabindex="-1"></a>When we created the list we had combined the <span class="in">`species`</span> vector with  a dataframe <span class="in">`df`</span> and the <span class="in">`number`</span> variable. </span>
+<span id="cb56-328"><a href="#cb56-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-329"><a href="#cb56-329" aria-hidden="true" tabindex="-1"></a>Let's **assign the original names to the components**. To do this we can use the assignment operator in a new context. If we add <span class="in">`names(list1)`</span> to the left side of the assignment arrow to be assigned to, then anything on the right side of the arrow will be assigned. Since we have three components in <span class="in">`list1`</span>, we need three names to assign.</span>
+<span id="cb56-330"><a href="#cb56-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-331"><a href="#cb56-331" aria-hidden="true" tabindex="-1"></a>We can **create a vector of names** using the combine (<span class="in">`c()`</span>) function, and inside the combine function we give the names to assign to the components in the order we would like. So the first name is assigned to the first component of the list, and so on.</span>
+<span id="cb56-332"><a href="#cb56-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-335"><a href="#cb56-335" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-336"><a href="#cb56-336" aria-hidden="true" tabindex="-1"></a><span class="co"># Name components of the list</span></span>
+<span id="cb56-337"><a href="#cb56-337" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(list1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"df"</span>, <span class="st">"number"</span>)</span>
+<span id="cb56-338"><a href="#cb56-338" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(list1)</span>
+<span id="cb56-339"><a href="#cb56-339" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-340"><a href="#cb56-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-341"><a href="#cb56-341" aria-hidden="true" tabindex="-1"></a>Now that we have named our list components, we can extract components using the <span class="in">`$`</span> similar to extracting columns from a data frame. To obtain a component of a list using the component name, use <span class="in">`list_name$component_name`</span>:</span>
+<span id="cb56-342"><a href="#cb56-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-343"><a href="#cb56-343" aria-hidden="true" tabindex="-1"></a>To extract the <span class="in">`df`</span> dataframe from the <span class="in">`list1`</span> list:</span>
+<span id="cb56-344"><a href="#cb56-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-347"><a href="#cb56-347" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-348"><a href="#cb56-348" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract 'df' component</span></span>
+<span id="cb56-349"><a href="#cb56-349" aria-hidden="true" tabindex="-1"></a>list1<span class="sc">$</span>df</span>
+<span id="cb56-350"><a href="#cb56-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-351"><a href="#cb56-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-352"><a href="#cb56-352" aria-hidden="true" tabindex="-1"></a>The methods presented above are using base R functions for data wrangling. Later we will explore the **Tidyverse suite of packages**, specifically designed to make data wrangling easier.</span>
-<span id="cb56-353"><a href="#cb56-353" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-352"><a href="#cb56-352" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb56-353"><a href="#cb56-353" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise</span></span>
+<span id="cb56-354"><a href="#cb56-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-355"><a href="#cb56-355" aria-hidden="true" tabindex="-1"></a>Let's practice combining ways to extract data from the data structures we have covered so far:</span>
+<span id="cb56-356"><a href="#cb56-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-357"><a href="#cb56-357" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Set names for the <span class="in">`random`</span> list you created in the last exercise.</span>
+<span id="cb56-358"><a href="#cb56-358" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Extract the <span class="in">`age`</span> component using the <span class="in">`$`</span> notation</span>
+<span id="cb56-359"><a href="#cb56-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-360"><a href="#cb56-360" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-361"><a href="#cb56-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-362"><a href="#cb56-362" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb56-363"><a href="#cb56-363" aria-hidden="true" tabindex="-1"></a><span class="fu"># An R package for data wrangling</span></span>
+<span id="cb56-364"><a href="#cb56-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-365"><a href="#cb56-365" aria-hidden="true" tabindex="-1"></a>The methods presented above are using base R functions for data wrangling. Later we will explore the **Tidyverse suite of packages**, specifically designed to make data wrangling easier.</span>
+<span id="cb56-366"><a href="#cb56-366" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
