@@ -41,6 +41,7 @@ The input(s) are called **arguments**, which can include:
 Not all functions take arguments, for example:
 
 ```{r}
+#| eval: false
 getwd()
 ```
 
@@ -129,11 +130,11 @@ However, it's usually not recommended practice because it involves a lot of memo
 1.  Let's use base R function to calculate **mean** value of the `glengths` vector. You might need to search online to find what function can perform this task.
 2.  Create a new vector `test <- c(1, NA, 2, 3, NA, 4)`. Use the same base R function from exercise 1 (with addition of proper argument), and calculate mean value of the `test` vector. The output should be `2.5`.
 
-::: callout-note
-In R, missing values are represented by the symbol `NA` (not available). It's a way to make sure that users know they have missing data, and make a conscious decision on how to deal with it. There are ways to ignore `NA` during statistical calculation, or to remove `NA` from the vector. If you want more information related to missing data or `NA` you can [go to this page](https://stats.oarc.ucla.edu/r/faq/how-does-r-handle-missing-values/) (please note that there are many advanced concepts on that page that have not been covered in class).
+3.  Another commonly used base function is `sort()`. Use this function to sort the `glengths` vector in **descending** order.
 :::
 
-3.  Another commonly used base function is `sort()`. Use this function to sort the `glengths` vector in **descending** order.
+::: callout-note
+In R, missing values are represented by the symbol `NA` (not available). It's a way to make sure that users know they have missing data, and make a conscious decision on how to deal with it. There are ways to ignore `NA` during statistical calculation, or to remove `NA` from the vector. If you want more information related to missing data or `NA` you can [go to this page](https://stats.oarc.ucla.edu/r/faq/how-does-r-handle-missing-values/) (please note that there are many advanced concepts on that page that have not been covered in class).
 :::
 
 ### User-defined Functions
@@ -192,5 +193,5 @@ We have only scratched the surface here when it comes to creating functions! We 
 ::: callout-tip
 # Exercises
 
-3.  Write a function called `multiply_it`, which takes two inputs: a numeric value `x`, and a numeric value `y`. The function will return the product of these two numeric values, which is `x * y`. For example, `multiply_it(x=4, y=6)` will return output `24`.
+1.  Write a function called `multiply_it`, which takes two inputs: a numeric value `x`, and a numeric value `y`. The function will return the product of these two numeric values, which is `x * y`. For example, `multiply_it(x=4, y=6)` will return output `24`.
 :::
