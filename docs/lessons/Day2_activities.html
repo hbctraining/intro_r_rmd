@@ -397,13 +397,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <ol type="1">
-<li><strong>Custom Functions</strong> - Let’s create a function <code>temp_conv()</code>, which converts the temperature in Fahrenheit (input) to the temperature in Kelvin (output).
+<li><p><strong>Custom Functions</strong> - Let’s create a function <code>temp_conv()</code>, which converts the temperature in Fahrenheit (input) to the temperature in Kelvin (output). <em>Let’s perform a two-step calculation: first convert from Fahrenheit to Celsius, and then convert from Celsius to Kelvin.</em></p>
 <ul>
-<li>We could perform a two-step calculation: first convert from Fahrenheit to Celsius, and then convert from Celsius to Kelvin.</li>
-<li>The formula for these two calculations are as follows: temp_c = (temp_f - 32) * 5 / 9; temp_k = temp_c + 273.15. To test your function,</li>
-<li>if your input is 70, the result of <code>temp_conv(70)</code> should be 294.2611.</li>
+<li>The formula for celsius to farenheight: <code>temp_c = (temp_f - 32) * 5 / 9</code></li>
+<li>The formula for celsius to kelvin: <code>temp_k = temp_c + 273.15</code></li>
+<li>Test your function. If your input is 70, the result of <code>temp_conv(70)</code> should be 294.2611.</li>
 </ul></li>
-<li><strong>Nesting Functions</strong> - Now we want to round the temperature in Kelvin (output of <code>temp_conv()</code>) to a single decimal place. Use the <code>round()</code> function with the newly-created <code>temp_conv()</code> function to achieve this in one line of code. If your input is 70, the output should now be 294.3.</li>
+<li><p><strong>Nesting Functions</strong> - Now we want to round the temperature in Kelvin (output of <code>temp_conv()</code>) to a single decimal place.</p>
+<ul>
+<li>Use the <code>round()</code> function with the newly-created <code>temp_conv()</code> function to achieve this in one line of code.</li>
+<li>If your input is 70, the output should now be 294.3.</li>
+</ul></li>
 </ol>
 
 
@@ -704,12 +708,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercises</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Custom Functions** - Let's create a function <span class="in">`temp_conv()`</span>, which converts the temperature in Fahrenheit (input) to the temperature in Kelvin (output). </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>We could perform a two-step calculation: first convert from Fahrenheit to Celsius, and then convert from Celsius to Kelvin. </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>The formula for these two calculations are as follows: temp_c = (temp_f - 32) * 5 / 9; temp_k = temp_c + 273.15. To test your function, </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>if your input is 70, the result of <span class="in">`temp_conv(70)`</span> should be 294.2611.</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Nesting Functions** - Now we want to round the temperature in Kelvin (output of <span class="in">`temp_conv()`</span>) to a single decimal place. Use the <span class="in">`round()`</span> function with the newly-created  <span class="in">`temp_conv()`</span> function to achieve this in one line of code. If your input is 70, the output should now be 294.3.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Custom Functions** - Let's create a function <span class="in">`temp_conv()`</span>, which converts the temperature in Fahrenheit (input) to the temperature in Kelvin (output). _Let's perform a two-step calculation: first convert from Fahrenheit to Celsius, and then convert from Celsius to Kelvin._</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>The formula for celsius to farenheight: <span class="in">`temp_c = (temp_f - 32) * 5 / 9`</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>The formula for celsius to kelvin: <span class="in">`temp_k = temp_c + 273.15`</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Test your function. If your input is 70, the result of <span class="in">`temp_conv(70)`</span> should be 294.2611.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Nesting Functions** - Now we want to round the temperature in Kelvin (output of <span class="in">`temp_conv()`</span>) to a single decimal place. </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Use the <span class="in">`round()`</span> function with the newly-created  <span class="in">`temp_conv()`</span> function to achieve this in one line of code. </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>If your input is 70, the output should now be 294.3.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

@@ -551,7 +551,8 @@ Note
 </div>
 <section id="reordering-genomic-data-using-match-function" class="level3">
 <h3 class="anchored" data-anchor-id="reordering-genomic-data-using-match-function">Reordering genomic data using <code>match()</code> function</h3>
-<p>While the input to the <code>match()</code> function is always going to be to vectors, often we need to use these vectors to reorder the rows or columns of a data frame to match the rows or columns of another dataframe. Let’s explore how to do this with our use case featuring RNA-seq data. To perform differential gene expression analysis, we have a data frame with the expression data or counts for every sample and another data frame with the information about to which condition each sample belongs. For the tools doing the analysis, the samples in the counts data, which are the column names, need to be the same and in the same order as the samples in the metadata data frame, which are the rownames.</p>
+<p>While the input to the <code>match()</code> function is always going to be to vectors, often we need to use these vectors to reorder the rows or columns of a data frame to match the rows or columns of another dataframe.</p>
+<p>Let’s explore how to do this with our use case featuring RNA-seq data. To perform differential gene expression analysis, we have a data frame with the expression data or counts for every sample and another data frame with the information about to which condition each sample belongs. For the tools doing the analysis, the <strong>samples in the counts data</strong>, which are the column names, need to be the same and in the <strong>same order as the samples in the metadata data frame</strong>, which are the rownames.</p>
 <p>We can take a look at these samples in each dataset by using the <code>rownames()</code> and <code>colnames()</code> functions.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check row names of the metadata</span></span>
@@ -567,9 +568,13 @@ Note
  [7] "sample6"  "sample12" "sample3"  "sample11" "sample10" "sample1" </code></pre>
 </div>
 </div>
-<p>We see the row names of the metadata are in a nice order starting at <code>sample1</code> and ending at <code>sample12</code>, while the column names of the counts data look to be the same samples, but are randomly ordered. Therefore, we want to reorder the columns of the counts data to match the order of the row names of the metadata. To do so, we will use the <code>match()</code> function to match the row names of our metadata with the column names of our counts data, so these will be the arguments for match.</p>
-<p>To do so, we will use the match function to match the row names of our metadata with the column names of our counts data, so these will be the arguments for <code>match()</code>.</p>
-<p>Within the <code>match()</code> function, the rownames of the metadata is the vector in the order that we want, so this will be the first argument, while the column names of the count or rpkm data is the vector to be reordered. We will save these indices for how to reorder the column names of the count data such that it matches the rownames of the metadata to a variable called <code>genomic idx</code>.</p>
+<p>We see the row names of the metadata are in a nice order starting at <code>sample1</code> and ending at <code>sample12</code>, while the column names of the counts data look to be the same samples, but are randomly ordered.</p>
+<p>We will use the match function to match the row names of our metadata with the column names of our counts data, so these will be the arguments for <code>match()</code>.</p>
+<ul>
+<li>The rownames of the metadata is the vector in the order that we want, so this will be the first argument</li>
+<li>The column names of the count or rpkm data is the vector to be reordered, and will be the second argument.</li>
+</ul>
+<p>We will save these indices for how to reorder the column names, to a variable called <code>genomic idx</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>genomic_idx <span class="ot">&lt;-</span> <span class="fu">match</span>(<span class="fu">rownames</span>(metadata), <span class="fu">colnames</span>(rpkm_data))</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>genomic_idx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -577,13 +582,12 @@ Note
 <pre><code> [1] 12  1  9  6  2  7  3  4  5 11 10  8</code></pre>
 </div>
 </div>
-<p>The <code>genomic_idx</code> represents how to re-order the column names in our counts data to be identical to the row names in metadata.</p>
 <p>Now we can create a new counts data frame in which the columns are re-ordered based on the <code>match()</code> indices. Remember that to reorder the rows or columns in a data frame we give the name of the data frame followed by square brackets, and then the indices for how to reorder the rows or columns.</p>
-<p>Our <code>genomic_idx</code> represents how we would need to reorder the <strong>columns</strong> of our count data such that the column names would be in the same order as the row names of our metadata. Therefore, we need to add our <code>genomic_idx</code> to the <strong>columns position</strong>. We are going to save the output of the reordering to a new data frame called <code>rpkm_ordered</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reorder the counts data frame to have the sample names in the same order as the metadata data frame</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>rpkm_ordered  <span class="ot">&lt;-</span> rpkm_data[ , genomic_idx]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Our <code>genomic_idx</code> represents how to reorder the <strong>columns</strong> of our count data such that the column names would be in the same order as the row names of our metadata. Therefore, <code>genomic_idx</code> was used in the <strong>columns position</strong>.</p>
 <p>Check and see what happened by clicking on the <code>rpkm_ordered</code> in the Environment window or using the <code>View()</code> function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the reordered counts</span></span>
@@ -608,7 +612,7 @@ Exercises
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="3" type="1">
+<ol type="1">
 <li><p>After talking with your collaborator, it becomes clear that <code>sample2</code> and <code>sample9</code> were actually from a different mouse background than the other samples and should not be part of our analysis. Create a new variable called <code>subset_rpkm</code> that has these columns removed from the <code>rpkm_ordered</code> data frame.</p></li>
 <li><p>Use the <code>match()</code> function to subset the <code>metadata</code> data frame so that the row names of the <code>metadata</code> data frame match the column names of the <code>subset_rpkm</code> data frame.</p></li>
 </ol>
@@ -917,8 +921,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
 <span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
 <span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>rpkm_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../data/counts.rpkm.csv"</span>)</span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"../data/mouse_exp_design.csv"</span>)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>rpkm_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/counts.rpkm.csv"</span>)</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"data/mouse_exp_design.csv"</span>)</span>
 <span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Objectives</span></span>
@@ -1066,65 +1070,70 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb33-188"><a href="#cb33-188" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-189"><a href="#cb33-189" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reordering genomic data using `match()` function</span></span>
 <span id="cb33-190"><a href="#cb33-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-191"><a href="#cb33-191" aria-hidden="true" tabindex="-1"></a>While the input to the <span class="in">`match()`</span> function is always going to be to vectors, often we need to use these vectors to reorder the rows or columns of a data frame to match the rows or columns of another dataframe. Let's explore how to do this with our use case featuring RNA-seq data. To perform differential gene expression analysis, we have a data frame with the expression data or counts for every sample and another data frame with the information about to which condition each sample belongs. For the tools doing the analysis, the samples in the counts data, which are the column names, need to be the same and in the same order as the samples in the metadata data frame, which are the rownames.</span>
+<span id="cb33-191"><a href="#cb33-191" aria-hidden="true" tabindex="-1"></a>While the input to the <span class="in">`match()`</span> function is always going to be to vectors, often we need to use these vectors to reorder the rows or columns of a data frame to match the rows or columns of another dataframe. </span>
 <span id="cb33-192"><a href="#cb33-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-193"><a href="#cb33-193" aria-hidden="true" tabindex="-1"></a>We can take a look at these samples in each dataset by using the <span class="in">`rownames()`</span> and <span class="in">`colnames()`</span> functions.</span>
+<span id="cb33-193"><a href="#cb33-193" aria-hidden="true" tabindex="-1"></a>Let's explore how to do this with our use case featuring RNA-seq data. To perform differential gene expression analysis, we have a data frame with the expression data or counts for every sample and another data frame with the information about to which condition each sample belongs. For the tools doing the analysis, the **samples in the counts data**, which are the column names, need to be the same and in the **same order as the samples in the metadata data frame**, which are the rownames.</span>
 <span id="cb33-194"><a href="#cb33-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-197"><a href="#cb33-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-198"><a href="#cb33-198" aria-hidden="true" tabindex="-1"></a><span class="co"># Check row names of the metadata</span></span>
-<span id="cb33-199"><a href="#cb33-199" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(metadata)</span>
-<span id="cb33-200"><a href="#cb33-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-201"><a href="#cb33-201" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the column names of the counts data</span></span>
-<span id="cb33-202"><a href="#cb33-202" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(rpkm_data)</span>
-<span id="cb33-203"><a href="#cb33-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-204"><a href="#cb33-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-205"><a href="#cb33-205" aria-hidden="true" tabindex="-1"></a>We see the row names of the metadata are in a nice order starting at <span class="in">`sample1`</span> and ending at <span class="in">`sample12`</span>, while the column names of the counts data look to be the same samples, but are randomly ordered. Therefore, we want to reorder the columns of the counts data to match the order of the row names of the metadata. To do so, we will use the <span class="in">`match()`</span> function to match the row names of our metadata with the column names of our counts data, so these will be the arguments for match. </span>
+<span id="cb33-195"><a href="#cb33-195" aria-hidden="true" tabindex="-1"></a>We can take a look at these samples in each dataset by using the <span class="in">`rownames()`</span> and <span class="in">`colnames()`</span> functions.</span>
+<span id="cb33-196"><a href="#cb33-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-199"><a href="#cb33-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb33-200"><a href="#cb33-200" aria-hidden="true" tabindex="-1"></a><span class="co"># Check row names of the metadata</span></span>
+<span id="cb33-201"><a href="#cb33-201" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(metadata)</span>
+<span id="cb33-202"><a href="#cb33-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-203"><a href="#cb33-203" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the column names of the counts data</span></span>
+<span id="cb33-204"><a href="#cb33-204" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(rpkm_data)</span>
+<span id="cb33-205"><a href="#cb33-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb33-206"><a href="#cb33-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-207"><a href="#cb33-207" aria-hidden="true" tabindex="-1"></a>To do so, we will use the match function to match the row names of our metadata with the column names of our counts data, so these will be the arguments for <span class="in">`match()`</span>. </span>
+<span id="cb33-207"><a href="#cb33-207" aria-hidden="true" tabindex="-1"></a>We see the row names of the metadata are in a nice order starting at <span class="in">`sample1`</span> and ending at <span class="in">`sample12`</span>, while the column names of the counts data look to be the same samples, but are randomly ordered. </span>
 <span id="cb33-208"><a href="#cb33-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-209"><a href="#cb33-209" aria-hidden="true" tabindex="-1"></a>Within the <span class="in">`match()`</span> function, the rownames of the metadata is the vector in the order that we want, so this will be the first argument, while the column names of the count or rpkm data is the vector to be reordered. We will save these indices for how to reorder the column names of the count data such that it matches the rownames of the metadata to a variable called <span class="in">`genomic idx`</span>.</span>
+<span id="cb33-209"><a href="#cb33-209" aria-hidden="true" tabindex="-1"></a>We will use the match function to match the row names of our metadata with the column names of our counts data, so these will be the arguments for <span class="in">`match()`</span>. </span>
 <span id="cb33-210"><a href="#cb33-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-213"><a href="#cb33-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-214"><a href="#cb33-214" aria-hidden="true" tabindex="-1"></a>genomic_idx <span class="ot">&lt;-</span> <span class="fu">match</span>(<span class="fu">rownames</span>(metadata), <span class="fu">colnames</span>(rpkm_data))</span>
-<span id="cb33-215"><a href="#cb33-215" aria-hidden="true" tabindex="-1"></a>genomic_idx</span>
-<span id="cb33-216"><a href="#cb33-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-217"><a href="#cb33-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-218"><a href="#cb33-218" aria-hidden="true" tabindex="-1"></a>The <span class="in">`genomic_idx`</span> represents how to re-order the column names in our counts data to be identical to the row names in metadata. </span>
-<span id="cb33-219"><a href="#cb33-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-220"><a href="#cb33-220" aria-hidden="true" tabindex="-1"></a>Now we can create a new counts data frame in which the columns are re-ordered based on the <span class="in">`match()`</span> indices. Remember that to reorder the rows or columns in a data frame we give the name of the data frame followed by square brackets, and then the indices for how to reorder the rows or columns.</span>
-<span id="cb33-221"><a href="#cb33-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-222"><a href="#cb33-222" aria-hidden="true" tabindex="-1"></a>Our <span class="in">`genomic_idx`</span> represents how we would need to reorder the **columns** of our count data such that the column names would be in the same order as the row names of our metadata. Therefore, we need to add our `genomic_idx` to the **columns position**. We are going to save the output of the reordering to a new data frame called <span class="in">`rpkm_ordered`</span>.</span>
+<span id="cb33-211"><a href="#cb33-211" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>The rownames of the metadata is the vector in the order that we want, so this will be the first argument</span>
+<span id="cb33-212"><a href="#cb33-212" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>The column names of the count or rpkm data is the vector to be reordered, and will be the second argument. </span>
+<span id="cb33-213"><a href="#cb33-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-214"><a href="#cb33-214" aria-hidden="true" tabindex="-1"></a>We will save these indices for how to reorder the column names, to a variable called <span class="in">`genomic idx`</span>.</span>
+<span id="cb33-215"><a href="#cb33-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-218"><a href="#cb33-218" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb33-219"><a href="#cb33-219" aria-hidden="true" tabindex="-1"></a>genomic_idx <span class="ot">&lt;-</span> <span class="fu">match</span>(<span class="fu">rownames</span>(metadata), <span class="fu">colnames</span>(rpkm_data))</span>
+<span id="cb33-220"><a href="#cb33-220" aria-hidden="true" tabindex="-1"></a>genomic_idx</span>
+<span id="cb33-221"><a href="#cb33-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb33-222"><a href="#cb33-222" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-223"><a href="#cb33-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-226"><a href="#cb33-226" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-227"><a href="#cb33-227" aria-hidden="true" tabindex="-1"></a><span class="co"># Reorder the counts data frame to have the sample names in the same order as the metadata data frame</span></span>
-<span id="cb33-228"><a href="#cb33-228" aria-hidden="true" tabindex="-1"></a>rpkm_ordered  <span class="ot">&lt;-</span> rpkm_data[ , genomic_idx]</span>
-<span id="cb33-229"><a href="#cb33-229" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-230"><a href="#cb33-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-231"><a href="#cb33-231" aria-hidden="true" tabindex="-1"></a>Check and see what happened by clicking on the <span class="in">`rpkm_ordered`</span> in the Environment window or using the <span class="in">`View()`</span> function. </span>
-<span id="cb33-232"><a href="#cb33-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-235"><a href="#cb33-235" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-236"><a href="#cb33-236" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb33-237"><a href="#cb33-237" aria-hidden="true" tabindex="-1"></a><span class="co"># View the reordered counts</span></span>
-<span id="cb33-238"><a href="#cb33-238" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(rpkm_ordered)</span>
-<span id="cb33-239"><a href="#cb33-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-240"><a href="#cb33-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-241"><a href="#cb33-241" aria-hidden="true" tabindex="-1"></a>We can see the sample names are now in a nice order from sample 1 to 12, just like the metadata. One thing to note is that you would never want to rearrange just the column names without the rest of the column because that would dissociate the sample name from it's values.</span>
-<span id="cb33-242"><a href="#cb33-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-243"><a href="#cb33-243" aria-hidden="true" tabindex="-1"></a>You can also verify that column names of this new data matrix matches the metadata row names by using the <span class="in">`all`</span> function:</span>
-<span id="cb33-244"><a href="#cb33-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-247"><a href="#cb33-247" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-248"><a href="#cb33-248" aria-hidden="true" tabindex="-1"></a><span class="fu">all</span>(<span class="fu">rownames</span>(metadata) <span class="sc">==</span> <span class="fu">colnames</span>(rpkm_ordered))</span>
-<span id="cb33-249"><a href="#cb33-249" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb33-250"><a href="#cb33-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-251"><a href="#cb33-251" aria-hidden="true" tabindex="-1"></a>Now that our samples are ordered the same in our metadata and counts data, **if these were raw counts (not RPKM)** we could proceed to perform differential expression analysis with this dataset.</span>
-<span id="cb33-252"><a href="#cb33-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-253"><a href="#cb33-253" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb33-254"><a href="#cb33-254" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises</span></span>
+<span id="cb33-224"><a href="#cb33-224" aria-hidden="true" tabindex="-1"></a>Now we can create a new counts data frame in which the columns are re-ordered based on the <span class="in">`match()`</span> indices. Remember that to reorder the rows or columns in a data frame we give the name of the data frame followed by square brackets, and then the indices for how to reorder the rows or columns.</span>
+<span id="cb33-225"><a href="#cb33-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-226"><a href="#cb33-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-229"><a href="#cb33-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb33-230"><a href="#cb33-230" aria-hidden="true" tabindex="-1"></a><span class="co"># Reorder the counts data frame to have the sample names in the same order as the metadata data frame</span></span>
+<span id="cb33-231"><a href="#cb33-231" aria-hidden="true" tabindex="-1"></a>rpkm_ordered  <span class="ot">&lt;-</span> rpkm_data[ , genomic_idx]</span>
+<span id="cb33-232"><a href="#cb33-232" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb33-233"><a href="#cb33-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-234"><a href="#cb33-234" aria-hidden="true" tabindex="-1"></a>Our <span class="in">`genomic_idx`</span> represents how to reorder the **columns** of our count data such that the column names would be in the same order as the row names of our metadata. Therefore, `genomic_idx` was used in the **columns position**.</span>
+<span id="cb33-235"><a href="#cb33-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-236"><a href="#cb33-236" aria-hidden="true" tabindex="-1"></a>Check and see what happened by clicking on the <span class="in">`rpkm_ordered`</span> in the Environment window or using the <span class="in">`View()`</span> function. </span>
+<span id="cb33-237"><a href="#cb33-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-240"><a href="#cb33-240" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb33-241"><a href="#cb33-241" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb33-242"><a href="#cb33-242" aria-hidden="true" tabindex="-1"></a><span class="co"># View the reordered counts</span></span>
+<span id="cb33-243"><a href="#cb33-243" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(rpkm_ordered)</span>
+<span id="cb33-244"><a href="#cb33-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb33-245"><a href="#cb33-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-246"><a href="#cb33-246" aria-hidden="true" tabindex="-1"></a>We can see the sample names are now in a nice order from sample 1 to 12, just like the metadata. One thing to note is that you would never want to rearrange just the column names without the rest of the column because that would dissociate the sample name from it's values.</span>
+<span id="cb33-247"><a href="#cb33-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-248"><a href="#cb33-248" aria-hidden="true" tabindex="-1"></a>You can also verify that column names of this new data matrix matches the metadata row names by using the <span class="in">`all`</span> function:</span>
+<span id="cb33-249"><a href="#cb33-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-252"><a href="#cb33-252" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb33-253"><a href="#cb33-253" aria-hidden="true" tabindex="-1"></a><span class="fu">all</span>(<span class="fu">rownames</span>(metadata) <span class="sc">==</span> <span class="fu">colnames</span>(rpkm_ordered))</span>
+<span id="cb33-254"><a href="#cb33-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb33-255"><a href="#cb33-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-256"><a href="#cb33-256" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>After talking with your collaborator, it becomes clear that <span class="in">`sample2`</span> and <span class="in">`sample9`</span> were actually from a different mouse background than the other samples and should not be part of our analysis. Create a new variable called <span class="in">`subset_rpkm`</span> that has these columns removed from the <span class="in">`rpkm_ordered`</span> data frame.</span>
+<span id="cb33-256"><a href="#cb33-256" aria-hidden="true" tabindex="-1"></a>Now that our samples are ordered the same in our metadata and counts data, **if these were raw counts (not RPKM)** we could proceed to perform differential expression analysis with this dataset.</span>
 <span id="cb33-257"><a href="#cb33-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-258"><a href="#cb33-258" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Use the <span class="in">`match()`</span> function to subset the <span class="in">`metadata`</span> data frame so that the row names of the <span class="in">`metadata`</span> data frame match the column names of the <span class="in">`subset_rpkm`</span> data frame.</span>
-<span id="cb33-259"><a href="#cb33-259" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb33-258"><a href="#cb33-258" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb33-259"><a href="#cb33-259" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises</span></span>
+<span id="cb33-260"><a href="#cb33-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-261"><a href="#cb33-261" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>After talking with your collaborator, it becomes clear that <span class="in">`sample2`</span> and <span class="in">`sample9`</span> were actually from a different mouse background than the other samples and should not be part of our analysis. Create a new variable called <span class="in">`subset_rpkm`</span> that has these columns removed from the <span class="in">`rpkm_ordered`</span> data frame.</span>
+<span id="cb33-262"><a href="#cb33-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-263"><a href="#cb33-263" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Use the <span class="in">`match()`</span> function to subset the <span class="in">`metadata`</span> data frame so that the row names of the <span class="in">`metadata`</span> data frame match the column names of the <span class="in">`subset_rpkm`</span> data frame.</span>
+<span id="cb33-264"><a href="#cb33-264" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

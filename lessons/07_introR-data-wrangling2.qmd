@@ -15,7 +15,7 @@ df <- data.frame(species, glengths)
 number <- 9
 list1 <- list(species, df, number)
 
-metadata <- read.csv(file="../data/mouse_exp_design.csv")
+metadata <- read.csv(file="data/mouse_exp_design.csv")
 ```
 
 ## Learning Objectives
@@ -28,7 +28,12 @@ Dataframes (and matrices) have 2 dimensions (rows and columns), so if we want to
 
 ![](../img/metadata.png)
 
-Let's say we wanted to extract the wild type (`Wt`) value that is present in the first row and the first column. To extract it, just like with vectors, we give the name of the data frame that we want to extract from, followed by the square brackets. Now inside the square brackets we give the coordinates or indices for the rows in which the value(s) are present, followed by a comma, then the coordinates or indices for the columns in which the value(s) are present. We know the wild type value is in the first row if we count from the top, so we put a one, then a comma. The wild type value is also in the first column, counting from left to right, so we put a one in the columns space too. 
+Let's say we wanted to **extract the wild type (`Wt`) value that is present in the first row and the first column**. 
+
+1. To extract it, just like with vectors, we give the name of the data frame that we want to extract from, followed by the square brackets (`metadata[ ]`). 
+2. Now inside the square brackets we **give the coordinates** or indices for the rows in which the value(s) are present, followed by a comma, then the coordinates or indices for the columns in which the value(s) are present (`metadata[rows, columns]`). 
+
+We know the wild type value is in the first row if we count from the top, so we put a one, then a comma. The wild type value is also in the first column, counting from left to right, so we put a one in the columns space too. 
 
 
 ```{r}
@@ -59,7 +64,11 @@ If you were selecting specific columns from the data frame - the rows are left b
 metadata[ , 3]   
 ```
 
-What kind of data structure does this output appear to be? It looks different from the data frame, and we really just see a series of values output, indicating a vector data structure. This happens be default if just selecting a single column from a data frame. R will drop to the simplest data structure possible. Since a single column in a data frame is really just a vector, R will output a vector data structure as the simplest data structure. Oftentimes we would like to keep our single column as a data frame. To do this, there is an argument we can add when subsetting called `drop`, meaning do we want to drop down to the simplest data structure. By default it is `TRUE`, but we can change it's value to `FALSE` in order to keep the output as a data frame.
+**What kind of data structure does this output appear to be?**
+
+It looks different from the data frame, and we really just see a series of values output, indicating a vector data structure. This happens be default if just selecting a single column from a data frame. **R will drop to the simplest data structure possible.** Since a single column in a data frame is really just a vector, R will output a vector data structure as the simplest data structure. 
+
+Oftentimes we would like to keep our single column as a data frame. To do this, there is an argument we can add when subsetting called `drop`, meaning do we want to drop down to the simplest data structure. By default it is `TRUE`, but we can change it's value to `FALSE` in order to **keep the output as a data frame**.
 
 ```{r}
 # Extract third column as a data frame
@@ -102,7 +111,7 @@ colnames(metadata)
 rownames(metadata)
 ```
 
-If only a single column is to be extracted from a data frame, there is a useful shortcut available. If you type the name of the data frame, then the `$`, you have the option to choose which column to extract. For instance, let's extract the entire genotype column from our dataset:
+If only a single column is to be extracted from a data frame, there is **a useful shortcut available**. If you type the name of the data frame, then the `$`, you have the option to choose which column to extract. For instance, let's extract the entire genotype column from our dataset:
 
 ```{r}
 # Extract the genotype column
@@ -204,7 +213,7 @@ sub_meta <- metadata[which(metadata$replicate > 1), ]
 ::: callout-tip
 # Exercise
 
-4. Subset the `metadata` dataframe to return only the rows of data with a genotype of `KO`.
+1. Subset the `metadata` dataframe to return only the rows of data with a genotype of `KO`.
 :::
 
 ::: callout-note
@@ -261,7 +270,11 @@ Adding names to components of a list uses the `names()` function. Let's check an
 names(list1) 
 ```
 
-When we created the list we had combined the `species` vector with  a dataframe `df` and the `number` variable. Let's assign the original names to the components. To do this we can use the assignment operator in a new context. If we add `names(list1)` to the left side of the assignment arrow to be assigned to, then anything on the right side of the arrow will be assigned. Since we have three components in `list1`, we need three names to assign. We can create a vector of names using the combine (`c()`) function, and inside the combine function we give the names to assign to the components in the order we would like. So the first name is assigned to the first component of the list, and so on.
+When we created the list we had combined the `species` vector with  a dataframe `df` and the `number` variable. 
+
+Let's **assign the original names to the components**. To do this we can use the assignment operator in a new context. If we add `names(list1)` to the left side of the assignment arrow to be assigned to, then anything on the right side of the arrow will be assigned. Since we have three components in `list1`, we need three names to assign.
+
+We can **create a vector of names** using the combine (`c()`) function, and inside the combine function we give the names to assign to the components in the order we would like. So the first name is assigned to the first component of the list, and so on.
 
 ```{r}
 # Name components of the list
@@ -283,8 +296,8 @@ list1$df
 
 Let's practice combining ways to extract data from the data structures we have covered so far:
 
-5. Set names for the `random` list you created in the last exercise.
-6. Extract the `age` component using the `$` notation
+1. Set names for the `random` list you created in the last exercise.
+2. Extract the `age` component using the `$` notation
 
 :::
 
