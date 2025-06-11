@@ -126,7 +126,7 @@ While the base R packages have perfectly fine methods for reading in data, the `
 
 ```{r}
 # Read in the functional analysis results
-functional_GO_results <- read_delim(file = "../data/gprofiler_results_Mov10oe.tsv", delim = "\t" )
+functional_GO_results <- read_delim(file = "data/gprofiler_results_Mov10oe.txt", delim = "\t" )
 
 # Take a look at the results
 functional_GO_results

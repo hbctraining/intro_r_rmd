@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Mary Piper, Jihe Liu, Meeta Mistry, Radhika Khetani, Will Gammerdinger">
 
-<title>Introduction to R - Tidyverse data wrangling</title>
+<title>Tidyverse data wrangling – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -70,17 +70,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e5cb4ee4193d6a2f28a249434e39fb42.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -89,8 +95,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -102,65 +110,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Introduction to R</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../lessons/schedule.html" rel="" target="">
- <span class="menu-text">Schedule</span></a>
+    <a class="nav-link" href="../lessons/schedule.html"> 
+<span class="menu-text">Schedule</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://bioinformatics.sph.harvard.edu/" rel="" target="">
- <span class="menu-text">HBC</span></a>
+    <a class="nav-link" href="https://bioinformatics.sph.harvard.edu/"> 
+<span class="menu-text">HBC</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/hbctraining/intro_r_rmd" rel="" target="">
- <span class="menu-text">GitHub</span></a>
+    <a class="nav-link" href="https://github.com/hbctraining/intro_r_rmd"> 
+<span class="menu-text">GitHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="mailto:hbctraining@hsph.harvard.edu" rel="" target="">
- <span class="menu-text">Contact us</span></a>
+    <a class="nav-link" href="mailto:hbctraining@hsph.harvard.edu"> 
+<span class="menu-text">Contact us</span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/11b_Custom_Functions_ggplot2.html">Day 3 Self-learning</a></li><li class="breadcrumb-item"><a href="../lessons/15_tidyverse.html">Tidyverse data wrangling</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/11b_Custom_Functions_ggplot2.html">Day 3 Self-learning</a></li><li class="breadcrumb-item"><a href="../lessons/15_tidyverse.html">Tidyverse data wrangling</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Day 1:</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -175,9 +183,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Day 1 Self-learning:</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -204,9 +212,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Day 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -227,9 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Day 2 Self-learning</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -268,9 +276,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Day 3</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -291,9 +299,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Day 3 Self-learning</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -332,9 +340,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Day 4</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -350,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -385,7 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lessons/11b_Custom_Functions_ggplot2.html">Day 3 Self-learning</a></li><li class="breadcrumb-item"><a href="../lessons/15_tidyverse.html">Tidyverse data wrangling</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Tidyverse data wrangling</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -406,7 +414,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>Approximate time: 75 minutes</p>
 <section id="learning-objectives" class="level2">
@@ -547,7 +557,7 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../img/dotplot6.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">dotplot6</figcaption>
+<figcaption>dotplot6</figcaption>
 </figure>
 </div>
 <p>To wrangle our data in preparation for the plotting, we are going to use the Tidyverse suite of tools to wrangle and visualize our data through several steps:</p>
@@ -570,7 +580,7 @@ Note
 <p>While the base R packages have perfectly fine methods for reading in data, the <code>readr</code> and <code>readxl</code> Tidyverse packages offer additional methods for reading in data. Let’s read in our tab-delimited functional analysis results using <code>read_delim()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the functional analysis results</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>functional_GO_results <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="at">file =</span> <span class="st">"../data/gprofiler_results_Mov10oe.tsv"</span>, <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span> )</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>functional_GO_results <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="at">file =</span> <span class="st">"data/gprofiler_results_Mov10oe.txt"</span>, <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span> )</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look at the results</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>functional_GO_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -964,18 +974,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1007,7 +1006,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -1059,10 +1078,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1072,8 +1108,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1085,7 +1130,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1129,6 +1296,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1154,6 +1322,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1247,7 +1441,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>To make R code more human readable, the Tidyverse tools use the pipe, <span class="in">`%&gt;%`</span>, which was acquired from the <span class="in">`magrittr`</span> package and is now part of the <span class="in">`dplyr`</span> package that is installed automatically with Tidyverse. **The pipe allows the output of a previous command to be used as input to another command instead of using nested functions.**</span>
 <span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>Shortcut to write the pipe is <span class="kw">&lt;kbd&gt;</span>shift<span class="kw">&lt;/kbd&gt;</span> + <span class="kw">&lt;kbd&gt;</span>command<span class="kw">&lt;/kbd&gt;</span> + <span class="kw">&lt;kbd&gt;</span>M<span class="kw">&lt;/kbd&gt;</span></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>Shortcut to write the pipe is &lt;kbd&gt;shift&lt;/kbd&gt; + &lt;kbd&gt;command&lt;/kbd&gt; + &lt;kbd&gt;M&lt;/kbd&gt;</span>
 <span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>An example of using the pipe to run multiple commands:</span>
@@ -1313,7 +1507,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-104"><a href="#cb22-104" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>cellular components (CC)</span>
 <span id="cb22-105"><a href="#cb22-105" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>molecular functions (MF)</span>
 <span id="cb22-106"><a href="#cb22-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-107"><a href="#cb22-107" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/mov10_FA.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">&gt;</span></span>
+<span id="cb22-107"><a href="#cb22-107" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/mov10_FA.png" width="800"&gt;</span>
 <span id="cb22-108"><a href="#cb22-108" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-109"><a href="#cb22-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis goal and workflow</span></span>
 <span id="cb22-110"><a href="#cb22-110" aria-hidden="true" tabindex="-1"></a></span>
@@ -1341,19 +1535,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-132"><a href="#cb22-132" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-135"><a href="#cb22-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb22-136"><a href="#cb22-136" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the functional analysis results</span></span>
-<span id="cb22-137"><a href="#cb22-137" aria-hidden="true" tabindex="-1"></a>functional_GO_results <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="at">file =</span> <span class="st">"../data/gprofiler_results_Mov10oe.tsv"</span>, <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span> )</span>
+<span id="cb22-137"><a href="#cb22-137" aria-hidden="true" tabindex="-1"></a>functional_GO_results <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="at">file =</span> <span class="st">"data/gprofiler_results_Mov10oe.txt"</span>, <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span> )</span>
 <span id="cb22-138"><a href="#cb22-138" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-139"><a href="#cb22-139" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look at the results</span></span>
 <span id="cb22-140"><a href="#cb22-140" aria-hidden="true" tabindex="-1"></a>functional_GO_results</span>
 <span id="cb22-141"><a href="#cb22-141" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-142"><a href="#cb22-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-143"><a href="#cb22-143" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb22-144"><a href="#cb22-144" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;summary&gt;&lt;i&gt;</span>Click here to see how to do this in base R<span class="kw">&lt;/i&gt;&lt;/summary&gt;</span></span>
-<span id="cb22-145"><a href="#cb22-145" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;br&gt;&lt;pre&gt;&lt;code&gt;</span># Read in the functional analysis results<span class="kw">&lt;br&gt;</span></span>
-<span id="cb22-146"><a href="#cb22-146" aria-hidden="true" tabindex="-1"></a>functional_GO_results &lt;- read.delim(file = "data/gprofiler_results_Mov10oe.tsv", sep = "\t" )<span class="kw">&lt;/code&gt;&lt;br&gt;</span></span>
-<span id="cb22-147"><a href="#cb22-147" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;code&gt;</span># Take a look at the results</span>
-<span id="cb22-148"><a href="#cb22-148" aria-hidden="true" tabindex="-1"></a>functional_GO_results<span class="kw">&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span></span>
-<span id="cb22-149"><a href="#cb22-149" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb22-143"><a href="#cb22-143" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;</span>
+<span id="cb22-144"><a href="#cb22-144" aria-hidden="true" tabindex="-1"></a>    &lt;summary&gt;&lt;i&gt;Click here to see how to do this in base R&lt;/i&gt;&lt;/summary&gt;</span>
+<span id="cb22-145"><a href="#cb22-145" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;&lt;pre&gt;&lt;code&gt;# Read in the functional analysis results&lt;br&gt;</span>
+<span id="cb22-146"><a href="#cb22-146" aria-hidden="true" tabindex="-1"></a>functional_GO_results &lt;- read.delim(file = "data/gprofiler_results_Mov10oe.tsv", sep = "\t" )&lt;/code&gt;&lt;br&gt;</span>
+<span id="cb22-147"><a href="#cb22-147" aria-hidden="true" tabindex="-1"></a>&lt;code&gt;# Take a look at the results</span>
+<span id="cb22-148"><a href="#cb22-148" aria-hidden="true" tabindex="-1"></a>functional_GO_results&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span>
+<span id="cb22-149"><a href="#cb22-149" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
 <span id="cb22-150"><a href="#cb22-150" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-151"><a href="#cb22-151" aria-hidden="true" tabindex="-1"></a>Notice that the results were automatically read in as a tibble and the output gives the number of rows, columns and the data type for each of the columns.</span>
 <span id="cb22-152"><a href="#cb22-152" aria-hidden="true" tabindex="-1"></a></span>
@@ -1379,13 +1573,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-174"><a href="#cb22-174" aria-hidden="true" tabindex="-1"></a>bp_oe</span>
 <span id="cb22-175"><a href="#cb22-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-176"><a href="#cb22-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-177"><a href="#cb22-177" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb22-178"><a href="#cb22-178" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;summary&gt;&lt;i&gt;</span>Click here to see how to do this in base R<span class="kw">&lt;/i&gt;&lt;/summary&gt;</span></span>
-<span id="cb22-179"><a href="#cb22-179" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;br&gt;&lt;pre&gt;&lt;code&gt;</span># Return only GO biological processes</span>
+<span id="cb22-177"><a href="#cb22-177" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;</span>
+<span id="cb22-178"><a href="#cb22-178" aria-hidden="true" tabindex="-1"></a>    &lt;summary&gt;&lt;i&gt;Click here to see how to do this in base R&lt;/i&gt;&lt;/summary&gt;</span>
+<span id="cb22-179"><a href="#cb22-179" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;&lt;pre&gt;&lt;code&gt;# Return only GO biological processes</span>
 <span id="cb22-180"><a href="#cb22-180" aria-hidden="true" tabindex="-1"></a>idx &lt;- functional_GO_results$domain == "BP"</span>
-<span id="cb22-181"><a href="#cb22-181" aria-hidden="true" tabindex="-1"></a>bp_oe2 &lt;- functional_GO_results<span class="co">[</span><span class="ot">idx,</span><span class="co">]</span><span class="kw">&lt;/code&gt;&lt;br&gt;</span></span>
-<span id="cb22-182"><a href="#cb22-182" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;code&gt;</span>View(bp_oe)<span class="kw">&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span></span>
-<span id="cb22-183"><a href="#cb22-183" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb22-181"><a href="#cb22-181" aria-hidden="true" tabindex="-1"></a>bp_oe2 &lt;- functional_GO_results<span class="co">[</span><span class="ot">idx,</span><span class="co">]</span>&lt;/code&gt;&lt;br&gt;</span>
+<span id="cb22-182"><a href="#cb22-182" aria-hidden="true" tabindex="-1"></a>&lt;code&gt;View(bp_oe)&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span>
+<span id="cb22-183"><a href="#cb22-183" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
 <span id="cb22-184"><a href="#cb22-184" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-185"><a href="#cb22-185" aria-hidden="true" tabindex="-1"></a>Now we have returned only those rows with a <span class="in">`domain`</span> of <span class="in">`BP`</span>. **How have the dimensions of our results changed?**</span>
 <span id="cb22-186"><a href="#cb22-186" aria-hidden="true" tabindex="-1"></a></span>
@@ -1414,12 +1608,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-211"><a href="#cb22-211" aria-hidden="true" tabindex="-1"></a>bp_oe</span>
 <span id="cb22-212"><a href="#cb22-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-213"><a href="#cb22-213" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-214"><a href="#cb22-214" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb22-215"><a href="#cb22-215" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;summary&gt;&lt;i&gt;</span>Click here to see how to do this in base R<span class="kw">&lt;/i&gt;&lt;/summary&gt;</span></span>
-<span id="cb22-216"><a href="#cb22-216" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;br&gt;&lt;pre&gt;&lt;code&gt;</span># Selecting columns to keep</span>
-<span id="cb22-217"><a href="#cb22-217" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- bp_oe<span class="co">[</span><span class="ot">, c("term.id", "term.name", "p.value", "query.size", "term.size", "overlap.size", "intersection")</span><span class="co">]</span><span class="kw">&lt;/code&gt;&lt;br&gt;</span></span>
-<span id="cb22-218"><a href="#cb22-218" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;code&gt;</span>View(bp_oe)<span class="kw">&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span></span>
-<span id="cb22-219"><a href="#cb22-219" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb22-214"><a href="#cb22-214" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;</span>
+<span id="cb22-215"><a href="#cb22-215" aria-hidden="true" tabindex="-1"></a>    &lt;summary&gt;&lt;i&gt;Click here to see how to do this in base R&lt;/i&gt;&lt;/summary&gt;</span>
+<span id="cb22-216"><a href="#cb22-216" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;&lt;pre&gt;&lt;code&gt;# Selecting columns to keep</span>
+<span id="cb22-217"><a href="#cb22-217" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- bp_oe<span class="co">[</span><span class="ot">, c("term.id", "term.name", "p.value", "query.size", "term.size", "overlap.size", "intersection")</span><span class="co">]</span>&lt;/code&gt;&lt;br&gt;</span>
+<span id="cb22-218"><a href="#cb22-218" aria-hidden="true" tabindex="-1"></a>&lt;code&gt;View(bp_oe)&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span>
+<span id="cb22-219"><a href="#cb22-219" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
 <span id="cb22-220"><a href="#cb22-220" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb22-221"><a href="#cb22-221" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
 <span id="cb22-222"><a href="#cb22-222" aria-hidden="true" tabindex="-1"></a>The <span class="in">`select()`</span> function also allows for negative selection. So we could have alternately removed columns with negative selection. Note that we need to put the column names inside of the combine (<span class="in">`c()`</span>) function with a <span class="in">`-`</span> preceding it for this functionality.</span>
@@ -1433,16 +1627,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-232"><a href="#cb22-232" aria-hidden="true" tabindex="-1"></a>              subgraph.number, relative.depth, domain))</span>
 <span id="cb22-233"><a href="#cb22-233" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-234"><a href="#cb22-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-235"><a href="#cb22-235" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb22-236"><a href="#cb22-236" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;summary&gt;&lt;i&gt;</span>Click here to see how to do this in base R<span class="kw">&lt;/i&gt;&lt;/summary&gt;</span></span>
-<span id="cb22-237"><a href="#cb22-237" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;br&gt;&lt;pre&gt;&lt;code&gt;</span># DO NOT RUN<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb22-238"><a href="#cb22-238" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;code&gt;</span># Selecting columns to remove</span>
+<span id="cb22-235"><a href="#cb22-235" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;</span>
+<span id="cb22-236"><a href="#cb22-236" aria-hidden="true" tabindex="-1"></a>    &lt;summary&gt;&lt;i&gt;Click here to see how to do this in base R&lt;/i&gt;&lt;/summary&gt;</span>
+<span id="cb22-237"><a href="#cb22-237" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;&lt;pre&gt;&lt;code&gt;# DO NOT RUN&lt;/code&gt;</span>
+<span id="cb22-238"><a href="#cb22-238" aria-hidden="true" tabindex="-1"></a>&lt;code&gt;# Selecting columns to remove</span>
 <span id="cb22-239"><a href="#cb22-239" aria-hidden="true" tabindex="-1"></a>idx &lt;- !(colnames(bp_oe) %in% c("query.number", "significant", "recall", "precision", "subgraph.number", "relative.depth", "domain"))</span>
-<span id="cb22-240"><a href="#cb22-240" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- bp_oe<span class="co">[</span><span class="ot">, idx</span><span class="co">]</span><span class="kw">&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span></span>
-<span id="cb22-241"><a href="#cb22-241" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb22-240"><a href="#cb22-240" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- bp_oe<span class="co">[</span><span class="ot">, idx</span><span class="co">]</span>&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span>
+<span id="cb22-241"><a href="#cb22-241" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
 <span id="cb22-242"><a href="#cb22-242" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-243"><a href="#cb22-243" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
-<span id="cb22-244"><a href="#cb22-244" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/bp_oe_selection.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"800"</span><span class="kw">&gt;</span></span>
+<span id="cb22-244"><a href="#cb22-244" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/bp_oe_selection.png" width="800"&gt;</span>
 <span id="cb22-245"><a href="#cb22-245" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-246"><a href="#cb22-246" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-247"><a href="#cb22-247" aria-hidden="true" tabindex="-1"></a><span class="fu">## 4. Order GO processes by significance (adjusted p-values)</span></span>
@@ -1457,12 +1651,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-258"><a href="#cb22-258" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(p.value)</span>
 <span id="cb22-259"><a href="#cb22-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-260"><a href="#cb22-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-261"><a href="#cb22-261" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb22-262"><a href="#cb22-262" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;summary&gt;&lt;i&gt;</span>Click here to see how to do this in base R<span class="kw">&lt;/i&gt;&lt;/summary&gt;</span></span>
-<span id="cb22-263"><a href="#cb22-263" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;br&gt;&lt;pre&gt;&lt;code&gt;</span># Order by adjusted p-value ascending</span>
+<span id="cb22-261"><a href="#cb22-261" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;</span>
+<span id="cb22-262"><a href="#cb22-262" aria-hidden="true" tabindex="-1"></a>    &lt;summary&gt;&lt;i&gt;Click here to see how to do this in base R&lt;/i&gt;&lt;/summary&gt;</span>
+<span id="cb22-263"><a href="#cb22-263" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;&lt;pre&gt;&lt;code&gt;# Order by adjusted p-value ascending</span>
 <span id="cb22-264"><a href="#cb22-264" aria-hidden="true" tabindex="-1"></a>idx &lt;- order(bp_oe$p.value)</span>
-<span id="cb22-265"><a href="#cb22-265" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- bp_oe<span class="co">[</span><span class="ot">idx,</span><span class="co">]</span><span class="kw">&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span></span>
-<span id="cb22-266"><a href="#cb22-266" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb22-265"><a href="#cb22-265" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- bp_oe<span class="co">[</span><span class="ot">idx,</span><span class="co">]</span>&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span>
+<span id="cb22-266"><a href="#cb22-266" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
 <span id="cb22-267"><a href="#cb22-267" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb22-268"><a href="#cb22-268" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
 <span id="cb22-269"><a href="#cb22-269" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
@@ -1475,13 +1669,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-278"><a href="#cb22-278" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(p.value))</span>
 <span id="cb22-279"><a href="#cb22-279" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-280"><a href="#cb22-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-281"><a href="#cb22-281" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb22-282"><a href="#cb22-282" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;summary&gt;&lt;i&gt;</span>Click here to see how to do this in base R<span class="kw">&lt;/i&gt;&lt;/summary&gt;</span></span>
-<span id="cb22-283"><a href="#cb22-283" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;br&gt;&lt;pre&gt;&lt;code&gt;</span># DO NOT RUN<span class="kw">&lt;/code&gt;</span></span>
-<span id="cb22-284"><a href="#cb22-284" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;code&gt;</span># Order by adjusted p-value descending</span>
+<span id="cb22-281"><a href="#cb22-281" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;</span>
+<span id="cb22-282"><a href="#cb22-282" aria-hidden="true" tabindex="-1"></a>    &lt;summary&gt;&lt;i&gt;Click here to see how to do this in base R&lt;/i&gt;&lt;/summary&gt;</span>
+<span id="cb22-283"><a href="#cb22-283" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;&lt;pre&gt;&lt;code&gt;# DO NOT RUN&lt;/code&gt;</span>
+<span id="cb22-284"><a href="#cb22-284" aria-hidden="true" tabindex="-1"></a>&lt;code&gt;# Order by adjusted p-value descending</span>
 <span id="cb22-285"><a href="#cb22-285" aria-hidden="true" tabindex="-1"></a>idx &lt;- order(bp_oe$p.value, decreasing = TRUE)</span>
-<span id="cb22-286"><a href="#cb22-286" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- bp_oe<span class="co">[</span><span class="ot">idx,</span><span class="co">]</span><span class="kw">&lt;/code&gt;&lt;/pre&gt;</span></span>
-<span id="cb22-287"><a href="#cb22-287" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb22-286"><a href="#cb22-286" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- bp_oe<span class="co">[</span><span class="ot">idx,</span><span class="co">]</span>&lt;/code&gt;&lt;/pre&gt;</span>
+<span id="cb22-287"><a href="#cb22-287" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
 <span id="cb22-288"><a href="#cb22-288" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb22-289"><a href="#cb22-289" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-290"><a href="#cb22-290" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
@@ -1504,12 +1698,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-309"><a href="#cb22-309" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bp_oe)</span>
 <span id="cb22-310"><a href="#cb22-310" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-311"><a href="#cb22-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-312"><a href="#cb22-312" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb22-313"><a href="#cb22-313" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;summary&gt;&lt;i&gt;</span>Click here to see how to do this in base R<span class="kw">&lt;/i&gt;&lt;/summary&gt;</span></span>
-<span id="cb22-314"><a href="#cb22-314" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;br&gt;&lt;pre&gt;&lt;code&gt;</span># Provide better names for columns</span>
+<span id="cb22-312"><a href="#cb22-312" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;</span>
+<span id="cb22-313"><a href="#cb22-313" aria-hidden="true" tabindex="-1"></a>    &lt;summary&gt;&lt;i&gt;Click here to see how to do this in base R&lt;/i&gt;&lt;/summary&gt;</span>
+<span id="cb22-314"><a href="#cb22-314" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;&lt;pre&gt;&lt;code&gt;# Provide better names for columns</span>
 <span id="cb22-315"><a href="#cb22-315" aria-hidden="true" tabindex="-1"></a>colnames(bp_oe)<span class="co">[</span><span class="ot">colnames(bp_oe) == "term.id"</span><span class="co">]</span> &lt;- "GO_id"</span>
-<span id="cb22-316"><a href="#cb22-316" aria-hidden="true" tabindex="-1"></a>colnames(bp_oe)<span class="co">[</span><span class="ot">colnames(bp_oe) == "term.name"</span><span class="co">]</span> &lt;- "GO_term"<span class="kw">&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span></span>
-<span id="cb22-317"><a href="#cb22-317" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb22-316"><a href="#cb22-316" aria-hidden="true" tabindex="-1"></a>colnames(bp_oe)<span class="co">[</span><span class="ot">colnames(bp_oe) == "term.name"</span><span class="co">]</span> &lt;- "GO_term"&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span>
+<span id="cb22-317"><a href="#cb22-317" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
 <span id="cb22-318"><a href="#cb22-318" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb22-319"><a href="#cb22-319" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-320"><a href="#cb22-320" aria-hidden="true" tabindex="-1"></a>::: callout-note    </span>
@@ -1539,11 +1733,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-346"><a href="#cb22-346" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bp_oe)</span>
 <span id="cb22-347"><a href="#cb22-347" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb22-348"><a href="#cb22-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-349"><a href="#cb22-349" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb22-350"><a href="#cb22-350" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;summary&gt;&lt;i&gt;</span>Click here to see how to do this in base R<span class="kw">&lt;/i&gt;&lt;/summary&gt;</span></span>
-<span id="cb22-351"><a href="#cb22-351" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;br&gt;&lt;pre&gt;&lt;code&gt;</span># Create gene ratio column based on other columns in dataset</span>
-<span id="cb22-352"><a href="#cb22-352" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- cbind(bp_oe, gene_ratio = bp_oe$overlap.size / bp_oe$query.size)<span class="kw">&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span></span>
-<span id="cb22-353"><a href="#cb22-353" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span>
+<span id="cb22-349"><a href="#cb22-349" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;</span>
+<span id="cb22-350"><a href="#cb22-350" aria-hidden="true" tabindex="-1"></a>    &lt;summary&gt;&lt;i&gt;Click here to see how to do this in base R&lt;/i&gt;&lt;/summary&gt;</span>
+<span id="cb22-351"><a href="#cb22-351" aria-hidden="true" tabindex="-1"></a>    &lt;br&gt;&lt;pre&gt;&lt;code&gt;# Create gene ratio column based on other columns in dataset</span>
+<span id="cb22-352"><a href="#cb22-352" aria-hidden="true" tabindex="-1"></a>bp_oe &lt;- cbind(bp_oe, gene_ratio = bp_oe$overlap.size / bp_oe$query.size)&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;</span>
+<span id="cb22-353"><a href="#cb22-353" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span>
 <span id="cb22-354"><a href="#cb22-354" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb22-355"><a href="#cb22-355" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
 <span id="cb22-356"><a href="#cb22-356" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
@@ -1553,7 +1747,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-360"><a href="#cb22-360" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-361"><a href="#cb22-361" aria-hidden="true" tabindex="-1"></a>Our final data for plotting should look like the table below:</span>
 <span id="cb22-362"><a href="#cb22-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-363"><a href="#cb22-363" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../img/bp_oe_ready_to_plot.png"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"900"</span><span class="kw">&gt;</span></span>
+<span id="cb22-363"><a href="#cb22-363" aria-hidden="true" tabindex="-1"></a>&lt;img src="../img/bp_oe_ready_to_plot.png" width="900"&gt;</span>
 <span id="cb22-364"><a href="#cb22-364" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-365"><a href="#cb22-365" aria-hidden="true" tabindex="-1"></a><span class="fu">## Next steps</span></span>
 <span id="cb22-366"><a href="#cb22-366" aria-hidden="true" tabindex="-1"></a></span>
@@ -1564,7 +1758,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb22-371"><a href="#cb22-371" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">R for Data Science</span><span class="co">](http://r4ds.had.co.nz)</span></span>
 <span id="cb22-372"><a href="#cb22-372" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">teach the tidyverse</span><span class="co">](http://varianceexplained.org/r/teach-tidyverse/)</span></span>
 <span id="cb22-373"><a href="#cb22-373" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">tidy style guide</span><span class="co">](http://style.tidyverse.org/)</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1572,12 +1766,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. <br> These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited. <br> Some materials used are adapted from work that is Copyright © <a href="http://datacarpentry.org/">Data Carpentry</a>. All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</div>
+    <div class="nav-footer-center">
+<p>This lesson has been developed by members of the teaching team at the <a href="http://bioinformatics.sph.harvard.edu/">Harvard Chan Bioinformatics Core (HBC)</a>. <br> These are open access materials distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited. <br> Some materials used are adapted from work that is Copyright © <a href="http://datacarpentry.org/">Data Carpentry</a>. All Data Carpentry instructional material is made available under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license</a> (CC BY 4.0).</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
