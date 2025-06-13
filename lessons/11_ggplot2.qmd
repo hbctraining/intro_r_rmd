@@ -13,15 +13,15 @@ Approximate time: 60 minutes
 
 ## Data Visualization with `ggplot2`
 
-***
+::: callout-note
 
-For this lesson, you will need the `new_metadata` data frame. Please download it [from here](https://github.com/hbctraining/Intro-to-R-flipped/raw/master/data/new_metadata.RData) to your project's data folder by right-clicking and "save file as" or "download file as".
+For this lesson, you will need the `new_metadata` data frame. If you do not have this in your environment, please download it [from here](https://github.com/hbctraining/Intro-to-R-flipped/raw/master/data/new_metadata.RData) to your project's data folder by right-clicking and "save file as" or "download file as".
 
 Once you have downloaded it, load it into your environment as follows:
 
 ```{r}
 ## load the new_metadata data frame into your environment from a .RData object
-load("../data/new_metadata.RData")
+load("data/new_metadata.RData")
 ```
 
 Next, let's check if it was successfully loaded into the environment:
@@ -34,15 +34,16 @@ View(new_metadata)
 
 Great, we are now ready to move forward!
 
-***
+:::
 
 When we are working with large sets of numbers it can be useful to display that information graphically to gain more insight. In this lesson we will be plotting with the popular Bioconductor package [`ggplot2`](http://docs.ggplot2.org/).
+
+
+The `ggplot2` syntax takes some getting used to, but once you get it, you will find it's extremely powerful and flexible. We will start with drawing a simple x-y scatterplot of `samplemeans` versus `age_in_days` from the `new_metadata` data frame. Please note that `ggplot2` expects a "data frame" or "tibble" (you can find out more about tibbles in the lesson on [tidyverse](https://hbctraining.github.io/Training-modules/Tidyverse_ggplot2/lessons/intro_tidyverse.html)) as input.
 
 ::: callout-note
 If you are interested in learning about plotting with base R functions, we have a short lesson [available here](basic_plots_in_r.qmd). 
 :::
-
-The `ggplot2` syntax takes some getting used to, but once you get it, you will find it's extremely powerful and flexible. We will start with drawing a simple x-y scatterplot of `samplemeans` versus `age_in_days` from the `new_metadata` data frame. Please note that `ggplot2` expects a "data frame" or "tibble" (you can find out more about tibbles in the lesson on [tidyverse](https://hbctraining.github.io/Training-modules/Tidyverse_ggplot2/lessons/intro_tidyverse.html)) as input.
 
 Let's start by loading the `ggplot2` library:
 
@@ -55,19 +56,11 @@ The `ggplot()` function is used to **initialize the basic graph structure**, the
 Let's start: 
 
 ```{r}
+#| eval: false
 ggplot(new_metadata) # what happens? 
 ```
 
-::: callout-note
-If you don't have the new_metadata object, you can right-click to download and save an `rds` file [from here](https://www.dropbox.com/s/xwsaisraubghawt/new_metadata.rds?dl=1) into the project `data` folder, and load it in using:
-
-```{r}
-#| eval: false
-new_metadata <- readRDS("../data/new_metadata.rds")
-```
-:::
-
-You get an blank plot, because you need to **specify additional layers** using the `+` operator.
+You get a blank plot, because you need to **specify additional layers** using the `+` operator.
 
 The **geom (geometric) object** is the layer that specifies what kind of plot we want to draw. A plot **must have at least one `geom`**; there is no upper limit. Examples include:
 
@@ -177,7 +170,7 @@ RStudio provide this very [useful cheatsheet](cheatsheets/data-visualization-2.1
 1. The current axis label text defaults to what we gave as input to `geom_point` (i.e the column headers). We can change this by **adding additional layers** called `xlab()` and `ylab()` for the x- and y-axis, respectively. Add these layers to the current plot such that the x-axis is labeled "Age (days)" and the y-axis is labeled "Mean expression".
 2. Use the `ggtitle` layer to add a plot title of your choice. 
 3. Add the following new layer to the code chunk `theme(plot.title=element_text(hjust=0.5))`.
-  * What does it change?
-  * How many theme() layers can be added to a ggplot code chunk, in your estimation?
+   * What does it change?
+   * How many theme() layers can be added to a ggplot code chunk, in your estimation?
   
 :::

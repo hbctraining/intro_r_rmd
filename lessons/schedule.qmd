@@ -320,7 +320,8 @@ II. **Complete the exercises**:
 |:-----------------:|:------------------------------------:|:-------------:|
 | 10:00 - 10:35 | Questions about self-learning lessons | All |
 | 10:35 - 11:15 | [In-class exercises](Day4_activities.qmd) + [Answer key](answer_keys/Day4_activities_answer_key.qmd) | Meeta |
-| 11:15 - 11:45 | Discussion, Q & A | All |
+| 11:15 - 11:25 | [Saving your Posit Cloud project](16_offboarding.qmd) | All |
+| 11:25 - 11:45 | Discussion, Q & A | All |
 | 11:45 - 12:00 | [Wrap Up](../slides/workshop_wrapup_slides.pdf) | Heather |
 
 ### Final Exercises
