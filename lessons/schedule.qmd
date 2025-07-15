@@ -12,8 +12,8 @@ editor:
 
 | Time | Topic | Instructor |
 |:-----------------:|:------------------------------------:|:-------------:|
-| 10:00 - 10:30 | [Workshop Introduction](../slides/workshop_intro_slides.pdf) | Heather |
-| 10:30 - 11:45 | [Introduction to R and RStudio](01b_introR-R-and-RStudio.qmd) | Will |
+| 10:00 - 10:30 | [Workshop Introduction](../slides/workshop_intro_slides.pdf) | Will |
+| 10:30 - 11:45 | [Introduction to R and RStudio](01b_introR-R-and-RStudio.qmd) | Elizabeth |
 | 11:45 - 12:00 | Overview of self-learning materials and homework submission | Will |
 
 ### Before the next class:
@@ -91,7 +91,7 @@ II. **Complete the exercises**:
 | Time | Topic | Instructor |
 |:-----------------:|:------------------------------------:|:-------------:|
 | 10:00 - 10:50 | Questions about self-learning | All |
-| 10:50 - 11:15 | [In-class exercises](Day2_activities.qmd) + [Answer key](answer_keys/Day2_activities_answer_key.qmd) | Heather |
+| 10:50 - 11:15 | [In-class exercises](Day2_activities.qmd) + [Answer key](answer_keys/Day2_activities_answer_key.qmd) | Elizabeth |
 | 11:15 - 12:00 | [Data Wrangling: Subsetting Vectors and Factors](05_introR-data-wrangling.qmd) | Will |
 
 ### Before the next class:
@@ -209,7 +209,7 @@ II. **Complete the exercises**:
 |:-----------------:|:------------------------------------:|:-------------:|
 | 10:00 - 10:35 | Questions about self-learning lessons | All |
 | 10:35 - 11:15 | [In-class exercises](Day3_activities.qmd) + [Answer key](answer_keys/Day3_activities_answer_key.qmd) | Will |
-| 11:15 - 12:00 | [Plotting with the ggplot2 package](11_ggplot2.qmd) | Heather |
+| 11:15 - 12:00 | [Plotting with the ggplot2 package](11_ggplot2.qmd) | Elizabeth |
 
 ### Before the next class:
 
@@ -319,10 +319,10 @@ II. **Complete the exercises**:
 | Time | Topic | Instructor |
 |:-----------------:|:------------------------------------:|:-------------:|
 | 10:00 - 10:35 | Questions about self-learning lessons | All |
-| 10:35 - 11:15 | [In-class exercises](Day4_activities.qmd) + [Answer key](answer_keys/Day4_activities_answer_key.qmd) | Meeta |
-| 11:15 - 11:25 | [Saving your Posit Cloud project](16_offboarding.qmd) | All |
+| 10:35 - 11:15 | [In-class exercises](Day4_activities.qmd) + [Answer key](answer_keys/Day4_activities_answer_key.qmd) | Elizabeth |
+| 11:15 - 11:25 | [Saving your Posit Cloud project](16_offboarding.qmd) | Will |
 | 11:25 - 11:45 | Discussion, Q & A | All |
-| 11:45 - 12:00 | [Wrap Up](../slides/workshop_wrapup_slides.pdf) | Heather |
+| 11:45 - 12:00 | [Wrap Up](../slides/workshop_wrapup_slides.pdf) | Will |
 
 ### Final Exercises
 
@@ -338,22 +338,17 @@ II. **Complete the exercises**:
 
 ## Building on the basic R knowledge
 
--   [DGE
-    workshop](https://hbctraining.github.io/DGE_workshop_salmon_online/)
--   [Single-cell RNA-seq
-    workshop](https://hbctraining.github.io/scRNA-seq_online/)
+-   [DGE workshop](https://hbctraining.github.io/Intro-to-DGE/)
+-   [Single-cell RNA-seq workshop](https://hbctraining.github.io/Intro-to-scRNAseq/)
 -   [RMarkdown](https://hbctraining.github.io/Training-modules/Rmarkdown/)
 -   [Functional
     analysis](https://hbctraining.github.io/Training-modules/DGE-functional-analysis/)
 -   [More ggplot2](https://hbctraining.github.io/publication_perfect/)
 -   [ggplot2 cookbook](http://www.cookbook-r.com/Graphs/)
--   [Running R and Rstudio on
-    O2](https://harvardmed.atlassian.net/wiki/spaces/O2/pages/1623425967/RStudio+on+O2)
+-   [Running R and Rstudio on O2](https://hbctraining.github.io/BMI713_Intro_to_HPC/schedule/workshop_schedule.html)
 
 ## Resources
 
--   [Online learning
-    resources](https://hbctraining.github.io/bioinformatics_online/lists/online_trainings.qmd)
 -   [All hbctraining materials](https://hbctraining.github.io/main)
 
 ## Cheatsheets
