@@ -107,7 +107,7 @@ Let's read in the `mouse_exp_design` file and create a new data frame called `me
 metadata <- read.csv(file="data/mouse_exp_design.csv")
 
 # OR 
-# metadata <- read.csv(file="../data/mouse_exp_design.txt")
+# metadata <- read.csv(file="data/mouse_exp_design.txt")
 ```
 
 ::: callout-note
